@@ -9,9 +9,9 @@ import { isCorrect } from './normalize.js';
 import { exportSessionCsv, prepareSessionResultsForCsv } from './csv.js';
 import {
     showScreen, updateTimerDisplay, setTimerPauseState, updateStats,
-    displayQuestion, showQuestionResult, showEmptyState, hideEmptyState,
+    displayQuestion, showQuestionResult,
     updateSubjectSelector, showParserErrors, hideParserErrors,
-    updateTimerValue, setStartButtonState, showSummary, announceStatus, announceError,
+    updateTimerValue, updateReadingSpeedValue, updateReadingSpeedPracticeValue, setStartButtonState, showSummary, announceStatus, announceError,
     updatePoolPreview, updateFilterTags, updateQuestionCounter, updateAccuracyDisplay
 } from './ui.js';
 
@@ -23,13 +23,28 @@ let appState = {
     userAnswers: [],
     sessionStartTime: null,
     timeAllocated: 10,
+    readingSpeed: 200, // Words per minute
     timer: null,
     isPaused: false,
-    isSessionActive: false
+    isSessionActive: false,
+    textRevealTimer: null
 };
 
 // Expose app state globally for UI functions
 window.appState = appState;
+
+/**
+ * Fisher-Yates shuffle algorithm to randomize array order
+ * @param {Array} array - Array to shuffle (modified in place)
+ * @returns {Array} The shuffled array
+ */
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 // DOM elements
 let elements = {};
@@ -68,6 +83,8 @@ function initializeElements() {
         startPractice: document.getElementById('start-practice'),
         timerSlider: document.getElementById('timer'),
         timerValue: document.getElementById('timer-value'),
+        readingSpeedSlider: document.getElementById('reading-speed'),
+        readingSpeedValue: document.getElementById('reading-speed-value'),
         selectAll: document.getElementById('select-all'),
         clearAll: document.getElementById('clear-all'),
         resetFilters: document.getElementById('reset-filters'),
@@ -116,6 +133,18 @@ function setupEventListeners() {
         });
     } else {
         console.error('Timer slider element not found!');
+    }
+    
+    // Reading speed slider
+    if (elements.readingSpeedSlider) {
+        console.log('Adding reading speed slider listener');
+        elements.readingSpeedSlider.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value);
+            updateReadingSpeedValue(value);
+            appState.readingSpeed = value;
+        });
+    } else {
+        console.error('Reading speed slider element not found!');
     }
     
     // Subject selection
@@ -179,8 +208,41 @@ function setupEventListeners() {
         elements.resetFilters.addEventListener('click', resetFilters);
     }
     
-    if (elements.resetFiltersEmpty) {
-        elements.resetFiltersEmpty.addEventListener('click', resetFilters);
+    // Reset filters from practice screen
+    const resetFiltersPractice = document.getElementById('reset-filters-practice');
+    if (resetFiltersPractice) {
+        resetFiltersPractice.addEventListener('click', resetFilters);
+    }
+    
+    // Reading speed slider in practice screen
+    const readingSpeedPractice = document.getElementById('reading-speed-practice');
+    if (readingSpeedPractice) {
+        readingSpeedPractice.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value);
+            updateReadingSpeedPracticeValue(value);
+            appState.readingSpeed = value;
+            
+            // Also update the main reading speed slider if it exists
+            if (elements.readingSpeedSlider) {
+                elements.readingSpeedSlider.value = value;
+                updateReadingSpeedValue(value);
+            }
+            
+            // Show feedback that speed has changed
+            const speedHint = document.querySelector('.speed-hint');
+            if (speedHint) {
+                speedHint.textContent = 'Speed updated! Affects next question';
+                speedHint.style.color = '#28a745';
+                speedHint.style.fontWeight = '600';
+                
+                // Reset the hint after 2 seconds
+                setTimeout(() => {
+                    speedHint.textContent = 'Affects next question';
+                    speedHint.style.color = '#6c757d';
+                    speedHint.style.fontWeight = 'normal';
+                }, 2000);
+            }
+        });
     }
     
     // Summary screen
@@ -275,6 +337,9 @@ function initializeUI() {
     // Set default timer value
     updateTimerValue(appState.timeAllocated);
     
+    // Set default reading speed value
+    updateReadingSpeedValue(appState.readingSpeed);
+    
     // Select all subjects by default
     selectAllSubjects();
     
@@ -301,6 +366,19 @@ function selectAllSubjects() {
 function clearAllSubjects() {
     document.querySelectorAll('.subject-group input[type="checkbox"]').forEach(checkbox => {
         checkbox.checked = false;
+    });
+    updatePoolPreview();
+    updateFilterTags();
+}
+
+/**
+ * Select only subjects that have available questions
+ */
+function selectAllAvailableSubjects() {
+    document.querySelectorAll('.subject-group input[type="checkbox"]').forEach(checkbox => {
+        if (!checkbox.disabled) {
+            checkbox.checked = true;
+        }
     });
     updatePoolPreview();
     updateFilterTags();
@@ -336,6 +414,9 @@ function filterQuestions() {
         return subjectMatch && levelMatch;
     });
     
+    // Randomize the order of filtered questions
+    shuffleArray(appState.filteredQuestions);
+    
     return appState.filteredQuestions.length;
 }
 
@@ -346,14 +427,42 @@ function startPracticeSession() {
     console.log('startPracticeSession called');
     console.log('Current app state:', appState);
     
-    const questionCount = filterQuestions();
+    let questionCount = filterQuestions();
     console.log('Question count after filtering:', questionCount);
     
+    // If no questions match, try to expand filters automatically
     if (questionCount === 0) {
-        console.log('No questions match filters, showing empty state');
-        showEmptyState();
-        announceError('No questions match your current filters');
-        return;
+        console.log('No questions match filters, auto-expanding filters');
+        
+        // First try: select all subjects if none selected
+        const selectedSubjects = Array.from(
+            document.querySelectorAll('.subject-group input[type="checkbox"]:checked')
+        );
+        
+        if (selectedSubjects.length === 0) {
+            selectAllSubjects();
+            questionCount = filterQuestions();
+        }
+        
+        // Second try: remove level filter if still no matches
+        if (questionCount === 0) {
+            document.querySelector('input[name="level"][value=""]').checked = true;
+            questionCount = filterQuestions();
+        }
+        
+        // Third try: select all available subjects
+        if (questionCount === 0) {
+            selectAllAvailableSubjects();
+            questionCount = filterQuestions();
+        }
+        
+        if (questionCount === 0) {
+            announceError('Unable to find any questions. Please check your question bank.');
+            return;
+        }
+        
+        announceStatus(`Expanded filters to include ${questionCount} randomized questions`);
+        updatePoolPreview();
     }
     
     console.log('Starting session with questions:', appState.filteredQuestions);
@@ -365,8 +474,7 @@ function startPracticeSession() {
     appState.isSessionActive = true;
     appState.isPaused = false;
     
-    // Hide empty state and show question card
-    hideEmptyState();
+
     
     // Switch to practice screen
     showScreen('practice-screen');
@@ -375,13 +483,20 @@ function startPracticeSession() {
     updateQuestionCounter();
     updateFilterTags();
     
+    // Initialize practice screen reading speed control
+    const readingSpeedPractice = document.getElementById('reading-speed-practice');
+    if (readingSpeedPractice) {
+        readingSpeedPractice.value = appState.readingSpeed;
+        updateReadingSpeedPracticeValue(appState.readingSpeed);
+    }
+    
     // Display first question
     displayQuestion(appState.filteredQuestions[0]);
     
     // Start timer
     startTimer();
     
-    announceStatus(`Practice session started with ${questionCount} questions`);
+    announceStatus(`Practice session started with ${questionCount} randomized questions`);
 }
 
 /**
@@ -550,6 +665,11 @@ function endSession() {
     if (appState.timer) {
         clearInterval(appState.timer);
         appState.timer = null;
+    }
+    
+    if (appState.textRevealTimer) {
+        clearInterval(appState.textRevealTimer);
+        appState.textRevealTimer = null;
     }
 }
 

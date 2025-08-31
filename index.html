@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0, minimum-scale=0.5">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#667eea">
+    <meta name="description" content="Practice for North County Academic League with timed questions across multiple subjects">
+    <meta name="keywords" content="NCAL, academic league, study app, practice questions, timer">
     <title>NCAL Study App</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -66,7 +73,14 @@
                             <button type="button" id="clear-all" class="btn-toggle">Clear All</button>
                         </div>
                     </div>
-                    <div class="pool-preview" id="pool-preview">Pool preview: ~0 questions</div>
+                    <div class="pool-preview-card">
+                        <div class="pool-preview-header">
+                            <span class="pool-icon">📚</span>
+                            <h4>Question Pool</h4>
+                        </div>
+                        <div id="pool-preview" class="pool-preview">~0 questions available</div>
+                        <div class="pool-hint">🔀 Questions are randomized each session • Adjust your filters above to change the pool</div>
+                    </div>
                 </div>
 
                 <!-- Level Selection -->
@@ -89,6 +103,17 @@
                         <input type="range" id="timer" min="3" max="60" value="10" step="1">
                         <span id="timer-value" class="timer-value">10s</span>
                     </div>
+                </div>
+
+                <!-- Reading Speed Selection -->
+                <div class="control-group">
+                    <label for="reading-speed">Reading speed</label>
+                    <div class="timer-control">
+                        <div class="timer-icon">📖</div>
+                        <input type="range" id="reading-speed" min="50" max="500" value="200" step="25">
+                        <span id="reading-speed-value" class="timer-value">200 WPM</span>
+                    </div>
+                    <div class="level-note">Words per minute - how fast the question appears</div>
                 </div>
 
                 <!-- Action Buttons -->
@@ -117,7 +142,10 @@
             <div class="practice-container">
                 <div class="practice-main">
                     <div class="practice-header">
-                        <button type="button" id="back-to-setup" class="btn-secondary">← Back to Setup</button>
+                        <div class="practice-header-left">
+                            <button type="button" id="back-to-setup" class="btn-secondary">← Back to Setup</button>
+                            <button type="button" id="reset-filters-practice" class="btn-secondary">🔄 Reset Filters</button>
+                        </div>
                         <div class="question-context">
                             <span id="question-category" class="context-tag"></span>
                             <span id="question-level" class="context-tag"></span>
@@ -163,11 +191,7 @@
                         </div>
                     </div>
 
-                    <!-- Empty State -->
-                    <div id="empty-state" class="empty-state hidden">
-                        <p>No questions match your current filters.</p>
-                        <button type="button" id="reset-filters-empty" class="btn-secondary">Reset Filters</button>
-                    </div>
+
                 </div>
 
                 <!-- Practice Sidebar -->
@@ -205,6 +229,19 @@
                         </div>
                     </div>
 
+                    <!-- Reading Speed Control -->
+                    <div class="sidebar-section">
+                        <h3>Reading Speed</h3>
+                        <div class="reading-speed-practice">
+                            <div class="speed-control">
+                                <span class="speed-icon">📖</span>
+                                <input type="range" id="reading-speed-practice" min="50" max="500" value="200" step="25">
+                                <span id="reading-speed-practice-value" class="speed-value">200 WPM</span>
+                            </div>
+                            <div class="speed-hint">Affects next question</div>
+                        </div>
+                    </div>
+
                     <!-- Shortcuts -->
                     <div class="sidebar-section">
                         <h3>Shortcuts</h3>
@@ -220,6 +257,10 @@
                             <div class="shortcut-item">
                                 <span class="shortcut-key">Tab</span>
                                 <span class="shortcut-action">Navigate controls</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <span class="shortcut-key">Click</span>
+                                <span class="shortcut-action">Skip text reveal</span>
                             </div>
                         </div>
                     </div>

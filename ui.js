@@ -180,7 +180,7 @@ export function updatePoolPreview() {
         return subjectMatch && levelMatch;
     });
     
-    previewElement.textContent = `Pool preview: ~${filteredQuestions.length} questions`;
+    previewElement.textContent = `${filteredQuestions.length} questions available (randomized each session)`;
 }
 
 /**
@@ -248,19 +248,102 @@ export function displayQuestion(question) {
     }
     if (levelElement) levelElement.textContent = question.level;
     if (authorElement) authorElement.textContent = `Author: ${question.author}`;
-    if (questionElement) questionElement.textContent = question.question;
+    
+    // Start progressive text reveal
+    if (questionElement) {
+        startTextReveal(questionElement, question.question);
+        
+        // Add click handler to skip text reveal
+        const skipReveal = () => {
+            if (window.appState?.textRevealTimer) {
+                clearInterval(window.appState.textRevealTimer);
+                window.appState.textRevealTimer = null;
+                questionElement.textContent = question.question;
+                questionElement.classList.remove('revealing');
+                
+                // Focus the answer input
+                const answerInput = document.getElementById('answer-input');
+                if (answerInput) {
+                    answerInput.focus();
+                }
+                
+                // Remove the click handler
+                questionElement.removeEventListener('click', skipReveal);
+            }
+        };
+        
+        questionElement.addEventListener('click', skipReveal, { once: true });
+    }
     
     // Clear previous answer input
     const answerInput = document.getElementById('answer-input');
     if (answerInput) {
         answerInput.value = '';
-        answerInput.focus();
+        // Don't focus immediately - wait for text reveal to finish
     }
     
     // Hide result display
     const resultDisplay = document.getElementById('result-display');
     if (resultDisplay) {
         resultDisplay.classList.add('hidden');
+    }
+}
+
+/**
+ * Progressively reveals text word by word
+ * @param {HTMLElement} element - Element to display text in
+ * @param {string} fullText - Complete text to reveal
+ */
+function startTextReveal(element, fullText) {
+    // Clear any existing text reveal timer
+    if (window.appState?.textRevealTimer) {
+        clearInterval(window.appState.textRevealTimer);
+    }
+    
+    const words = fullText.split(' ');
+    const readingSpeed = window.appState?.readingSpeed || 200; // Words per minute
+    const intervalMs = (60 / readingSpeed) * 1000; // Convert to milliseconds per word
+    
+    let currentWordIndex = 0;
+    element.textContent = ''; // Clear the element
+    element.style.opacity = '1';
+    element.classList.add('revealing'); // Add blinking cursor
+    
+    // Function to add the next word
+    const revealNextWord = () => {
+        if (currentWordIndex < words.length) {
+            if (currentWordIndex > 0) {
+                element.textContent += ' ';
+            }
+            element.textContent += words[currentWordIndex];
+            currentWordIndex++;
+        } else {
+            // Text reveal complete - clear timer and focus input
+            clearInterval(window.appState.textRevealTimer);
+            window.appState.textRevealTimer = null;
+            element.classList.remove('revealing'); // Remove blinking cursor
+            
+            // Focus the answer input once text is fully revealed
+            const answerInput = document.getElementById('answer-input');
+            if (answerInput) {
+                answerInput.focus();
+            }
+        }
+    };
+    
+    // Start the reveal immediately with first word
+    revealNextWord();
+    
+    // Continue revealing words at the specified interval
+    if (words.length > 1) {
+        window.appState.textRevealTimer = setInterval(revealNextWord, intervalMs);
+    } else {
+        // Single word - remove revealing class and focus input immediately
+        element.classList.remove('revealing');
+        const answerInput = document.getElementById('answer-input');
+        if (answerInput) {
+            answerInput.focus();
+        }
     }
 }
 
@@ -289,31 +372,7 @@ export function showQuestionResult(isCorrect, userAnswer, canonicalAnswer, resul
     }
 }
 
-/**
- * Shows empty state when no questions match filters
- */
-export function showEmptyState() {
-    const emptyState = document.getElementById('empty-state');
-    const questionCard = document.querySelector('.question-card');
-    
-    if (emptyState && questionCard) {
-        questionCard.style.display = 'none';
-        emptyState.classList.remove('hidden');
-    }
-}
 
-/**
- * Hides empty state and shows question card
- */
-export function hideEmptyState() {
-    const emptyState = document.getElementById('empty-state');
-    const questionCard = document.querySelector('.question-card');
-    
-    if (emptyState && questionCard) {
-        emptyState.classList.add('hidden');
-        questionCard.style.display = 'block';
-    }
-}
 
 /**
  * Updates subject selection UI based on available questions
@@ -391,6 +450,28 @@ export function updateTimerValue(value) {
     const timerValue = document.getElementById('timer-value');
     if (timerValue) {
         timerValue.textContent = `${value}s`;
+    }
+}
+
+/**
+ * Updates the reading speed slider value display
+ * @param {number} value - Reading speed in words per minute
+ */
+export function updateReadingSpeedValue(value) {
+    const readingSpeedValue = document.getElementById('reading-speed-value');
+    if (readingSpeedValue) {
+        readingSpeedValue.textContent = `${value} WPM`;
+    }
+}
+
+/**
+ * Updates the practice screen reading speed slider value display
+ * @param {number} value - Reading speed in words per minute
+ */
+export function updateReadingSpeedPracticeValue(value) {
+    const readingSpeedPracticeValue = document.getElementById('reading-speed-practice-value');
+    if (readingSpeedPracticeValue) {
+        readingSpeedPracticeValue.textContent = `${value} WPM`;
     }
 }
 
