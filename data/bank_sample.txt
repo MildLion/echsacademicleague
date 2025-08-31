@@ -1,0 +1,294 @@
+Science>Earth and Space Science;Which Greek letter is also the name for the deposition of sediments at the mouth of a river?;["DELTA"];Junior Varsity;NCAL
+Science>Earth and Space Science;Give the name of the largest satellite of the dwarf planet Pluto.;["CHARON"];Junior Varsity;NCAL
+Science>Earth and Space Science;Give the name of the only dwarf planet in our solar system whose orbit is smaller than Jupiter's.;["CERES","1 CERES"];Junior Varsity;NCAL
+Science>Earth and Space Science;Give the name of the first artificial satellite to orbit the earth.;["SPUTNIK"];Junior Varsity;NCAL
+Science>Earth and Space Science;Which planet in the solar system requires approximately 11.8 Earth years to travel around the Sun?;["JUPITER"];Junior Varsity;NCAL
+Science>Earth and Space Science;What word beginning with the letter "g" describes the lunar phase during which the moon is greater than half lit, but less than fully lit?;["GIBBOUS"];Junior Varsity;NCAL
+Science>Earth and Space Science;How many degrees of longitude would be traversed by a person traveling exactly halfway around the world along the 36th parallel of latitude?;["180","180 DEGREES"];Junior Varsity;NCAL
+Science>Earth and Space Science;Name the type rock that is formed as result of deposition calcium carbonate from sea water.;["LIMESTONE"];Junior Varsity;NCAL
+Science>Earth and Space Science;What is the single-word adjective constructed from two greek words that identifies the scientific theory that the sun is the center of the movement of the earth and the planets?;["HELIOCENTRIC"];Freshman;NCAL
+Languages>English;Spell the grammar term for words with opposite meanings.;["ANTONYM","ANTONYMS"];Junior Varsity;NCAL
+Languages>English;Give the literary term for the repetition of vowel sounds in a group of words close together.;["ASSONANCE"];Junior Varsity;NCAL
+Languages>English;Name the simple subject in the sentence "Four-tusked mammoths are roaming the planet.";["MAMMOTHS"];Junior Varsity;NCAL
+Languages>English;Name the literary device used the following sentence. "His thundering shout could split rocks.";["HYPERBOLE"];Junior Varsity;NCAL
+Languages>English;Give the literary term for words such as "buzz," "sizzle," "slam," and "hiss.";["ONOMATOPOEIA"];Junior Varsity;NCAL
+Languages>English;Identify the noun clause in the following sentence. "That she was talented was obvious.";["THAT SHE WAS TALENTED"];Junior Varsity;NCAL
+Languages>English;Spell the past participle of the verb "to lie," meaning to be in a horizontal position or to remain or be situated.;["L-A-I-N"];Junior Varsity;NCAL
+Languages>English;What is the term applied to unrhymed, iambic pentameter?;["BLANK VERSE"];Junior Varsity;NCAL
+Languages>English;Name the literary device used the following sentence. "His thundering shout could split rocks.";["HYPERBOLE"];Junior Varsity;NCAL
+Languages>English;Identify the noun clause in the following sentence,"That she as talented was obvious.";["THAT SHE WAS TALENTED"];Junior Varsity;NCAL
+Languages>English;Name the poetic term that identifies two successive rhyming lines of iambic pentameter.;["HEROIC COUPLET"];Junior Varsity;NCAL
+Languages>English;Identify the adverb clause in the following sentence. "Before the game started, John and I ate lunch.";["BEFORE THE GAME STARTED"];Junior Varsity;NCAL
+Languages>English;Give the literary term for an event or detail that is chronologically out of its proper time in history.;["ANACHRONISM"];Junior Varsity;NCAL
+Languages>English;Spell the name of the punctuation mark that is used in every contraction.;["APOSTROPHE"];Junior Varsity;NCAL
+Languages>English;Name either of the homonyms that mean a small, seedless raisin and the swiftest part of a stream.;["CURRANT", "CURRENT", "CURRANT OR CURRENT"];Freshman;NCAL
+Languages>English Literature;Who was Romeo's spiritual advisor in Shakespeare's "Romeo and Juliet?";["FRIAR LAWRENCE"];Junior Varsity;NCAL
+Languages>English Literature;Name the warring families in Shakespeare's "Romeo and Juliet.";["CAPULETS AND MONTAGUES"];Freshman;NCAL
+Languages>French;Spell, using the English alphabet, the 2-word French phrase that means "See you later.";["AU REVOIR", "A DEMAIN", "A BIENTOT"];Junior Varsity;NCAL
+Languages>French;Spell, using the English alphabet, the French noun that means "weight," as in "The weight of this book is 15 pounds.";["LE POIDS"];Junior Varsity;NCAL
+Languages>French;In French grammar, with what three letters must a verb end if it follows the preposition "e-n?";["ANT", "A-N-T"];Junior Varsity;NCAL
+Languages>French;Spell, using the English alphabet, the French word for the noun "arms," as in "My arms aren't long enough to touch my toes.";["BRAS","LES BRAS"];Junior Varsity;NCAL
+Languages>French;What is the one-word scientific term, a French word, that describes any glacially formed accumulation of unconsolidated debris?;["MORAINE"];Junior Varsity;NCAL
+Languages>French;Spell, using the English alphabet, the French masculine, singular form of the adjective meaning "sad", as in "The sad boy is crying.";["TRISTE"];Junior Varsity;NCAL
+Languages>French;Spell, using the English alphabet, the French word that means "book.";["LIVRE", "BOUQUIN"];Junior Varsity;NCAL
+Languages>French;Spell, using the English alphabet, the French word that means "pedestrian.";["PIETON", "PIETONNE"];Junior Varsity;NCAL
+Languages>French;Spell, using the English alphabet, the French word that means "paperclips.";["TROMBONE"];Junior Varsity;NCAL
+Languages>French;Give the French phrase for art that literally "fools the eye.";["TROMPE L'OEIL"];Freshman;NCAL
+Humanities>Geography;In which U.S. state are the Black Hills located?;["SOUTH DAKOTA"];Junior Varsity;NCAL
+Humanities>Geography;How many official languages are recognized in Switzerland?;["4","FOUR"];Junior Varsity;NCAL
+Humanities>Geography;Give the name of the hiking trail that passes through 14 states from Georgia to Maine in the eastern mountains of the United States.;["APPALACHIAN","APPALACHIAN TRAIL"];Junior Varsity;NCAL
+Humanities>Geography;What is the capital of North Korea?;["PYONGYANG"];Junior Varsity;NCAL
+Humanities>Geography;Which city in Greece would you be visiting if you were having your picture taken near the Arch of Hadrian?;["ATHENS"];Junior Varsity;NCAL
+Humanities>Geography;Identify either of the countries which comprise the Jutland Peninsula;["GERMANY", "DENMARK", "KINGDOM OF DENMARK", "FEDERAL REPUBLIC OF GERMANY", "GERMANY OR DENMARK"];Junior Varsity;NCAL
+Humanities>Geography;Give the name of the installation in Kentucky that is the site of the U.S. Gold Depository.;["FORT KNOX"];Junior Varsity;NCAL
+Humanities>Geography;Name the mountain range that separates Europe from Asia.;["URALS"];Junior Varsity;NCAL
+Humanities>Geography;Name the tiny European country nestled high in the Pyrenees between France and Spain.;["ANDORRA"];Junior Varsity;NCAL
+Humanities>Geography;In which world capital is the "Forbidden City" located?;["PEKING", "BEIJING"];Junior Varsity;NCAL
+Humanities>Geography;Name the country which contains the easternmost point of the South American continent.;["BRAZIL"];Junior Varsity;NCAL
+Humanities>Geography;Name the capital of Cambodia.;["PHNOM PENH"];Junior Varsity;NCAL
+Humanities>Geography;What's the world's smallest independent country by area?;["VATICAN"];Junior Varsity;NCAL
+Humanities>Geography;In which southern hemisphere country are the Canterbury Plains located?;["NEW ZEALAND"];Junior Varsity;NCAL
+Humanities>Geography;Name the country whose inhabitants are sometimes referred to as "Kiwis.";["NEW ZEALAND"];Junior Varsity;NCAL
+Humanities>Geography;What is the longest river in Canada?;["MACKENZIE", "MACKENZIE RIVER"];Freshman;NCAL
+Humanities>Geography;Name the country who owns Christmas Island.;["AUSTRALIA"];Freshman;NCAL
+Humanities>Geography;Identify the country which controls the Juan Fernandez Archipelago and Easter Island.;["CHILE", "REPUBLIC OF CHILE"];Freshman;NCAL
+Humanities>Geography;What body of water borders Norway, Scotland, Denmark, and England?;["NORTH SEA", "THE NORTH SEA"];Freshman;NCAL
+Math>Geometry;Give the geometry term for a polyhedron with 20 faces.;["ICOSAHEDRON"];Junior Varsity;NCAL
+Math>Geometry;In a regular polygon, what is the ratio of the measures of successive angles?;["1/1","1:1","1 TO 1"];Junior Varsity;NCAL
+Math>Geometry;What is the sum of the arc measures, in degrees, subtended by a central angle measuring 85 degrees and an inscribed angle of 85 degrees.;["225", "225 DEGREES"];Junior Varsity;NCAL
+Math>Geometry;What is the perimeter, in yards, of an equilateral decagon whose side measures 6 feet?;["20 YARDS", "20"];Junior Varsity;NCAL
+Math>Geometry;What is area of equilateral triangle with perimeter of twenty-four?;["SIXTEEN ROOT THREE"];Junior Varsity;NCAL
+Math>Geometry;What is the diameter of the circle whose equation is X squared plus Y squared equals 9?;["6","SIX"];Junior Varsity;NCAL
+Math>Geometry;Identify only positive integer which is equal to its cube.;["1","ONE"];Junior Varsity;NCAL
+Math>Geometry;Determine the area of an equilateral triangle in which each side measures 20.;["100 TIMES ROOT 3", "100*sqrt(3)"];Freshman;NCAL
+Humanities>Music;Give the nickname of Beethoven's Third Symphony.;["EROICA"];Junior Varsity;NCAL
+Humanities>Music;What is the full name of the man who is credited with the invention of the saxophone?;["SAX", "ADOLPHE SAX"];Junior Varsity;NCAL
+Humanities>Music;Name one of the two C clefs in modern music.;["ALTO","TENOR","ALTO OR TENOR"];Junior Varsity;Juniper
+Humanities>Music;Which opera composer wrote Madama Butterfly?;["PUCCINI"];Junior Varsity;Juniper
+Humanities>Music;What style of music did both Mozart and Haydn primarily write?;["CONTEMPORARY"];Junior Varsity;Juniper
+Humanities>Music;What instrument family does the Euphonium belong to?;["BRASS"];Junior Varsity;Juniper
+Humanities>Music;Name the brass instrument originally called a sackbut, which has a slide.;["TROMBONE"];Junior Varsity;NCAL
+Humanities>Music;Name the musical term for the high make voice in a 4-part choir.;["TENOR", "COUNTERTENOR"];Junior Varsity;NCAL
+Humanities>Music;In music, what is the frequency, in hertz, of the international tuning pitch?;["FOUR HUNDRED FORTY", "440"];Freshman;NCAL
+Humanities>Mythology;Name the mythological master of the dog Argos.;["ODYSSEUS"];Junior Varsity;NCAL
+Humanities>Mythology;Name the mythical enchantress who turned the crew of Odysseus into swine.;["CIRCE"];Junior Varsity;NCAL
+Humanities>Mythology;Name the god who according to Greek mythology, gave birth to his own son after sewing him into his thigh in order to finish the gestation period.;["ZEUS"];Junior Varsity;NCAL
+Humanities>Mythology;Name the father of Icarus in the Greek Myth.;["DAEDALUS"];Junior Varsity;NCAL
+Humanities>Mythology;Name the character in Greek Mythology who opened a box and freed all the world's troubles.;["PANDORA"];Junior Varsity;NCAL
+Humanities>Mythology;Name the mythological Titan who bore the heavens on his shoulders.;["ATLAS"];Freshman;NCAL
+Humanities>Mythology;In Greek mythology, name the father of Icarus.;["DAEDALUS"];Freshman;NCAL
+Science>Physics;What is the scientific term for the rate of change in an object's velocity?;["ACCELERATION"];Junior Varsity;NCAL
+Science>Physics;Give the physics term for an object's tendency to move in a straight line until a force changes its direction.;["INERTIA"];Junior Varsity;NCAL
+Science>Physics;What is the scientific term for the resistance encountered by an object or surface as a result of rubbing against another?;["FRICTION"];Freshman;NCAL
+Languages>Spanish;Spell, using the English alphabet, the one-word Spanish translation of the phrase "town square.";["LA PLAZA","PLAZA","EL ZOCALO","ZOCALO","PLAZA OR ZOCALO","ZOCALO OR PLAZA","LA PLAZA OR EL ZOCALO"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet the 3-word Spanish phrase that means "See you later.";["HASTA LA VISTA", "HASTA LA PROXIMA"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the Spanish word that means "keyboard," as in 'Please use the keyboard to type your essay into the computer.";["TECLADO"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the Spanish noun that means "weight," as in "The weight of this book is 15 pounds.";["PESO"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the infinitive form of the Spanish verb meaning "to cry," as in "He was so sad that he wanted to cry.";["LLORAR"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the one-word Spanish translation for the phrase "last night," as in "Last night, Gus was talking to a pretty girl.";["ANOCHE", "A-N-O-C-H-E"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the first person plural, preterite indicative conjugation of the Spanish verb that is spelled s-a-b-e-r.;["SUPIMOS", "S-U-P-I-M-O-S"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the Spanish masculine, singular form of the adjective meaning "sad", as in "The sad boy is crying.";["TRISTE"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the Spanish word that means "weight," as in "The weight of this book is 15 pounds.";["PESO", "EL PESO"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the Spanish noun that means "treasure.";["TESORO"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the Spanish word that means "sofa.";["SOFA"];Junior Varsity;NCAL
+Math>Trigonometry;What is the phase shift, in radians, of the trigonometric equation Y equals 3 times the sine of the quantity "3X minus pi?";["PI OVER 3", "PI/3", "ONE-THIRD PI", "ONE THIRD PI", "1/3 TIMES PI", "1/3 * PI", "ONE THIRD TIMES PI", "ONE-THIRD TIMES PI"];Junior Varsity;NCAL
+Math>Trigonometry;Which single trigonometric function is equal to the product of sine X and cotangent X?;["COSINE X","COSX","COS(X)"];Junior Varsity;NCAL
+Math>Trigonometry;Which trigonometric function is the reciprocal of the secant function?;["COS","COSINE"];Junior Varsity;NCAL
+Math>Trigonometry;Find the value of the cotangent of 14 pi radians.;["DNE","UND","UNDEFINED"];Junior Varsity;NCAL
+Math>Trigonometry;Simplify the trigonometric expression 2 times the tangent of 7 degrees divided by the quantity "1 minus the tangent squared of 7 degrees.";["TANGENT 14", "TANGENT FOURTEEN", "TANGENT OF 14 DEGREES"];Junior Varsity;NCAL
+Math>Trigonometry;In which quadrant is the cosine positive and the sine negative?;["FOURTH"];Junior Varsity;NCAL
+Math>Trigonometry;Compute sine squared of 80 degrees plus cosine squared of 80 degrees.;["1","ONE"];Junior Varsity;NCAL
+Math>Trigonometry;What is the phase shift, in radians, of the trigonometric equation Y equals 3 times the sine of the sine of the quantity "3 X minus pi?";["PI OVER 3", "ONE THIRD TIMES PI"];Junior Varsity;NCAL
+Math>Trigonometry;In a 30-60-90 triangle whose hypotenuse is 10, what is the length of the longer leg?;["5 TIMES ROOT 3", "5 ROOT 3"];Junior Varsity;NCAL
+Math>Trigonometry;Find the area of an isosceles trapezoid with bases of 10 and 18 if one base angle measures 60 degree.;["56 TIMES ROOT 3", "56 ROOT 3"];Junior Varsity;NCAL
+Math>Trigonometry;Find the value cotangent of 225 degrees.;["1"];Junior Varsity;NCAL
+Humanities>U.S. History;Name the U.S. President who referred to the Supreme Court of his early presidency as the "horse and buggy" court.;["FDR", "ROOSEVELT", "FRANKLIN ROOSEVELT", "FRANKLIN DELANO ROOSEVELT"];Junior Varsity;NCAL
+Humanities>U.S. History;In which U.S. state did the Battle of Antietam occur?;["MARYLAND"];Junior Varsity;NCAL
+Humanities>U.S. History;Which U.S. city was the location for the first Constitutional Convention?;["PHILADELPHIA", "PHILADELPHIA PENNSYLVANIA", "PHILADELPHIA, PENNSYLVANIA"];Junior Varsity;NCAL
+Humanities>U.S. History;For which party did Strom Thurmond run for the U.S. Presidency in the election of 1948?;["STATES RIGHTS","STATE'S RIGHTS","STATES RIGHTS PARTY","STATES RIGHT'S PARTY","DIXIECRAT", "DIXIECRAT PARTY", "STATES RIGHT'S PARTY OR DIXIECRAT PARTY"];Junior Varsity;NCAL
+Humanities>U.S. History;Who was the first U.S. President to serve in that office without being elected to either the Presidency or the Vice-Presidency?;["FORD","GERALD FORD"];Junior Varsity;NCAL
+Humanities>U.S. History;Name Abraham Lincoln's opponent in a series of famous debates in 1858.;["DOUGLAS","STEPHEN DOUGLAS","SENATOR DOUGLAS","SENATOR STEPHEN DOUGLAS"];Junior Varsity;NCAL
+Humanities>U.S. History;Give the name of the New-York-based portrait photographer who went into Civil War battlefields to document the conflict and continued to direct his staff even as his eyesight deteriorated.;["BRADY","MATHEW BRADY"];Junior Varsity;NCAL
+Humanities>U.S. History;By what name was November 11th, the day we now celebrate as Veteran's Day, previously known?;["ARMISTICE DAY"];Junior Varsity;NCAL
+Humanities>U.S. History;Name the last member of the Whig Party to hold the office of President of the United States.;["FILLMORE", "MILLARD FILLMORE"];Junior Varsity;NCAL
+Humanities>U.S. History;What event occurred in 1848 that caused the west coast of the United States to be settled before the plains region?;["THE DISCOVERY OF GOLD", "GOLD RUSH", "GOLD-RUSH", "THE GOLD RUSH"];Junior Varsity;NCAL
+Humanities>U.S. History;Who was the commander of the Union forces at the Battle of Antietam?;["MCCLELLAN", "GEORGE MCCLELLAN", "GENERAL MCCLELLAN", "GENERAL GEORGE BRINTON MCCLELLAN"];Junior Varsity;NCAL
+Humanities>U.S. History;What was the great issue of the Lincoln-Douglas debates?;["EXTENSION OF SLAVERY TO NEW TERRITORIES"];Junior Varsity;NCAL
+Humanities>U.S. History;Name the U.S. President at the end of the Korean War.;["DWIGHT EISENHOWER", "EISENHOWER"];Junior Varsity;NCAL
+Humanities>U.S. History;What United Stated warship became a floating museum in North Korea after its capture?;["PUEBLO"];Junior Varsity;NCAL
+Humanities>U.S. History;From which country did the United States purchase the Virgin Islands?;["DENMARK"];Junior Varsity;NCAL
+Humanities>U.S. History;Give the maiden name of former first lady, Eleanor Roosevelt.;["ROOSEVELT"];Junior Varsity;NCAL
+Humanities>U.S. History;Name the U.S. president whose eulogy included the following quote. "First in war, first in peace, and first in the hearts of his countrymen.";["WASHINGTON", "GEORGE WASHINGTON"];Junior Varsity;NCAL
+Humanities>U.S. History;Which U.S. state had the largest population at the time of the first official census in 1790?;["VIRGINIA"];Junior Varsity;NCAL
+Humanities>U.S. History;Name either of the states that joined the United States during the Civil War.;["WEST VIRGINIA", "NEVADA"];Junior Varsity;NCAL
+Humanities>U.S. History;What change was made in the design of the United states flag in the years 1959 and 1960?;["TWO STARS WERE ADDED", "2 STARS WERE ADDED", "2 STARS"];Junior Varsity;NCAL
+Humanities>World History;Who overthrew the Batista regime in Cuba in 1959?;["CASTRO","FIDEL CASTRO"];Junior Varsity;NCAL
+Humanities>World History;Give the name of the first prime minister of India.;["NEHRU", "JAWARHARLAL NEHRU"];Junior Varsity;NCAL
+Humanities>World History;What is the name of the airplane flown solo across the Atlantic by Charles Lindbergh?;["SPIRIT OF ST. LOUIS", "THE SPIRIT OF ST. LOUIS"];Junior Varsity;NCAL
+Humanities>World History;Name the South Vietnamese ruler who was assassinated in 1963.;["DIEM","NGO DINH DIEM"];Junior Varsity;NCAL
+Humanities>World History;Which European war ended the peace created by the Congress of Vienna?;["CRIMEAN","CRIMEAN WAR"];Junior Varsity;NCAL
+Humanities>World History;During the 17th century, which country was England's chief maritime rival?;["NETHERLANDS","THE NETHERLANDS"];Junior Varsity;NCAL
+Humanities>World History;What major religion did Mohandas Gandhi practice?;["HINDUISM"];Junior Varsity;NCAL
+Humanities>World History;Name the British-held country in which the Sepoy Rebellion occurred.;["INDIA", "REPUBLIC OF INDIA"];Junior Varsity;NCAL
+Humanities>World History;Name the famous prize won by Martin Luther King, Jr. in 1964.;["NOBEL PEACE", "NOBEL PEACE PRIZE"];Junior Varsity;NCAL
+Humanities>World History;Name the scientist who was offered the presidency of Israel in 1952 by David Ben-Gurion, though he declined the offer.;["EINSTEIN", "ALBERT EINSTEIN"];Junior Varsity;NCAL
+Humanities>World History;Name the Egyptian Sun god.;["RA"];Junior Varsity;NCAL
+Humanities>World History;Name the second son of Henry VII and Elizabeth of York.;["HENRY VIII"];Junior Varsity;NCAL
+Humanities>World History;Name the country in which Ulrich Zwingli was a leader in the protestant reformation.;["SWITZERLAND"];Junior Varsity;NCAL
+Humanities>World History;Give the name of the faction of the Russian Social Democratic Labor Party which seized control of the Russian government during the October Revolution of 1917.;["BOLSHEVIKS"];Junior Varsity;NCAL
+Humanities>World History;What event temporarily halted the fighting between nationalists and communists in China in the 1930's?;["INVASION BY JAPAN", "INVASION OF MANCHURIA"];Junior Varsity;NCAL
+Humanities>World History;Identify either of the 2 countries that received money from the U.S under the Truman Doctrine.;["GREECE", "TURKEY"];Junior Varsity;NCAL
+Humanities>World History;Name the ancient civilization which produced Zoroastrianism.;["PERSIA"];Junior Varsity;NCAL
+Humanities>World History;Name the Indian who taught that the world's problems are caused by man's desire.;["GUATAMA SIDDHARTHA", "SIDDHARTHA", "BUDDHA"];Freshman;NCAL
+Math>Algebra;What is the algebra term for the second, or Y-component, or an ordered pair?;["ORDINATE"];Junior Varsity;NCAL
+Math>Algebra;What is the range of the natural logarithm function?;["ALL REAL","ALL REALS","ALL REAL NUMBER","ALL REAL NUMBERS"];Junior Varsity;NCAL
+Math>Algebra;What is the value of the determinant of the 2-by-2 matrix with 1st-row entries of 1 and 2 and 2nd-row entries of 2 and 3?;["NEGATIVE 1", "NEGATIVE ONE","- ONE", "- 1", "-1"];Junior Varsity;NCAL
+Math>Algebra;How many positive real roots does the following function have. F of X equals X to the fourth power plus 6 X squared plus 5 X plus 9?;["NO","NONE", "0"];Junior Varsity;NCAL
+Math>Algebra;Give either of the 2 values that must be restricted from the domain of the equation the quantity "9 X plus 5" over the quantity "X minus 2" is equal to the quantity "X plus 9" over 3 X.;["X=0","X EQUALS 0","X = 0","0","X=2","X EQUALS 2","X = 2","2","x=2 or x=0"];Junior Varsity;NCAL
+Math>Algebra;Using principal values, find the square root of the term 169 times X to the fourth power?;["13X SQUARED","13 X SQUARED","13 X^2","13X TO THE SECOND", "13X TO THE SECOND POWER", "13 X TO THE SECOND POWER","13X^2"];Junior Varsity;NCAL
+Math>Algebra;In mathematics, for what values of B is the exponential function, Y equals B to the X, an increasing function?;["B GREATER THAN 1", "ALL"];Junior Varsity;NCAL
+Math>Algebra;Find the value of X if the reciprocal of X is equal to the sum of the reciprocals of 2 and 3.;["6 OVER 5", "6/5", "SIX-FIFTHS", "SIX FIFTHS", "X EQUALS 6 OVER 5", "X EQUALS 6/5", "X EQUALS SIX-FIFTHS", "X EQUALS SIX FIFTHS"];Junior Varsity;NCAL
+Math>Algebra;Find the integer value of X that solves the equation X cubed minus 1 equals zero.;["1","ONE","X EQUALS 1", "X EQUALS ONE"];Junior Varsity;NCAL
+Math>Algebra;What is the maximum number of times that the graph of a parabola can intersect the X-axis?;["2","TWO"];Junior Varsity;NCAL
+Math>Algebra;Find the arithmetic mean of 35 and 17.;["26","TWENTY SIX","TWENTY-SIX"];Junior Varsity;NCAL
+Math>Algebra;How many three-member committees may be formed from a group of six people?;["20","TWENTY"];Junior Varsity;NCAL
+Math>Algebra;What is the value of i to the eighth power?;["1", "ONE"];Junior Varsity;NCAL
+Math>Algebra;What is the value of X squared minus 1 when X equals 5?;["24","TWENTY FOUR","TWENTY-FOUR"];Junior Varsity;NCAL
+Math>Algebra;Name the most general set of numbers, each of which can be expressed in the form "A plus BI," where A and B are real numbers and "I" represents the square root of negative one.;["COMPLEX", "COMPLEX NUMBERS"];Junior Varsity;NCAL
+Math>Algebra;Simplify the product of X to the 6th power and X to the 8th power.;["X TO THE POWER OF 14", "X^14", "X TO THE 14TH"];Junior Varsity;NCAL
+Math>Algebra;How many real roots does the equation 2 X squared plus X plus 1 equals zero have?;["NONE", "ZERO","0", "NONE OR ZERO"];Junior Varsity;NCAL
+Math>Algebra;When drawing randomly and without replacement from a bag containing 4 consecutively numbered objects, what is the probability that the objects are in ascending numeral order?;["1/24", "ONE OVER 24", "ONE OVER TWENTY-FOUR", "ONE OVER TWENTY FOUR", "ONE-TWENTY-FOURTH", "1 OVER 24 or ONE-TWENTY-FOURTH"];Junior Varsity;NCAL
+Math>Algebra;State, in HK form, the equation of a circle with a radius of 5 having its center at the point "negative 3 comma 4.";["(quantity) X PLUS 3 SQUARED PLUS (quantity) Y MINUS 4 SQUARED EQUALS 25"];Junior Varsity;NCAL
+Math>Algebra;What is the value of the geometric mean of 6 and 8?;["FOUR TIMES ROOT 3", "4 * ROOT 3", "4 ROOT 3"];Junior Varsity;NCAL
+Math>Algebra;What is the value of the combination 4 choose 2?;["6", "SIX"];Junior Varsity;NCAL
+Math>Algebra;If the absolute value of X equals 5, name either of the 2 possible values of X;["5", "FIVE", "-5", "NEGATIVE 5", "5 or NEGATIVE 5"];Junior Varsity;NCAL
+Math>Algebra;What is the monomial whose square is nine times the fourth power of Y?;["NEGATIVE THREE (times) Y SQUARED","-3x^y"];Junior Varsity;NCAL
+Math>Algebra;How many unique seating arrangements of seven people at a round table are possible?;["720"];Junior Varsity;NCAL
+Math>Algebra;Convert seventy-five radians to degrees.;["FIVE TWELFTHS PI","FIVE PI OVER TWELVE"];Junior Varsity;NCAL
+Math>Algebra;What is the average speed, in miles per hour, of a car that takes 3 hours to travel 13 5 miles?;["45", "45 MILES PER HOUR"];Junior Varsity;NCAL
+Math>Algebra;Identify the only point with integer coordinates that lies on the line that is defined by the equation X times root 2 plus Y times root 3 equals.;["0,0","(0,0)","ORIGIN","THE ORIGIN"];Junior Varsity;NCAL
+Math>Algebra;What is the value of "five point zero three" times ten to the third power in standard notation?;["5030"];Junior Varsity;NCAL
+Math>Algebra;Identify the type of conic defined by the following equation. two X squared minus six Y squared equals twenty-four.;["HYPERBOLA"];Junior Varsity;NCAL
+Math>Algebra;Give either the two values that must be restricted from the domain of the equation, the quantity "eight X plus five" over the quantity "X minus two" is equal to the quantity "X plus nine" over three X.;["ZERO", "TWO", "0", "2"];Junior Varsity;NCAL
+Math>Algebra;What is the name given to the locus of points in a plane such that the absolute value of the difference of the distances from each of the two fixed points in the plane is constant?;["HYPERBOLA"];Junior Varsity;NCAL
+Math>Algebra;How many different handshakes would occur among four people introducing themselves to each other?;["6", "SIX"];Junior Varsity;NCAL
+Math>Algebra;Using principal values, find the square root of the term, 169 times X to the fourth power?;["13 X SQUARED", "13 X TO THE SECOND POWER"];Junior Varsity;NCAL
+Math>Algebra;Compute the product of 4 to the negative second power and the square root of 4.;["ONE EIGHTH", "1 OVER 8", "1/8"];Junior Varsity;NCAL
+Math>Algebra;What is the value of X in the equation, 3 to the "X plus 1" power equals one-ninth?;["NEGATIVE 3", "-3"];Junior Varsity;NCAL
+Math>Algebra;Name the smallest prime number greater than 37.;["41", "FORTY-ONE"];Junior Varsity;NCAL
+Math>Algebra;What is the value of 16 to the three-fourths power?;["8", "EIGHT"];Junior Varsity;NCAL
+Math>Algebra;What is the mathematical term for a number which is superscripted above a base, indicating a particular number of factors of that base?;["EXPONENT"];Junior Varsity;NCAL
+Math>Algebra;What is the length of time, in years, for seven-eights of a radioactive compound to decay if its half-life is eight years?;["24"];Junior Varsity;NCAL
+Math>Algebra;Give the coordinates of the point through which the graphs of all exponential functions with a coefficient of one pass.;["ZERO ONE", "ZERO COMMA ONE", "0,1", "(0,1)"];Junior Varsity;NCAL
+Math>Algebra;Name the type of conic section represented by the equation X squared plus Y squared minus 10 X plus 8 Y plus 5 equals zero.;["CIRCLE"];Junior Varsity;NCAL
+Math>Algebra;A fair coin is flipped 3 times. What is the probability that heads appears at least once?;["7 OVER 8", "SEVEN-EIGHTHS"];Junior Varsity;NCAL
+Math>Algebra;How many elements are in the intersection of the set containing the even positive integers and the set containing the positive multiples of 5 which are less than 40?;["3"];Junior Varsity;NCAL
+Math>Algebra;Which birthday would a person born in the year 10 BC be celebrating in the year 6 AD?;["15", "FIFTEEN", "15TH", "FIFTEENTH"];Freshman;NCAL
+Math>Algebra;Give the equation of the line that passes through the points "4 comma negative 7" and 4 comma 1.";["X=4", "X EQUALS 4"];Freshman;NCAL
+Languages>American Literature;Give the name of the American novel about Esther Greenwood, a young woman whose talent and intelligence have brought her academic and career success, though she struggles with mental illness and suicidal tendencies.;["BELL JAR","THE BELL JAR"];Junior Varsity;NCAL
+Languages>American Literature;During which war does the action of the novel "A Separate Peace" take place?;["WWII","WW2","WORLD WAR II","WORLD WAR TWO"];Junior Varsity;NCAL
+Languages>American Literature;Give the name of the Harlem Renaissance author who wrote the novel "Cane.";["TOOMER","JEAN TOOMER"];Junior Varsity;NCAL
+Languages>American Literature;Name the Edgar Allan Poe poem that originally sold for fifteen dollars but has since been sold, in a first edition of his poetry, for over $200,000.;["RAVEN","THE RAVEN"];Junior Varsity;NCAL
+Languages>American Literature;Name the author whose first novel was "A Soldier's Pay.";["FAULKNER","WILLIAM FAULKNER","WILLIAM CUTHBERT FAULKNER"];Junior Varsity;NCAL
+Languages>American Literature;Name the dystopian novel in which the main character's wife's friends become angry after he reads them the poem "Dover Beach" by Matthew Arnold.;["FAHRENHEIT 451"];Junior Varsity;Will
+Languages>American Literature;Name the American novel whose opening sentence is "Call me Ishmael.";["MOBY DICK"];Junior Varsity;NCAL
+Languages>American Literature;Identify the American Author of the 1920 novel "The Age of Innocence.";["WHARTON","EDITH WHARTON", "EDITH NEWBOLD WHARTON", "EDIT NEWBOLD JONES WHARTON"];Junior Varsity;NCAL
+Languages>American Literature;What sarcastic term for the post-Civil War era was coined by Mark Twain and Charles Dudley Warner in their jointly-authored 1873 book?;["GILDED AGE"];Junior Varsity;NCAL
+Languages>American Literature;Name the California county that was home to the celebrated frog in Mark Twain's story.;["CALAVERAS","CALAVERAS COUNTY"];Junior Varsity;NCAL
+Languages>American Literature;Give the name of the author of the American novel "The Human Comedy.";["SAROYAN","WILLIAM SAROYAN"];Junior Varsity;NCAL
+Languages>American Literature;Identify the type of tree mentioned in the first line of the poem "The Village Blacksmith.";["CHESTNUT","CHESTNUT TREE"];Junior Varsity;NCAL
+Languages>American Literature;What was the pseudonym of William S. Porter?;["O HENRY","O. HENRY"];Junior Varsity;NCAL
+Languages>American Literature;Give the name of the spectacle which is central to Ernest Hemingway's "Death in the Afternoon.";["BULLFIGHTING"];Junior Varsity;NCAL
+Languages>American Literature;Which U.S. state is the setting for William Faulkner's "The Sound and the Fury?";["MISSISSIPPI"];Junior Varsity;NCAL
+Languages>American Literature;Give the name of the American poet who wrote "The Valley of Unrest.";["POE", "EDGAR ALLEN POE"];Junior Varsity;NCAL
+Languages>American Literature;Name the town in which Babbitt lives in the Sinclair Lewis novel.;["ZENITH"];Junior Varsity;NCAL
+Languages>American Literature;In which Robert Frost poem does the narrator meet his neighbor once a year to do repair work?;["MENDING WALL"];Junior Varsity;NCAL
+Languages>American Literature;In "The Great Gatsby," who kills Gatsby?;["GEORGE", "WILSON", "GEORGE WILSON"];Junior Varsity;NCAL
+Languages>American Literature;Name the American author whose works include "Imperial Woman," "The Living Reed," "Dragon Seed," and the Pulitzer Prize winning "The Good Earth.";["PEARL BUCK", "BUCK"];Junior Varsity;NCAL
+Languages>American Literature;Give the name of the author who wrote "Call of the Wild.";["JACK LONDON","LONDON"];Junior Varsity;Chambers
+Languages>American Literature;Name the American author whose works include "The Catcher in the Rye," "Franny and Zooey," and "Raise High the Roof Beam, Carpenter's Seymour and Introduction";["J.D. SALINGER","SALINGER","JEROME DAVID SALINGER"];Junior Varsity;Chambers
+Languages>American Literature;Name the American author whose works include "The 500 Hats of our Tholomew Cubans," "The Butter Battle Book," and "Yertle the Turtle.";["DR.SEUSS","DR SEUSS", "SEUSS"];Junior Varsity;Chambers
+Languages>American Literature;Name the author who wrote the book "The Jungle.";["UPTON SINCLAIR ","SINCLAIR"];Junior Varsity;Chambers
+Languages>American Literature;Name the author who whose works include "Tortilla Flap","Doubious Battle," and "Canary Row";["JOHN STEINBECK","STEINBECK"];Junior Varsity;Chambers
+Languages>American Literature;Name the author whose works include "Cat's Cradle" and "Slaughterhouse-Five";["KURT VONNEGUT","VONNEGUT"];Junior Varsity;Chambers
+Languages>American Literature;Name the author whose works include "Stuart Little," "The Trumpet of the Swan," and "Charlotte Webb";["ELWYN BROOKS WHITE","WHITE","E.B WHITE"];Junior Varsity;Chambers
+Languages>American Literature;Name the author whose works include "Native Son","Black Boy," and "The Outsiders";["R.N WRIGHT","RICHARD NATHANIEL WRIGHT","WRIGHT"];Junior Varsity;Chambers
+Languages>American Literature;Name the author whose works include "The Crucible," "Death of a Salesman," and "All My Sons";["ARTHUR MILLER","MILLER"];Junior Varsity;Chambers
+Languages>American Literature;In "Of Mice and Men," name either of the 2 hallucinations seen by Lennie after he runs away from the ranch.;["RABBIT", "AUNT CLARA","GIANT RABBIT"];Junior Varsity;NCAL
+Languages>American Literature;Who wrote the novels."To the Lighthouse" and "Mrs.Dalloway";["VIRGINIA WOOLF","WOOLf"];Junior Varsity;NCAL
+Languages>American Literature;Name the author of the plays "Barefoot in the Park" and "The Odd Couple.";["NEIL SIMON","SIMON"];Junior Varsity;NCAL
+Languages>American Literature;Name the Broadway musical by Frank Loesser whose colorful characters include Sky Masterson, Miss Adelaide, Nathan Detroit, Harry the Horse, and a missionary, Miss Sarah Brown.;["GUYS AND DOLLS"];Junior Varsity;NCAL
+Languages>American Literature;In "The Great Gatsby," who killed Gatsby?;["MR. WILSON"];Junior Varsity;NCAL
+Languages>American Literature;Name the Ernest Lawrence Thayer poem which contains the line,"There is no joy in Mudville.";["CASEY AT THE BAT"];Junior Varsity;NCAL
+Languages>American Literature;Give the name of Edward Albee's first full-length play.;["WHO'S AFRAID OF VIRGNIA WOOLF"];Junior Varsity;NCAL
+Languages>American Literature;In which essay by Emerson does he describe an American ideal education that is founded first in a study of nature?;["THE AMERICAN SCHOLAR"];Junior Varsity;NCAL
+Languages>American Literature;Name the poet who wrote the poem entitled "Chicago.";["CARL SANDBURG", "SANDBURG"];Junior Varsity;NCAL
+Languages>American Literature;Give the name of the poem that Robert Frost read at John F. Kennedy's presidential inauguration in 1961.;["THE GIFT OUTRIGHT"];Junior Varsity;NCAL
+Languages>American Literature;Name the John Steinbeck novel that revolves around a father, Adam Trask, attempting to raise his two sons in Salinas, California.;["EAST OF EDEN"];Junior Varsity;NCAL
+Languages>American Literature;Who wrote the short story "A & P?";["JOHN UPDIKE", "UPDIKE"];Junior Varsity;NCAL
+Languages>American Literature;What, according to Langston Hughes, dries up like a raisin in the sun?;["A DREAM DEFERRED"];Junior Varsity;NCAL
+Languages>American Literature;Who wrote the poem "Stopping by Woods on a Snowy Evening?";["ROBERT FROST", "FROST"];Junior Varsity;NCAL
+Languages>American Literature;Identify the business magnate who wrote the article "The Gospel of Wealth" in 1889.;["ANDREW CARNEGIE", "CARNEGIE"];Junior Varsity;NCAL
+Languages>American Literature;In the story by Herman Melville, from what speech defect does Billy Budd suffer?;["STUTTERING"];Junior Varsity;NCAL
+Humanities>Art History;Name the Renaissance artist who painted "Primavera" located in the Uffizi Gallery in Florence.;["BOTTICELLI","SANDRO BOTTICELLI"];Junior Varsity;NCAL
+Humanities>Art History;Name the museum which houses the following paintings: Klee's "Twittering Machine," Rousseau's "Sleeping Beauty," and Mondrian's "Broadway Boogie Woogie.";["MUSEUM OF MODERN ART", "MUSEUM OF MODERN ART, NEW YORK"];Junior Varsity;NCAL
+Humanities>Art History;Name the Edgar Allan Poe poem that originally sold for fifteen dollars but has since been sold, in a first edition of his poetry, for over $200,000.;["THE RAVEN", "RAVEN"];Junior Varsity;NCAL
+Humanities>Art History;Who composed the religious works, "Passion According to St. Matthew" and "Passion According to St John?";["BACH","JOHANN BACH","JOHANN SEBASTIAN BACH"];Junior Varsity;NCAL
+Humanities>Art History;What is the art term for a painting made on wet plaster?;["FRESCO"];Junior Varsity;NCAL
+Humanities>Art History;Name the artist who painted "Starry Night.";["VAN GOGH", "VINCENT VAN GOGH"];Junior Varsity;NCAL
+Humanities>Art History;Identify the artist who created the 1616 painting "David Slaying Goliath.";["RUBENS", "PETER PAUL RUBENS"];Junior Varsity;NCAL
+Humanities>Art History;Name the German painter who created the painting "Washington Crossing the Delaware.";["EMMANUEL LEUTZE","LEUTZE"];Junior Varsity;NCAL
+Humanities>Art History;Name the museum which contains the largest collection of impressionist paintings in the world.;["JEU DE PAUME"];Junior Varsity;NCAL
+Humanities>Art History;Name the German-born American illustrator and graphic artist known for his use of psychedelic shapesand color palettes that strongly influenced the counter culture poster art of the late 1960s and early 1970s.;["MAX", "PETER MAX", "PETER MAX FINKELSTEIN"];Junior Varsity;NCAL
+Humanities>Art History;Name the first Impressionist artist to use words in his paintings.;["TOULOUSE-LAUTREC"];Junior Varsity;NCAL
+Humanities>Art History;Name the artistic movement to which Salvador Dali belongs.;["SURREALISM"];Junior Varsity;NCAL
+Humanities>Art History;Name the surrealist painter whose works include "The Persistence of Memory.";["SALVADOR DALI", "DALI"];Junior Varsity;NCAL
+Humanities>Art History;What type of musical composition, based on a courtly Polish dance, was used during World War II to tell the world that Poland had not yet fallen to the Germans?;["POLONAISE"];Junior Varsity;NCAL
+Science>Biological Science;Give the biology term for the monomer components of proteins.;["AMINO ACID", "AMINO ACIDS"];Junior Varsity;NCAL
+Science>Biological Science;Instead of seeds, what reproductive structure do ferns use?;["SPORES"];Junior Varsity;NCAL
+Science>Biological Science;Name the organelle, found in most eukaryotic cells, that was identified in 1897 by an Italian physician whose first name was Camillo.;["GOLGI BODY", "GOLGI APPARATUS"];Junior Varsity;NCAL
+Science>Biological Science;Name the body part in which cones and rods are located.;["EYE","EYES","THE EYE","THE EYES"];Junior Varsity;NCAL
+Science>Biological Science;Give the name for the biological, semi-permeable structure that is made of organic molecules and controls movement through diffusion and osmosi.;["CELL MEMBRANE"];Junior Varsity;NCAL
+Science>Biological Science;In which organelle is adenosine triphosphate primarily produced?;["MITOCHONDRION","MITOCHONDRIA"];Junior Varsity;NCAL
+Science>Biological Science;Give the biology term for animals which are primarily active at dawn or dusk.;["CREPUSCULAR"];Junior Varsity;NCAL
+Science>Biological Science;What two-word biology term describes genes that are carried on the X-chromosome.;["SEX LINKED", "SEX-LINKED"];Junior Varsity;NCAL
+Science>Biological Science;Name the organ of locomotion, connected to the water vascular system, in echinoderms.;["TUBE-FEET", "TUBE FEET", "PODIA", "TUBE FEET or PODIA"];Junior Varsity;NCAL
+Science>Biological Science;What is the unique shape of the chloroplasts of the alga, Spirogyra.;["SPIRAL","HELIX"];Junior Varsity;NCAL
+Science>Biological Science;Name the organ of the body containing the myocardium, the endocardium, and the pericardium.;["HEART"];Junior Varsity;NCAL
+Science>Biological Science;What is the anatomical name for the bone of the upper leg?;["FEMUR"];Junior Varsity;NCAL
+Science>Biological Science;In addition to chloroplasts, what structure is found in plant cells but not in animal cells?;["CELL WALL"];Junior Varsity;NCAL
+Science>Biological Science;What is the term for a sudden, spontaneous multiplication of the number of chromosomes in an otherwise normal cell?;["AUTHOPOLYPLOIDY"];Junior Varsity;NCAL
+Science>Biological Science;When cancer spreads to a new tissue, what is the name of the process?;["METASTASIS"];Junior Varsity;NCAL
+Science>Biological Science;What is the name given to the group of unicellular organisms that don't contain a nucleus.;["PROKARYOTE"];Junior Varsity;NCAL
+Science>Biological Science;Give the two-word name, sometimes hyphenated, for the type of environmental factors which includes disease, competition, parasites, and food.;["DENSITY-DEPENDENT", "DENSITY DEPENDENT"];Junior Varsity;NCAL
+Science>Biological Science;What is the name any nucleic acid sequence that is removed by splicing in the formation of mature RNA?;["INTRON"];Junior Varsity;NCAL
+Science>Biological Science;Name the structure through which of the exchange of gases between a lead and its environment takes place.;["STOMATA"];Junior Varsity;NCAL
+Science>Biological Science;Name the system of tubes in a cell which provides a channel from the nucleus through the cytoplasm to the outside of the cell by the way of cell membrane.;["ENDOPLASMIC RETICULUM"];Junior Varsity;NCAL
+Science>Biological Science;Name the scientist responsible for the development of vaccines for rabies and anthrax.;["LOUS PASTEUR", "PASTEUR"];Junior Varsity;NCAL
+Science>Biological Science;Name the color receptors in the retina of the human eye.;["CONES"];Freshman;NCAL
+Math>Calculus;Find the derivative, with respect to X, of the expression 2 to the 5 X power.;["2^5X*5LN(2)"];Varsity;NCAL
+Math>Calculus;Find the 2nd derivative, with respect to X, of the expression 4x^3+2x^2+6x+8.;["24x+4"];Varsity;NCAL
+Science>Chemistry;What phase of matter is commonly referred to as the fourth state of matter?;["PLASMA"];Junior Varsity;NCAL
+Science>Chemistry;Give the name of the chemical family which includes chlorine.;["HALOGEN"];Junior Varsity;NCAL
+Science>Chemistry;When the hydrogen of an acid is replaced by a metal, what specific type of compound results?;["SALT"];Junior Varsity;NCAL
+Science>Chemistry;What molecular shape is associated with "S-P-3-D-2" hybridization?;["OCTAHEDRAL", "SQUARE PLANAR BI-PYRAMIDAL", "OCTAHEDRAL"];Junior Varsity;NCAL
+Science>Chemistry;By what measurement is mass divided to obtain density?;["VOLUME"];Junior Varsity;NCAL
+Science>Chemistry;Which metallic transition element has the highest melting-point?;["W","Tungsten"];Junior Varsity;NCAL
+Science>Chemistry;What is the chemical symbol for mercury?;["HG"];Junior Varsity;NCAL
+Science>Chemistry;Name the sub-atomic particle the size of an electron, but with a positive charge.;["POSITRON","POSITRON?"];Junior Varsity;NCAL
+Science>Chemistry;Identify the rule from chemistry that states that for a given electron configuration, the term with maximum multiplicity has the lowest energy.;["HUND","HUNDS RULE","HUND'S RULE"];Junior Varsity;NCAL
+Science>Chemistry;Name the alloy of copper which gives its name to an age of history.;["BRONZE"];Junior Varsity;NCAL
+Science>Chemistry;How many electrons are found in the outermost energy shell of neutral halogens?;["7","SEVEN"];Junior Varsity;NCAL
+Science>Chemistry;What element is added to rubber during vulcanization?;["S", "SULFUR"];Junior Varsity;NCAL
+Science>Chemistry;Name the acid used in an automotive lead-acid storage battery.;["SULFURIC", "SULFURIC ACID"];Junior Varsity;NCAL
+Science>Chemistry;In the lowest-terms balanced equation for the combustion of benzene, what is the coefficient for carbon dioxide?;["12", "TWELVE"];Junior Varsity;NCAL
+Science>Chemistry;How many grams of water can be heated by one degree Celsius by one calorie of heat?;["ONE","1"];Junior Varsity;NCAL
+Science>Chemistry;What is the chemical name for rust?;["FERRIC OXIDE","FE2O3","FE-TWO O-THREE"];Junior Varsity;NCAL
+Science>Chemistry;What substance is formed by the combination of gasoline and naphthenic and palmitic acids?;["NAPALM"];Junior Varsity;NCAL
+Science>Chemistry;What is the chemical formula for dinitrogen tetroxide?;["N2O4"];Junior Varsity;NCAL
+Science>Chemistry;What chemical compound inside kernel of popcorn make it "pop" when it is heated?;["WATER", "H2O"];Junior Varsity;NCAL
+Science>Chemistry;In electrochemistry, what is the term for a gain of electrons?;["REDUCTION"];Junior Varsity;NCAL
+Science>Chemistry;Name the type of chemical bond formed by the transfer electrons from one atom to another.;["IONIC BOND"];Junior Varsity;NCAL
+Science>Chemistry;Give the chemistry term for the number moles of dissolved solute that a liter of solution contains.;["MOLARITY"];Junior Varsity;NCAL
+Science>Chemistry;Name the element which comprises four percent of the Earth's crust and two percent of the human body by mass.;["CALCIUM"];Junior Varsity;NCAL
+Science>Chemistry;In chemistry, how many different "f" sub-orbitals are there.;["7", "SEVEN"];Junior Varsity;NCAL

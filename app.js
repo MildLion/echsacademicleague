@@ -1,0 +1,625 @@
+/**
+ * NCAL Study App - Main Application Logic
+ * Orchestrates the entire application including data loading, session management,
+ * timer functionality, and user interactions
+ */
+
+import { parseQuestionBank } from './parser.js';
+import { isCorrect } from './normalize.js';
+import { exportSessionCsv, prepareSessionResultsForCsv } from './csv.js';
+import {
+    showScreen, updateTimerDisplay, setTimerPauseState, updateStats,
+    displayQuestion, showQuestionResult, showEmptyState, hideEmptyState,
+    updateSubjectSelector, showParserErrors, hideParserErrors,
+    updateTimerValue, setStartButtonState, showSummary, announceStatus, announceError,
+    updatePoolPreview, updateFilterTags, updateQuestionCounter, updateAccuracyDisplay
+} from './ui.js';
+
+// Application state
+let appState = {
+    questions: [],
+    filteredQuestions: [],
+    currentQuestionIndex: 0,
+    userAnswers: [],
+    sessionStartTime: null,
+    timeAllocated: 10,
+    timer: null,
+    isPaused: false,
+    isSessionActive: false
+};
+
+// Expose app state globally for UI functions
+window.appState = appState;
+
+// DOM elements
+let elements = {};
+
+/**
+ * Initialize the application
+ */
+async function init() {
+    try {
+        // Get DOM elements
+        initializeElements();
+        
+        // Set up event listeners
+        setupEventListeners();
+        
+        // Load question bank
+        await loadQuestionBank();
+        
+        // Initialize UI
+        initializeUI();
+        
+        announceStatus('NCAL Study App loaded successfully');
+        
+    } catch (error) {
+        console.error('Failed to initialize app:', error);
+        announceError('Failed to load application');
+    }
+}
+
+/**
+ * Initialize DOM element references
+ */
+function initializeElements() {
+    elements = {
+        // Setup screen
+        startPractice: document.getElementById('start-practice'),
+        timerSlider: document.getElementById('timer'),
+        timerValue: document.getElementById('timer-value'),
+        selectAll: document.getElementById('select-all'),
+        clearAll: document.getElementById('clear-all'),
+        resetFilters: document.getElementById('reset-filters'),
+        
+        // Practice screen
+        backToSetup: document.getElementById('back-to-setup'),
+        answerInput: document.getElementById('answer-input'),
+        submitAnswer: document.getElementById('submit-answer'),
+        nextQuestion: document.getElementById('next-question'),
+        pauseTimer: document.getElementById('pause-timer'),
+        resetFiltersEmpty: document.getElementById('reset-filters-empty'),
+        
+        // Summary screen
+        backToPractice: document.getElementById('back-to-practice'),
+        exportCsv: document.getElementById('export-csv'),
+        newSession: document.getElementById('new-session'),
+        
+        // Error handling
+        copyErrors: document.getElementById('copy-errors'),
+        dismissErrors: document.getElementById('dismiss-errors')
+    };
+    
+    // Debug: Log which elements were found
+    console.log('Elements initialized:', {
+        startPractice: !!elements.startPractice,
+        timerSlider: !!elements.timerSlider,
+        selectAll: !!elements.selectAll,
+        clearAll: !!elements.clearAll
+    });
+}
+
+/**
+ * Set up all event listeners
+ */
+function setupEventListeners() {
+    console.log('Setting up event listeners...');
+    
+    // Timer slider
+    if (elements.timerSlider) {
+        console.log('Adding timer slider listener');
+        elements.timerSlider.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value);
+            updateTimerValue(value);
+            appState.timeAllocated = value;
+            updateFilterTags();
+        });
+    } else {
+        console.error('Timer slider element not found!');
+    }
+    
+    // Subject selection
+    if (elements.selectAll) {
+        console.log('Adding select all listener');
+        elements.selectAll.addEventListener('click', selectAllSubjects);
+    } else {
+        console.error('Select all element not found!');
+    }
+    
+    if (elements.clearAll) {
+        console.log('Adding clear all listener');
+        elements.clearAll.addEventListener('click', clearAllSubjects);
+    } else {
+        console.error('Clear all element not found!');
+    }
+    
+    // Start practice
+    if (elements.startPractice) {
+        console.log('Adding start practice listener');
+        elements.startPractice.addEventListener('click', startPracticeSession);
+    } else {
+        console.error('Start practice element not found!');
+    }
+    
+    // Practice screen navigation
+    if (elements.backToSetup) {
+        elements.backToSetup.addEventListener('click', () => {
+            if (confirm('Are you sure you want to end this session?')) {
+                endSession();
+                showScreen('setup-screen');
+            }
+        });
+    }
+    
+    // Answer submission
+    if (elements.answerInput) {
+        elements.answerInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                submitAnswer();
+            }
+        });
+    }
+    
+    if (elements.submitAnswer) {
+        elements.submitAnswer.addEventListener('click', submitAnswer);
+    }
+    
+    // Next question
+    if (elements.nextQuestion) {
+        elements.nextQuestion.addEventListener('click', nextQuestion);
+    }
+    
+    // Timer controls
+    if (elements.pauseTimer) {
+        elements.pauseTimer.addEventListener('click', toggleTimerPause);
+    }
+    
+    // Reset filters
+    if (elements.resetFilters) {
+        elements.resetFilters.addEventListener('click', resetFilters);
+    }
+    
+    if (elements.resetFiltersEmpty) {
+        elements.resetFiltersEmpty.addEventListener('click', resetFilters);
+    }
+    
+    // Summary screen
+    if (elements.backToPractice) {
+        elements.backToPractice.addEventListener('click', () => {
+            showScreen('practice-screen');
+        });
+    }
+    
+    if (elements.exportCsv) {
+        elements.exportCsv.addEventListener('click', exportResults);
+    }
+    
+    if (elements.newSession) {
+        elements.newSession.addEventListener('click', startNewSession);
+    }
+    
+    // Error handling
+    if (elements.copyErrors) {
+        elements.copyErrors.addEventListener('click', copyErrorDetails);
+    }
+    
+    if (elements.dismissErrors) {
+        elements.dismissErrors.addEventListener('click', hideParserErrors);
+    }
+    
+    // Subject and level change listeners
+    document.addEventListener('change', handleFilterChange);
+    
+    // Global keyboard shortcuts
+    document.addEventListener('keydown', handleGlobalKeyboard);
+}
+
+/**
+ * Handle filter changes to update pool preview
+ */
+function handleFilterChange(event) {
+    if (event.target.type === 'checkbox' || event.target.type === 'radio') {
+        updatePoolPreview();
+        updateFilterTags();
+    }
+}
+
+/**
+ * Load the question bank from file
+ */
+async function loadQuestionBank() {
+    try {
+        setStartButtonState(true);
+        
+        const response = await fetch('data/bank_sample.txt');
+        if (!response.ok) {
+            throw new Error(`Failed to load question bank: ${response.status}`);
+        }
+        
+        const content = await response.text();
+        
+        // Parse the question bank
+        const parseResult = parseQuestionBank(content, 'bank_sample.txt');
+        
+        appState.questions = parseResult.questions;
+        
+        // Show parser errors if any
+        if (parseResult.errors.length > 0) {
+            showParserErrors(parseResult.errors);
+            announceError(`Found ${parseResult.errors.length} parsing errors`);
+        } else {
+            hideParserErrors();
+        }
+        
+        // Update subject selector based on available questions
+        updateSubjectSelector(appState.questions);
+        
+        // Update pool preview
+        updatePoolPreview();
+        
+        announceStatus(`Loaded ${parseResult.validQuestions} questions successfully`);
+        
+    } catch (error) {
+        console.error('Failed to load question bank:', error);
+        announceError('Failed to load question bank');
+        throw error;
+    } finally {
+        setStartButtonState(false);
+    }
+}
+
+/**
+ * Initialize the UI with default values
+ */
+function initializeUI() {
+    // Set default timer value
+    updateTimerValue(appState.timeAllocated);
+    
+    // Select all subjects by default
+    selectAllSubjects();
+    
+    // Update filter tags
+    updateFilterTags();
+}
+
+/**
+ * Select all subject checkboxes
+ */
+function selectAllSubjects() {
+    document.querySelectorAll('.subject-group input[type="checkbox"]').forEach(checkbox => {
+        if (!checkbox.disabled) {
+            checkbox.checked = true;
+        }
+    });
+    updatePoolPreview();
+    updateFilterTags();
+}
+
+/**
+ * Clear all subject checkboxes
+ */
+function clearAllSubjects() {
+    document.querySelectorAll('.subject-group input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    updatePoolPreview();
+    updateFilterTags();
+}
+
+/**
+ * Get selected subjects and level filters
+ */
+function getActiveFilters() {
+    const selectedSubjects = Array.from(
+        document.querySelectorAll('.subject-group input[type="checkbox"]:checked')
+    ).map(cb => cb.value);
+    
+    const selectedLevel = document.querySelector('input[name="level"]:checked')?.value || '';
+    
+    return { selectedSubjects, selectedLevel };
+}
+
+/**
+ * Filter questions based on selected subjects and level
+ */
+function filterQuestions() {
+    const { selectedSubjects, selectedLevel } = getActiveFilters();
+    
+    appState.filteredQuestions = appState.questions.filter(question => {
+        // Subject filter
+        const subjectMatch = selectedSubjects.length === 0 || 
+                           selectedSubjects.includes(question.category);
+        
+        // Level filter
+        const levelMatch = !selectedLevel || question.level === selectedLevel;
+        
+        return subjectMatch && levelMatch;
+    });
+    
+    return appState.filteredQuestions.length;
+}
+
+/**
+ * Start a new practice session
+ */
+function startPracticeSession() {
+    console.log('startPracticeSession called');
+    console.log('Current app state:', appState);
+    
+    const questionCount = filterQuestions();
+    console.log('Question count after filtering:', questionCount);
+    
+    if (questionCount === 0) {
+        console.log('No questions match filters, showing empty state');
+        showEmptyState();
+        announceError('No questions match your current filters');
+        return;
+    }
+    
+    console.log('Starting session with questions:', appState.filteredQuestions);
+    
+    // Initialize session state
+    appState.currentQuestionIndex = 0;
+    appState.userAnswers = [];
+    appState.sessionStartTime = Date.now();
+    appState.isSessionActive = true;
+    appState.isPaused = false;
+    
+    // Hide empty state and show question card
+    hideEmptyState();
+    
+    // Switch to practice screen
+    showScreen('practice-screen');
+    
+    // Update UI elements
+    updateQuestionCounter();
+    updateFilterTags();
+    
+    // Display first question
+    displayQuestion(appState.filteredQuestions[0]);
+    
+    // Start timer
+    startTimer();
+    
+    announceStatus(`Practice session started with ${questionCount} questions`);
+}
+
+/**
+ * Start the timer for the current question
+ */
+function startTimer() {
+    if (appState.timer) {
+        clearInterval(appState.timer);
+    }
+    
+    let timeLeft = appState.timeAllocated;
+    
+    // Update display immediately
+    updateTimerDisplay(timeLeft, appState.timeAllocated);
+    
+    appState.timer = setInterval(() => {
+        if (!appState.isPaused) {
+            timeLeft--;
+            
+            if (timeLeft <= 0) {
+                // Time's up
+                clearInterval(appState.timer);
+                handleTimeout();
+            } else {
+                updateTimerDisplay(timeLeft, appState.timeAllocated);
+            }
+        }
+    }, 1000);
+}
+
+/**
+ * Handle timer timeout
+ */
+function handleTimeout() {
+    const currentQuestion = appState.filteredQuestions[appState.currentQuestionIndex];
+    
+    // Record timeout
+    appState.userAnswers[appState.currentQuestionIndex] = {
+        answer: '',
+        correctness: 'Timeout',
+        timeElapsed: appState.timeAllocated,
+        timestamp: Date.now()
+    };
+    
+    // Show result
+    showQuestionResult(false, '', currentQuestion.answers[0], 'Timeout');
+    
+    // Update stats
+    updateStats(
+        appState.userAnswers.filter(a => a?.correctness === 'Correct').length,
+        appState.userAnswers.filter(a => a?.correctness !== 'Correct').length,
+        appState.currentQuestionIndex + 1,
+        appState.filteredQuestions.length
+    );
+    
+    // Update accuracy display
+    updateAccuracyDisplay();
+    
+    announceStatus('Time is up');
+}
+
+/**
+ * Toggle timer pause/resume
+ */
+function toggleTimerPause() {
+    appState.isPaused = !appState.isPaused;
+    setTimerPauseState(appState.isPaused);
+    
+    if (appState.isPaused) {
+        announceStatus('Timer paused');
+    } else {
+        announceStatus('Timer resumed');
+    }
+}
+
+/**
+ * Submit the current answer
+ */
+function submitAnswer() {
+    const answerInput = elements.answerInput;
+    const userAnswer = answerInput.value.trim();
+    
+    if (!userAnswer) {
+        announceError('Please enter an answer');
+        return;
+    }
+    
+    // Stop timer
+    if (appState.timer) {
+        clearInterval(appState.timer);
+        appState.timer = null;
+    }
+    
+    const currentQuestion = appState.filteredQuestions[appState.currentQuestionIndex];
+    const isAnswerCorrect = isCorrect(userAnswer, currentQuestion.answers);
+    
+    // Calculate time elapsed
+    const timeLeft = parseInt(document.getElementById('timer-countdown').textContent) || 0;
+    const timeElapsed = appState.timeAllocated - timeLeft;
+    
+    // Record answer
+    appState.userAnswers[appState.currentQuestionIndex] = {
+        answer: userAnswer,
+        correctness: isAnswerCorrect ? 'Correct' : 'Incorrect',
+        timeElapsed: timeElapsed,
+        timestamp: Date.now()
+    };
+    
+    // Show result
+    showQuestionResult(isAnswerCorrect, userAnswer, currentQuestion.answers[0], 
+                      isAnswerCorrect ? 'Correct' : 'Incorrect');
+    
+    // Update stats
+    updateStats(
+        appState.userAnswers.filter(a => a?.correctness === 'Correct').length,
+        appState.userAnswers.filter(a => a?.correctness !== 'Correct').length,
+        appState.currentQuestionIndex + 1,
+        appState.filteredQuestions.length
+    );
+    
+    // Update accuracy display
+    updateAccuracyDisplay();
+    
+    // Announce result
+    announceStatus(isAnswerCorrect ? 'Correct answer!' : 'Incorrect answer');
+}
+
+/**
+ * Move to the next question
+ */
+function nextQuestion() {
+    appState.currentQuestionIndex++;
+    
+    if (appState.currentQuestionIndex >= appState.filteredQuestions.length) {
+        // Session complete
+        endSession();
+        showSummary({
+            questions: appState.filteredQuestions,
+            userAnswers: appState.userAnswers,
+            timeAllocated: appState.timeAllocated,
+            correct: appState.userAnswers.filter(a => a?.correctness === 'Correct').length,
+            incorrect: appState.userAnswers.filter(a => a?.correctness !== 'Correct').length,
+            total: appState.filteredQuestions.length
+        });
+        return;
+    }
+    
+    // Update question counter
+    updateQuestionCounter();
+    
+    // Display next question
+    displayQuestion(appState.filteredQuestions[appState.currentQuestionIndex]);
+    
+    // Start timer for new question
+    startTimer();
+    
+    announceStatus(`Question ${appState.currentQuestionIndex + 1} of ${appState.filteredQuestions.length}`);
+}
+
+/**
+ * End the current session
+ */
+function endSession() {
+    appState.isSessionActive = false;
+    
+    if (appState.timer) {
+        clearInterval(appState.timer);
+        appState.timer = null;
+    }
+}
+
+/**
+ * Reset filters and return to setup
+ */
+function resetFilters() {
+    selectAllSubjects();
+    document.querySelector('input[name="level"][value=""]').checked = true;
+    showScreen('setup-screen');
+}
+
+/**
+ * Export session results to CSV
+ */
+function exportResults() {
+    try {
+        const sessionResults = prepareSessionResultsForCsv(
+            appState.filteredQuestions,
+            appState.userAnswers,
+            appState.timeAllocated
+        );
+        
+        exportSessionCsv(sessionResults, `ncal-session-${Date.now()}`);
+        announceStatus('Results exported successfully');
+        
+    } catch (error) {
+        console.error('Failed to export results:', error);
+        announceError('Failed to export results');
+    }
+}
+
+/**
+ * Start a new session
+ */
+function startNewSession() {
+    showScreen('setup-screen');
+    resetFilters();
+}
+
+/**
+ * Copy error details to clipboard
+ */
+async function copyErrorDetails() {
+    try {
+        const errorList = document.getElementById('error-list');
+        const errorText = errorList.textContent;
+        
+        await navigator.clipboard.writeText(errorText);
+        announceStatus('Error details copied to clipboard');
+        
+    } catch (error) {
+        console.error('Failed to copy error details:', error);
+        announceError('Failed to copy error details');
+    }
+}
+
+/**
+ * Handle global keyboard shortcuts
+ */
+function handleGlobalKeyboard(event) {
+    // Space bar toggles pause (but not when typing in input)
+    if (event.key === ' ' && event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
+        event.preventDefault();
+        if (appState.isSessionActive && appState.timer) {
+            toggleTimerPause();
+        }
+    }
+}
+
+// Initialize app when DOM is ready
+document.addEventListener('DOMContentLoaded', init);
+
