@@ -36,6 +36,28 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+.logo-container {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px; /* Ensure consistent spacing even if logo fails to load */
+}
+
+.header-logo {
+    height: 80px;
+    width: auto;
+    max-width: 200px;
+    transition: transform 0.2s ease;
+    object-fit: contain; /* Ensure logo maintains aspect ratio */
+    display: block; /* Ensure proper display */
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.3)); /* Add glow effect on hover */
+}
+
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
@@ -1032,6 +1054,11 @@ input[type="range"]::-moz-range-thumb {
         padding: 1.5rem 1rem;
     }
     
+    .header-logo {
+        height: 60px;
+        max-width: 150px;
+    }
+    
     header h1 {
         font-size: 2rem;
     }
@@ -1193,6 +1220,11 @@ input[type="range"]::-moz-range-thumb {
 
 /* Small Mobile (320px - 599px) */
 @media (max-width: 599px) {
+    .header-logo {
+        height: 50px;
+        max-width: 120px;
+    }
+    
     header h1 {
         font-size: 1.75rem;
     }
@@ -1319,6 +1351,11 @@ input[type="range"]::-moz-range-thumb {
 
 /* Very Small Mobile (max 360px) */
 @media (max-width: 360px) {
+    .header-logo {
+        height: 40px;
+        max-width: 100px;
+    }
+    
     header h1 {
         font-size: 1.5rem;
     }
