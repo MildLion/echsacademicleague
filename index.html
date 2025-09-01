@@ -12,7 +12,7 @@
     <title>Academic League Practice Website</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="apple-touch-icon" href="assets/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20241220-4">
 </head>
 <body>
     <header>
@@ -44,7 +44,7 @@
                     <div class="subject-selector">
                         <div class="subject-column">
                             <div class="subject-group">
-                                <h3>HUMANITIES</h3>
+                                <h3 class="section-header" data-section="Humanities">HUMANITIES</h3>
                                 <label><input type="checkbox" value="Humanities>Geography"> Geography</label>
                                 <label><input type="checkbox" value="Humanities>U.S. History"> U.S. History</label>
                                 <label><input type="checkbox" value="Humanities>World History"> World History</label>
@@ -53,7 +53,7 @@
                                 <label><input type="checkbox" value="Humanities>Art History"> Art History</label>
                             </div>
                             <div class="subject-group">
-                                <h3>SCIENCE</h3>
+                                <h3 class="section-header" data-section="Science">SCIENCE</h3>
                                 <label><input type="checkbox" value="Science>Earth and Space Science"> Earth and Space Science</label>
                                 <label><input type="checkbox" value="Science>Biological Science"> Biological Science</label>
                                 <label><input type="checkbox" value="Science>Chemistry"> Chemistry</label>
@@ -62,14 +62,14 @@
                         </div>
                         <div class="subject-column">
                             <div class="subject-group">
-                                <h3>MATH</h3>
+                                <h3 class="section-header" data-section="Math">MATH</h3>
                                 <label><input type="checkbox" value="Math>Calculus"> Calculus</label>
                                 <label><input type="checkbox" value="Math>Algebra"> Algebra</label>
                                 <label><input type="checkbox" value="Math>Geometry"> Geometry</label>
                                 <label><input type="checkbox" value="Math>Trigonometry"> Trigonometry</label>
                             </div>
                             <div class="subject-group">
-                                <h3>LANGUAGES</h3>
+                                <h3 class="section-header" data-section="Languages">LANGUAGES</h3>
                                 <label><input type="checkbox" value="Languages>English"> English</label>
                                 <label><input type="checkbox" value="Languages>English Literature"> English Literature</label>
                                 <label><input type="checkbox" value="Languages>American Literature"> American Literature</label>
@@ -353,6 +353,6 @@
         <p>NCAL Study App - Offline Practice Tool</p>
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="app.js?v=20241220-4"></script>
 </body>
 </html>

@@ -272,6 +272,9 @@ function setupEventListeners() {
     // Subject and level change listeners
     document.addEventListener('change', handleFilterChange);
     
+    // Section header click listeners
+    document.addEventListener('click', handleSectionHeaderClick);
+    
     // Global keyboard shortcuts
     document.addEventListener('keydown', handleGlobalKeyboard);
 }
@@ -283,7 +286,72 @@ function handleFilterChange(event) {
     if (event.target.type === 'checkbox' || event.target.type === 'radio') {
         updatePoolPreview();
         updateFilterTags();
+        updateSectionHeaderStates();
     }
+}
+
+/**
+ * Handle section header clicks to select/deselect all subcategories
+ */
+function handleSectionHeaderClick(event) {
+    if (event.target.classList.contains('section-header')) {
+        const section = event.target.getAttribute('data-section');
+        const sectionGroup = event.target.closest('.subject-group');
+        const checkboxes = sectionGroup.querySelectorAll('input[type="checkbox"]');
+        
+        // Check if all checkboxes in this section are selected
+        const allSelected = Array.from(checkboxes).every(cb => cb.checked);
+        
+        // Toggle all checkboxes in this section
+        checkboxes.forEach(checkbox => {
+            if (!checkbox.disabled) {
+                checkbox.checked = !allSelected;
+            }
+        });
+        
+        // Update UI
+        updatePoolPreview();
+        updateFilterTags();
+        updateSectionHeaderStates();
+        
+        // Announce the action
+        const action = allSelected ? 'deselected' : 'selected';
+        announceStatus(`${section} section ${action}`);
+    }
+}
+
+/**
+ * Update the visual state of section headers based on checkbox states
+ */
+function updateSectionHeaderStates() {
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    
+    sectionHeaders.forEach(header => {
+        const sectionGroup = header.closest('.subject-group');
+        const checkboxes = sectionGroup.querySelectorAll('input[type="checkbox"]');
+        const enabledCheckboxes = Array.from(checkboxes).filter(cb => !cb.disabled);
+        
+        if (enabledCheckboxes.length === 0) {
+            // No enabled checkboxes, remove all state classes
+            header.classList.remove('all-selected', 'none-selected', 'mixed-selected');
+            return;
+        }
+        
+        const selectedCount = enabledCheckboxes.filter(cb => cb.checked).length;
+        const totalCount = enabledCheckboxes.length;
+        
+        // Remove all state classes
+        header.classList.remove('all-selected', 'none-selected', 'mixed-selected');
+        
+        // Add appropriate state class
+        if (selectedCount === 0) {
+            header.classList.add('none-selected');
+        } else if (selectedCount === totalCount) {
+            header.classList.add('all-selected');
+        } else {
+            header.classList.add('mixed-selected');
+        }
+    });
 }
 
 /**
@@ -345,6 +413,9 @@ function initializeUI() {
     
     // Update filter tags
     updateFilterTags();
+    
+    // Update section header states
+    updateSectionHeaderStates();
 }
 
 /**
@@ -358,6 +429,7 @@ function selectAllSubjects() {
     });
     updatePoolPreview();
     updateFilterTags();
+    updateSectionHeaderStates();
 }
 
 /**
@@ -369,6 +441,7 @@ function clearAllSubjects() {
     });
     updatePoolPreview();
     updateFilterTags();
+    updateSectionHeaderStates();
 }
 
 /**
@@ -382,6 +455,7 @@ function selectAllAvailableSubjects() {
     });
     updatePoolPreview();
     updateFilterTags();
+    updateSectionHeaderStates();
 }
 
 /**

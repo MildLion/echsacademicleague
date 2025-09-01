@@ -249,6 +249,53 @@ h3 {
     font-weight: 700;
 }
 
+.section-header {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    user-select: none;
+}
+
+.section-header:hover {
+    color: #007bff;
+    border-bottom-color: #007bff;
+    transform: translateY(-1px);
+}
+
+.section-header::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+.section-header:hover::after {
+    opacity: 1;
+    color: #007bff;
+}
+
+.section-header.all-selected::after {
+    content: '✓';
+    color: #28a745;
+    opacity: 1;
+}
+
+.section-header.none-selected::after {
+    content: '○';
+    color: #6c757d;
+    opacity: 0.6;
+}
+
+.section-header.mixed-selected::after {
+    content: '◐';
+    color: #ffc107;
+    opacity: 1;
+}
+
 .subject-group label {
     display: flex;
     align-items: center;
