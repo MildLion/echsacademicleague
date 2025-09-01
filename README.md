@@ -159,6 +159,66 @@ Exported files include these columns:
 - `author`: Question author
 - `timestamp`: Export timestamp
 
+## Development Guidelines
+
+### Cache Busting Rule
+**CRITICAL**: Always update module version numbers when making changes to prevent browser caching issues.
+
+When modifying any of these files:
+- `app.js` - Main application logic
+- `ui.js` - UI management functions  
+- `parser.js` - Question bank parser
+- `normalize.js` - Text normalization utilities
+- `csv.js` - CSV export functionality
+- `styles.css` - Application styles
+
+**Update the version parameter in `index.html`:**
+```html
+<!-- Before -->
+<script type="module" src="app.js?v=20241220"></script>
+<link rel="stylesheet" href="styles.css?v=20241220">
+
+<!-- After -->
+<script type="module" src="app.js?v=20241220-1"></script>
+<link rel="stylesheet" href="styles.css?v=20241220-1">
+```
+
+**Version Format**: Use `YYYYMMDD-X` where:
+- `YYYYMMDD` = Date of changes
+- `X` = Increment number for multiple updates per day
+
+**Why This Matters**: Without version updates, users' browsers cache old versions, causing bugs and missing features to persist.
+
+### General Cache-Busting Rule
+**RULE**: Every time you modify any JavaScript, CSS, or HTML file that affects functionality or appearance, you MUST update the version number in `index.html` to force browsers to load the fresh version.
+
+**When to Update Versions:**
+- ✅ Bug fixes
+- ✅ New features
+- ✅ UI/UX changes
+- ✅ Performance improvements
+- ✅ Content updates
+- ✅ Any change that users should see immediately
+
+**When NOT to Update Versions:**
+- ❌ Documentation-only changes (README.md)
+- ❌ Comments-only changes
+- ❌ Whitespace/formatting changes
+- ❌ Unused code removal
+
+**Quick Version Update Process:**
+1. Make your code changes
+2. Update version in `index.html` (both CSS and JS links)
+3. Test that changes are visible
+4. Commit with descriptive message
+
+**Example Version Progression:**
+- `v=20241220` (initial)
+- `v=20241220-1` (first update same day)
+- `v=20241220-2` (second update same day)
+- `v=20241221` (next day)
+- `v=20241221-1` (first update next day)
+
 ## Contributing
 
 This is an MVP implementation. For production use, consider:

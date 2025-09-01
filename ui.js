@@ -242,6 +242,20 @@ export function displayQuestion(question) {
     const authorElement = document.getElementById('question-author');
     const questionElement = document.getElementById('question-text');
     
+    // CRITICAL: Clean up any existing text reveal state first
+    if (window.appState?.textRevealTimer) {
+        clearInterval(window.appState.textRevealTimer);
+        window.appState.textRevealTimer = null;
+    }
+    
+    // Remove any existing click handlers and revealing class
+    if (questionElement) {
+        questionElement.classList.remove('revealing');
+        // Clone the element to remove all event listeners
+        const newQuestionElement = questionElement.cloneNode(true);
+        questionElement.parentNode.replaceChild(newQuestionElement, questionElement);
+    }
+    
     if (categoryElement) {
         const categoryParts = question.category.split('>');
         categoryElement.textContent = categoryParts.length > 1 ? categoryParts[1] : question.category;
@@ -249,17 +263,18 @@ export function displayQuestion(question) {
     if (levelElement) levelElement.textContent = question.level;
     if (authorElement) authorElement.textContent = `Author: ${question.author}`;
     
-    // Start progressive text reveal
-    if (questionElement) {
-        startTextReveal(questionElement, question.question);
+    // Start progressive text reveal with the fresh element
+    const freshQuestionElement = document.getElementById('question-text');
+    if (freshQuestionElement) {
+        startTextReveal(freshQuestionElement, question.question);
         
         // Add click handler to skip text reveal
         const skipReveal = () => {
             if (window.appState?.textRevealTimer) {
                 clearInterval(window.appState.textRevealTimer);
                 window.appState.textRevealTimer = null;
-                questionElement.textContent = question.question;
-                questionElement.classList.remove('revealing');
+                freshQuestionElement.textContent = question.question;
+                freshQuestionElement.classList.remove('revealing');
                 
                 // Focus the answer input
                 const answerInput = document.getElementById('answer-input');
@@ -268,11 +283,11 @@ export function displayQuestion(question) {
                 }
                 
                 // Remove the click handler
-                questionElement.removeEventListener('click', skipReveal);
+                freshQuestionElement.removeEventListener('click', skipReveal);
             }
         };
         
-        questionElement.addEventListener('click', skipReveal, { once: true });
+        freshQuestionElement.addEventListener('click', skipReveal, { once: true });
     }
     
     // Clear previous answer input
