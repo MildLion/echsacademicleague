@@ -16,10 +16,14 @@
 </head>
 <body>
     <header>
-        <h1>ECHS Practice Website</h1>
-        <p>Made by Sal</p>
-        <div class="logo-container">
-            <img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1695737771/osideus/suinpncxczuvm1ksid2y/ElCamino.png" alt="El Camino High School Logo" title="El Camino High School" class="header-logo" onerror="this.style.display='none'">
+        <div class="header-content">
+            <div class="header-left">
+                <h1>ECHS Practice Website</h1>
+                <p>Made by Sal</p>
+            </div>
+            <div class="logo-container">
+                <img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1695737771/osideus/suinpncxczuvm1ksid2y/ElCamino.png" alt="El Camino High School Logo" title="El Camino High School" class="header-logo" onerror="this.style.display='none'">
+            </div>
         </div>
     </header>
 
@@ -28,52 +32,60 @@
         <section id="setup-screen" class="screen active">
             <div class="setup-container">
                 <div class="setup-header">
-                    <h2>Practice Controls</h2>
-                    <div class="setup-icon">⚙️</div>
+                    <div class="setup-header-content">
+                        <h2>Settings</h2>
+                        <div class="setup-icon">⚙️</div>
+                    </div>
                 </div>
                 
                 <!-- Subject Selection -->
                 <div class="control-group">
                     <label for="subjects">Subjects</label>
                     <div class="subject-selector">
-                        <div class="subject-group">
-                            <h3>HUMANITIES</h3>
-                            <label><input type="checkbox" value="Humanities>Geography"> Geography</label>
-                            <label><input type="checkbox" value="Humanities>U.S. History"> U.S. History</label>
-                            <label><input type="checkbox" value="Humanities>World History"> World History</label>
-                            <label><input type="checkbox" value="Humanities>Music"> Music</label>
-                            <label><input type="checkbox" value="Humanities>Mythology"> Mythology</label>
-                            <label><input type="checkbox" value="Humanities>Art History"> Art History</label>
+                        <div class="subject-column">
+                            <div class="subject-group">
+                                <h3>HUMANITIES</h3>
+                                <label><input type="checkbox" value="Humanities>Geography"> Geography</label>
+                                <label><input type="checkbox" value="Humanities>U.S. History"> U.S. History</label>
+                                <label><input type="checkbox" value="Humanities>World History"> World History</label>
+                                <label><input type="checkbox" value="Humanities>Music"> Music</label>
+                                <label><input type="checkbox" value="Humanities>Mythology"> Mythology</label>
+                                <label><input type="checkbox" value="Humanities>Art History"> Art History</label>
+                            </div>
+                            <div class="subject-group">
+                                <h3>SCIENCE</h3>
+                                <label><input type="checkbox" value="Science>Earth and Space Science"> Earth and Space Science</label>
+                                <label><input type="checkbox" value="Science>Biological Science"> Biological Science</label>
+                                <label><input type="checkbox" value="Science>Chemistry"> Chemistry</label>
+                                <label><input type="checkbox" value="Science>Physics"> Physics</label>
+                            </div>
                         </div>
-                        <div class="subject-group">
-                            <h3>SCIENCE</h3>
-                            <label><input type="checkbox" value="Science>Earth and Space Science"> Earth and Space Science</label>
-                            <label><input type="checkbox" value="Science>Biological Science"> Biological Science</label>
-                            <label><input type="checkbox" value="Science>Chemistry"> Chemistry</label>
-                            <label><input type="checkbox" value="Science>Physics"> Physics</label>
+                        <div class="subject-column">
+                            <div class="subject-group">
+                                <h3>MATH</h3>
+                                <label><input type="checkbox" value="Math>Calculus"> Calculus</label>
+                                <label><input type="checkbox" value="Math>Algebra"> Algebra</label>
+                                <label><input type="checkbox" value="Math>Geometry"> Geometry</label>
+                                <label><input type="checkbox" value="Math>Trigonometry"> Trigonometry</label>
+                            </div>
+                            <div class="subject-group">
+                                <h3>LANGUAGES</h3>
+                                <label><input type="checkbox" value="Languages>English"> English</label>
+                                <label><input type="checkbox" value="Languages>English Literature"> English Literature</label>
+                                <label><input type="checkbox" value="Languages>American Literature"> American Literature</label>
+                                <label><input type="checkbox" value="Languages>French"> French</label>
+                                <label><input type="checkbox" value="Languages>Spanish"> Spanish</label>
+                            </div>
                         </div>
-                        <div class="subject-group">
-                            <h3>MATH</h3>
-                            <label><input type="checkbox" value="Math>Calculus"> Calculus</label>
-                            <label><input type="checkbox" value="Math>Algebra"> Algebra</label>
-                            <label><input type="checkbox" value="Math>Geometry"> Geometry</label>
-                            <label><input type="checkbox" value="Math>Trigonometry"> Trigonometry</label>
-                        </div>
-                        <div class="subject-group">
-                            <h3>LANGUAGES</h3>
-                            <label><input type="checkbox" value="Languages>English"> English</label>
-                            <label><input type="checkbox" value="Languages>English Literature"> English Literature</label>
-                            <label><input type="checkbox" value="Languages>American Literature"> American Literature</label>
-                            <label><input type="checkbox" value="Languages>French"> French</label>
-                            <label><input type="checkbox" value="Languages>Spanish"> Spanish</label>
-                        </div>
-                        <div class="subject-group">
-                            <h3>CURRENT EVENTS</h3>
-                            <label><input type="checkbox" value="Current Events"> Current Events</label>
-                        </div>
-                        <div class="subject-toggle">
-                            <button type="button" id="select-all" class="btn-toggle">Select All</button>
-                            <button type="button" id="clear-all" class="btn-toggle">Clear All</button>
+                        <div class="subject-column">
+                            <div class="subject-group">
+                                <h3>CURRENT EVENTS</h3>
+                                <label><input type="checkbox" value="Current Events"> Current Events</label>
+                            </div>
+                            <div class="subject-toggle">
+                                <button type="button" id="select-all" class="btn-toggle">Select All</button>
+                                <button type="button" id="clear-all" class="btn-toggle">Clear All</button>
+                            </div>
                         </div>
                     </div>
                     <div class="pool-preview-card">
@@ -98,25 +110,27 @@
                     <div class="level-note">If none selected, include all.</div>
                 </div>
 
-                <!-- Timer Selection -->
+                <!-- Timer and Reading Speed Selection -->
                 <div class="control-group">
-                    <label for="timer">Time per question</label>
-                    <div class="timer-control">
-                        <div class="timer-icon">⏱️</div>
-                        <input type="range" id="timer" min="3" max="60" value="10" step="1">
-                        <span id="timer-value" class="timer-value">10s</span>
+                    <div class="settings-row">
+                        <div class="setting-item">
+                            <label for="timer">Time per question</label>
+                            <div class="timer-control">
+                                <div class="timer-icon">⏱️</div>
+                                <input type="range" id="timer" min="3" max="60" value="10" step="1">
+                                <span id="timer-value" class="timer-value">10s</span>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label for="reading-speed">Reading speed</label>
+                            <div class="timer-control">
+                                <div class="timer-icon">📖</div>
+                                <input type="range" id="reading-speed" min="50" max="500" value="200" step="25">
+                                <span id="reading-speed-value" class="timer-value">200 WPM</span>
+                            </div>
+                            <div class="level-note">Words per minute - how fast the question appears</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Reading Speed Selection -->
-                <div class="control-group">
-                    <label for="reading-speed">Reading speed</label>
-                    <div class="timer-control">
-                        <div class="timer-icon">📖</div>
-                        <input type="range" id="reading-speed" min="50" max="500" value="200" step="25">
-                        <span id="reading-speed-value" class="timer-value">200 WPM</span>
-                    </div>
-                    <div class="level-note">Words per minute - how fast the question appears</div>
                 </div>
 
                 <!-- Action Buttons -->
@@ -256,6 +270,10 @@
                             <div class="shortcut-item">
                                 <span class="shortcut-key">Space</span>
                                 <span class="shortcut-action">Pause / Resume</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <span class="shortcut-key">N</span>
+                                <span class="shortcut-action">Next Question</span>
                             </div>
                             <div class="shortcut-item">
                                 <span class="shortcut-key">Tab</span>

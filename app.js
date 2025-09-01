@@ -479,6 +479,9 @@ function startPracticeSession() {
     // Switch to practice screen
     showScreen('practice-screen');
     
+    // Scroll to top to ensure question is visible
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     // Update UI elements
     updateQuestionCounter();
     updateFilterTags();
@@ -517,7 +520,8 @@ function startTimer() {
             timeLeft--;
             
             if (timeLeft <= 0) {
-                // Time's up
+                // Time's up - show 0 before handling timeout
+                updateTimerDisplay(0, appState.timeAllocated);
                 clearInterval(appState.timer);
                 handleTimeout();
             } else {
@@ -532,6 +536,16 @@ function startTimer() {
  */
 function handleTimeout() {
     const currentQuestion = appState.filteredQuestions[appState.currentQuestionIndex];
+    
+    // Add timeout visual effect to timer
+    const timerDisplay = document.querySelector('.timer-display');
+    if (timerDisplay) {
+        timerDisplay.classList.add('timeout');
+        // Remove the timeout class after animation completes
+        setTimeout(() => {
+            timerDisplay.classList.remove('timeout');
+        }, 500);
+    }
     
     // Record timeout
     appState.userAnswers[appState.currentQuestionIndex] = {
@@ -731,11 +745,28 @@ async function copyErrorDetails() {
  * Handle global keyboard shortcuts
  */
 function handleGlobalKeyboard(event) {
-    // Space bar toggles pause (but not when typing in input)
-    if (event.key === ' ' && event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
+    // Don't trigger shortcuts when typing in input fields
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+        return;
+    }
+    
+    // Space bar toggles pause
+    if (event.key === ' ') {
         event.preventDefault();
         if (appState.isSessionActive && appState.timer) {
             toggleTimerPause();
+        }
+    }
+    
+    // N key skips to next question
+    if (event.key === 'n' || event.key === 'N') {
+        event.preventDefault();
+        if (appState.isSessionActive) {
+            // Check if we're on the practice screen and there's a next question button
+            const nextQuestionBtn = document.getElementById('next-question');
+            if (nextQuestionBtn && !nextQuestionBtn.disabled) {
+                nextQuestion();
+            }
         }
     }
 }
