@@ -19,7 +19,7 @@ import {
 // Constants for better maintainability
 const APP_CONSTANTS = {
     DEFAULT_TIME_ALLOCATED: 10,
-    DEFAULT_READING_SPEED: 200,
+    DEFAULT_READING_SPEED: 300,
     MIN_TIMER_VALUE: 3,
     MAX_TIMER_VALUE: 60,
     MIN_READING_SPEED: 50,
