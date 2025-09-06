@@ -24,6 +24,12 @@ Languages>English;Spell the name of the punctuation mark that is used in every c
 Languages>English;Name either of the homonyms that mean a small, seedless raisin and the swiftest part of a stream.;["CURRANT", "CURRENT", "CURRANT OR CURRENT"];Freshman;NCAL
 Languages>English Literature;Who was Romeo's spiritual advisor in Shakespeare's "Romeo and Juliet?";["FRIAR LAWRENCE"];Junior Varsity;NCAL
 Languages>English Literature;Name the warring families in Shakespeare's "Romeo and Juliet.";["CAPULETS AND MONTAGUES"];Freshman;NCAL
+Languages>English;Give the two-word Latin phrase for a common language among a given group of people.;["LINGUA FRANCA"];Varsity;NCAL
+Languages>English;Identify the literary device Walt Whitman uses when he calls out to a deceased subject.;["APOSTROPHE"];Varsity;NCAL
+Languages>English Literature;Quotes from this play include “All the perfumes of Arabia will not sweeten this little hand.” What is this Shakespearean tragedy about ambition and guilt?;["MACBETH"];Varsity;NCAL
+Languages>English Literature;Two pieces of evidence implicate the title character in the theft of funds from a Calvinist congregation in Lantern Yard: a pocket knife and an empty bag. Name this George Eliot novel set in the fictional city of Raveloe.;["SILAS MARNER"];Varsity;NCAL
+Languages>English Literature;Words by this author include the 1965 play “The Homecoming” and the 1957 play “The Birthday Party.” Identify the British playwright.;["HAROLD PINTER","PINTER"];Varsity;NCAL
+Languages>English Literature;Give the name of the British author who wrote Chitty Chitty Bang Bang: The Magical Car as well as the novel You Only Live Twice. ;["IAN FLEMING","FLEMING"];Varsity;NCAL
 Languages>French;Spell, using the English alphabet, the 2-word French phrase that means "See you later.";["AU REVOIR", "A DEMAIN", "A BIENTOT"];Junior Varsity;NCAL
 Languages>French;Spell, using the English alphabet, the French noun that means "weight," as in "The weight of this book is 15 pounds.";["LE POIDS"];Junior Varsity;NCAL
 Languages>French;In French grammar, with what three letters must a verb end if it follows the preposition "e-n?";["ANT", "A-N-T"];Junior Varsity;NCAL
@@ -34,6 +40,8 @@ Languages>French;Spell, using the English alphabet, the French word that means "
 Languages>French;Spell, using the English alphabet, the French word that means "pedestrian.";["PIETON", "PIETONNE"];Junior Varsity;NCAL
 Languages>French;Spell, using the English alphabet, the French word that means "paperclips.";["TROMBONE"];Junior Varsity;NCAL
 Languages>French;Give the French phrase for art that literally "fools the eye.";["TROMPE L'OEIL"];Freshman;NCAL
+Languages>French;Spell, using the English alphabet, the French translation of the noun “eggplant.”;["AUBERGINE","A-U-B-E-R-G-I-N-E"];Varsity;NCAL
+Languages>French;Spell, using the English alphabet, the French present participle that means “wanting.”;["VOULANT","V-O-U-L-A-N-T"];Varsity;NCAL
 Humanities>Geography;In which U.S. state are the Black Hills located?;["SOUTH DAKOTA"];Junior Varsity;NCAL
 Humanities>Geography;How many official languages are recognized in Switzerland?;["4","FOUR"];Junior Varsity;NCAL
 Humanities>Geography;Give the name of the hiking trail that passes through 14 states from Georgia to Maine in the eastern mountains of the United States.;["APPALACHIAN","APPALACHIAN TRAIL"];Junior Varsity;NCAL
@@ -51,8 +59,18 @@ Humanities>Geography;In which southern hemisphere country are the Canterbury Pla
 Humanities>Geography;Name the country whose inhabitants are sometimes referred to as "Kiwis.";["NEW ZEALAND"];Junior Varsity;NCAL
 Humanities>Geography;What is the longest river in Canada?;["MACKENZIE", "MACKENZIE RIVER"];Freshman;NCAL
 Humanities>Geography;Name the country who owns Christmas Island.;["AUSTRALIA"];Freshman;NCAL
+Humanities>Geography;Name the Asian desert that spans northern China and southern Mongolia.;["GOBI DESERT","GOBI"];Junior Varsity;Sal
+Humanities>Geography;Which African region of high plains, glaciers, and volcanoes stretches from the Red Sea to Mozambique?;["GREAT RIFT VALLEY","EAST AFRICAN RIFT"];Varsity;Sal
+Humanities>Geography;Which Russian lake near the border with Finland is Europe’s largest by area?;["LAKE LADOGA","LADOGA"];Varsity;Sal
+Humanities>Geography;Name the strait connecting the Mediterranean Sea to the Atlantic Ocean between Spain and Morocco.;["STRAIT OF GIBRALTAR"];Junior Varsity;Sal
+Humanities>Geography;Name the European river that empties into the North Sea at Rotterdam.;["RHINE RIVER","RHINE"];Junior Varsity;Sal
+Humanities>Geography;What is Africa’s largest lake by area and a major source of the Nile?;["LAKE VICTORIA","VICTORIA Nyanza","VICTORIA"];Junior Varsity;Sal
+Humanities>Geography;What mountain range spans Morocco, Algeria, and Tunisia?;["ATLAS MOUNTAINS","THE ATLAS"];Junior Varsity;Sal
+Humanities>Geography;Which European river flows through Vienna, Bratislava, Budapest, and Belgrade?;["DANUBE RIVER","DANUBE"];Junior Varsity;Sal
 Humanities>Geography;Identify the country which controls the Juan Fernandez Archipelago and Easter Island.;["CHILE", "REPUBLIC OF CHILE"];Freshman;NCAL
 Humanities>Geography;What body of water borders Norway, Scotland, Denmark, and England?;["NORTH SEA", "THE NORTH SEA"];Freshman;NCAL
+Humanities>Geography;Give the geography term for any place name.;["TOPONYM"];Varsity;NCAL
+Humanities>Geography;Identify the city that contains the Burj Khalifa.;["DUBAI"];Varsity;NCAL
 Math>Geometry;Give the geometry term for a polyhedron with 20 faces.;["ICOSAHEDRON"];Junior Varsity;NCAL
 Math>Geometry;In a regular polygon, what is the ratio of the measures of successive angles?;["1/1","1:1","1 TO 1"];Junior Varsity;NCAL
 Math>Geometry;What is the sum of the arc measures, in degrees, subtended by a central angle measuring 85 degrees and an inscribed angle of 85 degrees.;["225", "225 DEGREES"];Junior Varsity;NCAL
@@ -61,6 +79,7 @@ Math>Geometry;What is area of equilateral triangle with perimeter of twenty-four
 Math>Geometry;What is the diameter of the circle whose equation is X squared plus Y squared equals 9?;["6","SIX"];Junior Varsity;NCAL
 Math>Geometry;Identify only positive integer which is equal to its cube.;["1","ONE"];Junior Varsity;NCAL
 Math>Geometry;Determine the area of an equilateral triangle in which each side measures 20.;["100 TIMES ROOT 3", "100*sqrt(3)"];Freshman;NCAL
+Math>Geometry;Find the area of a 30-60-90 triangle whose hypotenuse measures 12.;["18 ROOT 3","EIGHTEEN ROOT THREE","18*SQRT(3)"];Varsity;NCAL
 Humanities>Music;Give the nickname of Beethoven's Third Symphony.;["EROICA"];Junior Varsity;NCAL
 Humanities>Music;What is the full name of the man who is credited with the invention of the saxophone?;["SAX", "ADOLPHE SAX"];Junior Varsity;NCAL
 Humanities>Music;Name one of the two C clefs in modern music.;["ALTO","TENOR","ALTO OR TENOR"];Junior Varsity;Juniper
@@ -71,6 +90,7 @@ Humanities>Music;Name the brass instrument originally called a sackbut, which ha
 Humanities>Music;Name the musical term for the high make voice in a 4-part choir.;["TENOR", "COUNTERTENOR"];Junior Varsity;NCAL
 Humanities>Music;In music, what is the frequency, in hertz, of the international tuning pitch?;["FOUR HUNDRED FORTY", "440"];Freshman;NCAL
 Humanities>Mythology;Name the mythological master of the dog Argos.;["ODYSSEUS"];Junior Varsity;NCAL
+Humanities>Music;Which opera by Richard Strauss tells the story of John the Baptist?;["SALOME"];Varsity;NCAL
 Humanities>Mythology;Name the mythical enchantress who turned the crew of Odysseus into swine.;["CIRCE"];Junior Varsity;NCAL
 Humanities>Mythology;Name the god who according to Greek mythology, gave birth to his own son after sewing him into his thigh in order to finish the gestation period.;["ZEUS"];Junior Varsity;NCAL
 Humanities>Mythology;Name the father of Icarus in the Greek Myth.;["DAEDALUS"];Junior Varsity;NCAL
@@ -80,6 +100,12 @@ Humanities>Mythology;In Greek mythology, name the father of Icarus.;["DAEDALUS"]
 Science>Physics;What is the scientific term for the rate of change in an object's velocity?;["ACCELERATION"];Junior Varsity;NCAL
 Science>Physics;Give the physics term for an object's tendency to move in a straight line until a force changes its direction.;["INERTIA"];Junior Varsity;NCAL
 Science>Physics;What is the scientific term for the resistance encountered by an object or surface as a result of rubbing against another?;["FRICTION"];Freshman;NCAL
+Science>Physics;Assuming the same frequency, find the resultant amplitude (in centimeters) of a wave with a 3-centimeter amplitude being constructively superimposed over a wave with a 4-centimeter amplitude.;["7 CM","SEVEN CENTIMETERS","7"];Varsity;NCAL
+Science>Physics;Give the two-word physics term for the apparent change in frequency that occurs when a wave source moves relative to an observer, commonly experienced with passing sirens.;["DOPPLER EFFECT"];Varsity;NCAL
+Science>Physics;Which lepton is found in a neutral, hydrogen-1 atom?;["ELECTRON"];Varsity;NCAL
+Science>Physics;If 200 grams of a radioactive substance with a half-life of 20 minutes sits for one hour, how many grams remain?;["25 GRAMS","25","TWENTY-FIVE GRAMS"];Varsity;NCAL
+Science>Physics;Give the physics term for a point of a transverse wave that is a relative minimum.;["TROUGH"];Varsity;NCAL
+Science>Physics;Find the average acceleration (m/s^2) of a car whose velocity decreases from 16.0 m/s to 2.0 m/s during a 3.5-second interval.;["-4","NEGATIVE FOUR","-4 M/S^2","NEGATIVE FOUR METERS PER SECOND SQUARED"];Varsity;NCAL
 Languages>Spanish;Spell, using the English alphabet, the one-word Spanish translation of the phrase "town square.";["LA PLAZA","PLAZA","EL ZOCALO","ZOCALO","PLAZA OR ZOCALO","ZOCALO OR PLAZA","LA PLAZA OR EL ZOCALO"];Junior Varsity;NCAL
 Languages>Spanish;Spell, using the English alphabet the 3-word Spanish phrase that means "See you later.";["HASTA LA VISTA", "HASTA LA PROXIMA"];Junior Varsity;NCAL
 Languages>Spanish;Spell, using the English alphabet, the Spanish word that means "keyboard," as in 'Please use the keyboard to type your essay into the computer.";["TECLADO"];Junior Varsity;NCAL
@@ -91,6 +117,7 @@ Languages>Spanish;Spell, using the English alphabet, the Spanish masculine, sing
 Languages>Spanish;Spell, using the English alphabet, the Spanish word that means "weight," as in "The weight of this book is 15 pounds.";["PESO", "EL PESO"];Junior Varsity;NCAL
 Languages>Spanish;Spell, using the English alphabet, the Spanish noun that means "treasure.";["TESORO"];Junior Varsity;NCAL
 Languages>Spanish;Spell, using the English alphabet, the Spanish word that means "sofa.";["SOFA"];Junior Varsity;NCAL
+Languages>Spanish;Spell, using the English alphabet, the transitive Spanish infinitive that means “to influence.”;["INFLUENCIAR"];Varsity;NCAL
 Math>Trigonometry;What is the phase shift, in radians, of the trigonometric equation Y equals 3 times the sine of the quantity "3X minus pi?";["PI OVER 3", "PI/3", "ONE-THIRD PI", "ONE THIRD PI", "1/3 TIMES PI", "1/3 * PI", "ONE THIRD TIMES PI", "ONE-THIRD TIMES PI"];Junior Varsity;NCAL
 Math>Trigonometry;Which single trigonometric function is equal to the product of sine X and cotangent X?;["COSINE X","COSX","COS(X)"];Junior Varsity;NCAL
 Math>Trigonometry;Which trigonometric function is the reciprocal of the secant function?;["COS","COSINE"];Junior Varsity;NCAL
@@ -102,6 +129,8 @@ Math>Trigonometry;What is the phase shift, in radians, of the trigonometric equa
 Math>Trigonometry;In a 30-60-90 triangle whose hypotenuse is 10, what is the length of the longer leg?;["5 TIMES ROOT 3", "5 ROOT 3"];Junior Varsity;NCAL
 Math>Trigonometry;Find the area of an isosceles trapezoid with bases of 10 and 18 if one base angle measures 60 degree.;["56 TIMES ROOT 3", "56 ROOT 3"];Junior Varsity;NCAL
 Math>Trigonometry;Find the value cotangent of 225 degrees.;["1"];Junior Varsity;NCAL
+Math>Trigonometry;On the interval from x = pi radians to x = 3pi/2 radians, at what value x does sin x = cos x?;["5PI/4","FIVE PI OVER FOUR"];Varsity;NCAL
+Math>Trigonometry;For non-negative values of R, identify the shape of the graph of the polar equation θ = 5π/4.;["RAY"];Varsity;NCAL
 Humanities>U.S. History;Name the U.S. President who referred to the Supreme Court of his early presidency as the "horse and buggy" court.;["FDR", "ROOSEVELT", "FRANKLIN ROOSEVELT", "FRANKLIN DELANO ROOSEVELT"];Junior Varsity;NCAL
 Humanities>U.S. History;In which U.S. state did the Battle of Antietam occur?;["MARYLAND"];Junior Varsity;NCAL
 Humanities>U.S. History;Which U.S. city was the location for the first Constitutional Convention?;["PHILADELPHIA", "PHILADELPHIA PENNSYLVANIA", "PHILADELPHIA, PENNSYLVANIA"];Junior Varsity;NCAL
@@ -122,6 +151,8 @@ Humanities>U.S. History;Name the U.S. president whose eulogy included the follow
 Humanities>U.S. History;Which U.S. state had the largest population at the time of the first official census in 1790?;["VIRGINIA"];Junior Varsity;NCAL
 Humanities>U.S. History;Name either of the states that joined the United States during the Civil War.;["WEST VIRGINIA", "NEVADA"];Junior Varsity;NCAL
 Humanities>U.S. History;What change was made in the design of the United states flag in the years 1959 and 1960?;["TWO STARS WERE ADDED", "2 STARS WERE ADDED", "2 STARS"];Junior Varsity;NCAL
+Humanities>U.S. History;Give the full name of the two-term Governor of New York who promoted the building of the Erie Canal.;["DEWITT CLINTON","DE WITT CLINTON"];Varsity;NCAL
+Humanities>U.S. History;Give the name of the first Roman Catholic to run for U.S. President as a major party’s candidate.;["AL SMITH"];Varsity;NCAL
 Humanities>World History;Who overthrew the Batista regime in Cuba in 1959?;["CASTRO","FIDEL CASTRO"];Junior Varsity;NCAL
 Humanities>World History;Give the name of the first prime minister of India.;["NEHRU", "JAWARHARLAL NEHRU"];Junior Varsity;NCAL
 Humanities>World History;What is the name of the airplane flown solo across the Atlantic by Charles Lindbergh?;["SPIRIT OF ST. LOUIS", "THE SPIRIT OF ST. LOUIS"];Junior Varsity;NCAL
@@ -280,6 +311,9 @@ Humanities>World History;Which Portuguese explorer was the first to reach India 
 Humanities>World History;Which British naval officer was the subject of a famous mutiny on the HMS Bounty?;["WILLIAM BLIGH","BLIGH"];Varsity;Sal
 Humanities>World History;What Japanese word means "divine wind" and refers to the typhoons that destroyed Mongol invasion fleets?;["KAMIKAZE"];Freshman;Sal
 Humanities>World History;Often credited to Cai Lun in 105 CE, what Chinese invention revolutionized bureaucracy and communication?;["PAPER"];Freshman;Sal
+Humanities>World History;Give the name of the country that was led by Leonid Brezhnev for nearly two decades during the Cold War.;["USSR","SOVIET UNION"];Varsity;NCAL
+Humanities>World History;Name the West African man whose 1789 autobiography and lobbying strengthened the anti-slavery movement in England.;["OLAUDAH EQUIANO","EQUIANO"];Varsity;NCAL
+Humanities>World History;What phrase describes the two parts of the circular Chinese symbol?;["YIN AND YANG","YIN-YANG","YIN YANG"];Varsity;NCAL
 Math>Algebra;What is the algebra term for the second, or Y-component, or an ordered pair?;["ORDINATE"];Junior Varsity;NCAL
 Math>Algebra;What is the range of the natural logarithm function?;["ALL REAL","ALL REALS","ALL REAL NUMBER","ALL REAL NUMBERS"];Junior Varsity;NCAL
 Math>Algebra;What is the value of the determinant of the 2-by-2 matrix with 1st-row entries of 1 and 2 and 2nd-row entries of 2 and 3?;["NEGATIVE 1", "NEGATIVE ONE","- ONE", "- 1", "-1"];Junior Varsity;NCAL
@@ -325,6 +359,12 @@ Math>Algebra;A fair coin is flipped 3 times. What is the probability that heads 
 Math>Algebra;How many elements are in the intersection of the set containing the even positive integers and the set containing the positive multiples of 5 which are less than 40?;["3"];Junior Varsity;NCAL
 Math>Algebra;Which birthday would a person born in the year 10 BC be celebrating in the year 6 AD?;["15", "FIFTEEN", "15TH", "FIFTEENTH"];Freshman;NCAL
 Math>Algebra;Give the equation of the line that passes through the points "4 comma negative 7" and 4 comma 1.";["X=4", "X EQUALS 4"];Freshman;NCAL
+Math>Algebra;If A and B are positive integers and the fraction A over B is in lowest terms, what is the least common multiple of A and B?;["AB"];Varsity;NCAL
+Math>Algebra;Give the coefficient of the quadratic term of the cubic polynomial whose leading coefficient is 1 and whose factors are (x + 6), x, and (x − 3).;["3","THREE"];Varsity;NCAL
+Math>Algebra;Compute the geometric mean of 2, 4, and 8.;["4","FOUR"];Varsity;NCAL
+Math>Algebra;Give the algebra term for the number of times a polynomial has a root at a given point.;["MULTIPLICITY"];Varsity;NCAL
+Math>Algebra;Find the fifth term in the geometric sequence whose first two terms are 8 and −4.;["1/2","ONE-HALF","0.5"];Varsity;NCAL
+Math>Algebra;Find the product of 19 and 21.;["399","THREE HUNDRED NINETY-NINE"];Varsity;NCAL
 Languages>American Literature;Give the name of the American novel about Esther Greenwood, a young woman whose talent and intelligence have brought her academic and career success, though she struggles with mental illness and suicidal tendencies.;["BELL JAR","THE BELL JAR"];Junior Varsity;NCAL
 Languages>American Literature;During which war does the action of the novel "A Separate Peace" take place?;["WWII","WW2","WORLD WAR II","WORLD WAR TWO"];Junior Varsity;NCAL
 Languages>American Literature;Give the name of the Harlem Renaissance author who wrote the novel "Cane.";["TOOMER","JEAN TOOMER"];Junior Varsity;NCAL
@@ -370,6 +410,11 @@ Languages>American Literature;What, according to Langston Hughes, dries up like 
 Languages>American Literature;Who wrote the poem "Stopping by Woods on a Snowy Evening?";["ROBERT FROST", "FROST"];Junior Varsity;NCAL
 Languages>American Literature;Identify the business magnate who wrote the article "The Gospel of Wealth" in 1889.;["ANDREW CARNEGIE", "CARNEGIE"];Junior Varsity;NCAL
 Languages>American Literature;In the story by Herman Melville, from what speech defect does Billy Budd suffer?;["STUTTERING"];Junior Varsity;NCAL
+Languages>American Literature;In 1941, this American co-authored the book “The Sea of Cortez” with marine biologist Ed Ricketts and later immortalized Ricketts as “Doc” in a novel set in Monterey, California. Name the author.;["JOHN STEINBECK","STEINBECK"];Varsity;NCAL
+Languages>American Literature;The protagonist of this work and his love interest, Mattie, are permanently injured after steering a sled into an elm tree during a suicide attempt. Name this novel by Edith Wharton.;["ETHAN FROME"];Varsity;NCAL
+Languages>American Literature;One character in this novel, Ruth May, dies after being bitten by a green mamba. Another character discusses justice and the Congo with Anatole, the Kilanga village teacher. Identify this novel by Barbara Kingsolver.;["THE POISONWOOD BIBLE","POISONWOOD BIBLE"];Varsity;NCAL
+Languages>American Literature;In which period of American literature do works like “Color” by Countee Cullen, “Banana Bottom” by Claude McKay, “Black Thunder” by Arna Bontemps, and “Jonah’s Gourd Vine” by Zora Neale Hurston belong?;["HARLEM RENAISSANCE"];Varsity;NCAL
+Languages>American Literature;This author creates an allegory tracing the rise of Nazism and the potential to overcome evil through characters like Mrs. Treadwell, Elsa Lutz, and Jenny on their voyage from Mexico to Germany. Name the author of Ship of Fools. ;["KATHERINE ANNE PORTER","PORTER"];Varsity;NCAL
 Humanities>Art History;Name the Renaissance artist who painted "Primavera" located in the Uffizi Gallery in Florence.;["BOTTICELLI","SANDRO BOTTICELLI"];Junior Varsity;NCAL
 Humanities>Art History;Name the museum which houses the following paintings: Klee's "Twittering Machine," Rousseau's "Sleeping Beauty," and Mondrian's "Broadway Boogie Woogie.";["MUSEUM OF MODERN ART", "MUSEUM OF MODERN ART, NEW YORK"];Junior Varsity;NCAL
 Humanities>Art History;Name the Edgar Allan Poe poem that originally sold for fifteen dollars but has since been sold, in a first edition of his poetry, for over $200,000.;["THE RAVEN", "RAVEN"];Junior Varsity;NCAL
@@ -383,6 +428,7 @@ Humanities>Art History;Name the German-born American illustrator and graphic art
 Humanities>Art History;Name the first Impressionist artist to use words in his paintings.;["TOULOUSE-LAUTREC"];Junior Varsity;NCAL
 Humanities>Art History;Name the artistic movement to which Salvador Dali belongs.;["SURREALISM"];Junior Varsity;NCAL
 Humanities>Art History;Name the surrealist painter whose works include "The Persistence of Memory.";["SALVADOR DALI", "DALI"];Junior Varsity;NCAL
+Humanities>Art History;Give the architectural term for a recess in the wall of a catacomb designed to hold a human corpse.;["LOCULUS"];Varsity;NCAL
 Humanities>Art History;What type of musical composition, based on a courtly Polish dance, was used during World War II to tell the world that Poland had not yet fallen to the Germans?;["POLONAISE"];Junior Varsity;NCAL
 Science>Biological Science;Give the biology term for the monomer components of proteins.;["AMINO ACID", "AMINO ACIDS"];Junior Varsity;NCAL
 Science>Biological Science;Instead of seeds, what reproductive structure do ferns use?;["SPORES"];Junior Varsity;NCAL
@@ -406,8 +452,15 @@ Science>Biological Science;Name the structure through which of the exchange of g
 Science>Biological Science;Name the system of tubes in a cell which provides a channel from the nucleus through the cytoplasm to the outside of the cell by the way of cell membrane.;["ENDOPLASMIC RETICULUM"];Junior Varsity;NCAL
 Science>Biological Science;Name the scientist responsible for the development of vaccines for rabies and anthrax.;["LOUS PASTEUR", "PASTEUR"];Junior Varsity;NCAL
 Science>Biological Science;Name the color receptors in the retina of the human eye.;["CONES"];Freshman;NCAL
+Science>Biological Science;Give the biology term for unicellular algae that have a silica shell.;["DIATOM","DIATOMS"];Varsity;NCAL
+Science>Biological Science;Give the name for the thick cellular fibers that are the chief components in cilia and flagella.;["MICROTUBULES"];Varsity;NCAL
+Science>Biological Science;What is the average lifespan, within two days, of a human taste bud?;["EIGHT TO TEN DAYS","8–10 DAYS","8 TO 10 DAYS"];Varsity;NCAL
+Science>Biological Science;Give the microbiology term for the dormant, non-reproductive structure produced by certain bacteria that can reconstitute after long nutrient deprivation.;["ENDOSPORE"];Varsity;NCAL
+Science>Biological Science;Give the name of the British physician known as the father of modern surgery for his early use of antiseptics.;["LISTER","JOSEPH LISTER"];Varsity;NCAL
 Math>Calculus;Find the derivative, with respect to X, of the expression 2 to the 5 X power.;["2^5X*5LN(2)"];Varsity;NCAL
 Math>Calculus;Find the 2nd derivative, with respect to X, of the expression 4x^3+2x^2+6x+8.;["24x+4"];Varsity;NCAL
+Math>Calculus;What is the indefinite integral with respect to x of 3?;["3X + C","3X PLUS C"];Varsity;NCAL
+Math>Calculus;Give the calculus term for a point on the graph of a function at which the first derivative equals zero.;["STATIONARY POINT"];Varsity;NCAL
 Science>Chemistry;What phase of matter is commonly referred to as the fourth state of matter?;["PLASMA"];Junior Varsity;NCAL
 Science>Chemistry;Give the name of the chemical family which includes chlorine.;["HALOGEN"];Junior Varsity;NCAL
 Science>Chemistry;When the hydrogen of an acid is replaced by a metal, what specific type of compound results?;["SALT"];Junior Varsity;NCAL
@@ -432,3 +485,12 @@ Science>Chemistry;Name the type of chemical bond formed by the transfer electron
 Science>Chemistry;Give the chemistry term for the number moles of dissolved solute that a liter of solution contains.;["MOLARITY"];Junior Varsity;NCAL
 Science>Chemistry;Name the element which comprises four percent of the Earth's crust and two percent of the human body by mass.;["CALCIUM"];Junior Varsity;NCAL
 Science>Chemistry;In chemistry, how many different "f" sub-orbitals are there.;["7", "SEVEN"];Junior Varsity;NCAL
+Science>Chemistry;In the Lewis dot structure of ionic nitrogen, how many total electrons are represented?;["10","TEN"];Varsity;NCAL
+Science>Chemistry;Name the group on the periodic table that contains the elements with the highest first ionization energies.;["NOBLE GASES","NOBLE GAS"];Varsity;NCAL
+Science>Chemistry;Give the chemistry term for the substance in a reaction that is completely consumed.;["LIMITING REACTANT","LIMITING REAGENT"];Varsity;NCAL
+Humanities>Government;What is the minimum age for a representative in the U.S. Congress?;["25","TWENTY-FIVE"];Varsity;NCAL
+Humanities>Government;According to the 20th Amendment to the U.S. Constitution, on which day does Congress convene each year?;["JANUARY 3","JANUARY THIRD","JAN 3"];Varsity;NCAL
+Humanities>Economics;Give the two-word economics term defined as C + I + G + (X − M) and whose curve intersects the 45-degree line on a Keynesian cross.;["AGGREGATE DEMAND"];Varsity;NCAL
+Humanities>Economics;Name the specific award established in 1968 by the Central Bank of Sweden and first awarded in 1969 to Ragnar Frisch and Jan Tinbergen.;["NOBEL PRIZE IN ECONOMIC SCIENCES","ECONOMICS NOBEL"];Varsity;NCAL
+Languages>English Literature;The Canzoniere, a collection of 366 poems, was dedicated to this person described with phrases like “breeze blowing at blonde curling hair.” Name the subject.;["LAURA"];Varsity;NCAL
+Languages>English Literature;Name the Russian author whose son Yevgeny accepted the Nobel Prize in Literature on his behalf in 1989, 31 years after he was forced to decline it.;["BORIS PASTERNAK","PASTERNAK"];Varsity;NCAL
