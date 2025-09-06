@@ -492,5 +492,5 @@ Humanities>Government;What is the minimum age for a representative in the U.S. C
 Humanities>Government;According to the 20th Amendment to the U.S. Constitution, on which day does Congress convene each year?;["JANUARY 3","JANUARY THIRD","JAN 3"];Varsity;NCAL
 Humanities>Economics;Give the two-word economics term defined as C + I + G + (X − M) and whose curve intersects the 45-degree line on a Keynesian cross.;["AGGREGATE DEMAND"];Varsity;NCAL
 Humanities>Economics;Name the specific award established in 1968 by the Central Bank of Sweden and first awarded in 1969 to Ragnar Frisch and Jan Tinbergen.;["NOBEL PRIZE IN ECONOMIC SCIENCES","ECONOMICS NOBEL"];Varsity;NCAL
-Languages>English Literature;The Canzoniere, a collection of 366 poems, was dedicated to this person described with phrases like “breeze blowing at blonde curling hair.” Name the subject.;["LAURA"];Varsity;NCAL
-Languages>English Literature;Name the Russian author whose son Yevgeny accepted the Nobel Prize in Literature on his behalf in 1989, 31 years after he was forced to decline it.;["BORIS PASTERNAK","PASTERNAK"];Varsity;NCAL
+Languages>World Literature;The Canzoniere, a collection of 366 poems, was dedicated to this person described with phrases like “breeze blowing at blonde curling hair.” Name the subject.;["LAURA"];Varsity;NCAL
+Languages>World Literature;Name the Russian author whose son Yevgeny accepted the Nobel Prize in Literature on his behalf in 1989, 31 years after he was forced to decline it.;["BORIS PASTERNAK","PASTERNAK"];Varsity;NCAL
