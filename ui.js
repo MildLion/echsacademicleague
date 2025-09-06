@@ -276,10 +276,11 @@ export function displayQuestion(question) {
                 freshQuestionElement.textContent = question.question;
                 freshQuestionElement.classList.remove('revealing');
                 
-                // Focus the answer input
+                // Focus the answer input and scroll to it on mobile
                 const answerInput = document.getElementById('answer-input');
                 if (answerInput) {
                     answerInput.focus();
+                    scrollToAnswerInput();
                 }
                 
                 // Remove the click handler
@@ -338,10 +339,11 @@ function startTextReveal(element, fullText) {
             window.appState.textRevealTimer = null;
             element.classList.remove('revealing'); // Remove blinking cursor
             
-            // Focus the answer input once text is fully revealed
+            // Focus the answer input once text is fully revealed and scroll to it
             const answerInput = document.getElementById('answer-input');
             if (answerInput) {
                 answerInput.focus();
+                scrollToAnswerInput();
             }
         }
     };
@@ -358,6 +360,7 @@ function startTextReveal(element, fullText) {
         const answerInput = document.getElementById('answer-input');
         if (answerInput) {
             answerInput.focus();
+            scrollToAnswerInput();
         }
     }
 }
@@ -666,5 +669,26 @@ export function announceStatus(message, type = 'polite') {
  */
 export function announceError(message) {
     announceStatus(message, 'assertive');
+}
+
+/**
+ * Scrolls to the answer input on mobile devices for better UX
+ */
+function scrollToAnswerInput() {
+    const answerInput = document.getElementById('answer-input');
+    if (!answerInput) return;
+    
+    // Check if we're on a mobile device (screen width < 768px)
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) return;
+    
+    // Small delay to ensure the element is rendered
+    setTimeout(() => {
+        answerInput.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center',
+            inline: 'nearest'
+        });
+    }, 100);
 }
 

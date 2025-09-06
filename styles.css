@@ -1188,13 +1188,13 @@ input[type="range"]::-moz-range-thumb {
 /* Large Mobile & Small Tablet (600px - 767px) */
 @media (max-width: 767px) {
     header {
-        padding: 1.5rem 1rem;
+        padding: 1rem 0.75rem;
     }
     
     .header-content {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
+        gap: 0.75rem;
     }
     
     .header-left {
@@ -1202,20 +1202,20 @@ input[type="range"]::-moz-range-thumb {
     }
     
     .header-logo {
-        height: 60px;
-        max-width: 150px;
+        height: 50px;
+        max-width: 120px;
     }
     
     header h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     
     header p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     main {
-        padding: 1rem;
+        padding: 0.75rem;
     }
     
     /* Setup Screen Mobile */
@@ -1259,71 +1259,128 @@ input[type="range"]::-moz-range-thumb {
     }
     
     /* Practice Screen Mobile */
+    .practice-main {
+        padding: 1.5rem;
+    }
+    
     .practice-header {
         flex-direction: column;
         align-items: stretch;
-        gap: 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
     }
     
     .practice-header-left {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 0.5rem;
     }
     
     .question-context {
         justify-content: center;
         order: 3;
+        gap: 0.5rem;
     }
     
     .question-counter {
         text-align: center;
         order: 2;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .question-text {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         line-height: 1.3;
+        margin-bottom: 1.5rem;
     }
     
     .answer-section {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 12px;
+        border: 2px solid #e9ecef;
+        position: relative;
+    }
+    
+    .answer-section::before {
+        content: "Type your answer below:";
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 0.5rem;
+        text-align: center;
     }
     
     #answer-input {
         font-size: 1.1rem;
-        padding: 1.25rem;
+        padding: 1rem;
         -webkit-tap-highlight-color: rgba(0,123,255,0.2);
+        border-radius: 8px;
+        border: 2px solid #007bff;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    #answer-input:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+        outline: none;
+    }
+    
+    #submit-answer {
+        font-size: 1.1rem;
+        padding: 1rem;
+        font-weight: 600;
+        box-shadow: 0 4px 8px rgba(0,123,255,0.3);
     }
     
     .timer-display {
         flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        margin-top: 1rem;
     }
     
     .timer-ring {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
     
     .timer-countdown {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     /* Sidebar Mobile */
     .practice-sidebar {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .sidebar-section {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
     }
     
     .stats-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
     }
     
     .stat-card {
-        padding: 0.75rem;
+        padding: 0.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+    
+    .stat-value {
+        font-size: 1.2rem;
     }
     
     .shortcuts-list {
@@ -1342,6 +1399,15 @@ input[type="range"]::-moz-range-thumb {
     .speed-value {
         font-size: 0.8rem;
         min-width: 50px;
+    }
+    
+    .filter-tags {
+        gap: 0.25rem;
+    }
+    
+    .filter-tag {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
     }
     
     /* Summary Screen Mobile */
@@ -1687,6 +1753,33 @@ input:focus {
     100% { 
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* Enhanced smooth scrolling for mobile */
+@media (max-width: 767px) {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 20px;
+    }
+    
+    /* Ensure smooth transitions for mobile interactions */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Add visual feedback for touch interactions */
+    .btn-primary:active,
+    .btn-secondary:active,
+    #submit-answer:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    /* Improve touch targets */
+    button, input, select, textarea {
+        min-height: 44px;
+        min-width: 44px;
     }
 }
 
