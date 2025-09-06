@@ -3,22 +3,59 @@
  * Handles all visual updates and user interactions
  */
 
+// DOM element cache to avoid repeated queries
+const domCache = new Map();
+
+/**
+ * Cached DOM element getter with fallback
+ * @param {string} selector - CSS selector or element ID
+ * @param {boolean} isId - Whether selector is an ID (default: false)
+ * @returns {HTMLElement|null} Cached element or null
+ */
+function getCachedElement(selector, isId = false) {
+    if (!domCache.has(selector)) {
+        const element = isId ? document.getElementById(selector) : document.querySelector(selector);
+        domCache.set(selector, element);
+    }
+    return domCache.get(selector);
+}
+
+/**
+ * Clear DOM cache (useful for dynamic content)
+ */
+export function clearDomCache() {
+    domCache.clear();
+}
+
 /**
  * Shows a specific screen and hides others
  * @param {string} screenId - ID of screen to show
  */
 export function showScreen(screenId) {
-    // Hide all screens
-    document.querySelectorAll('.screen').forEach(screen => {
+    // Hide all screens - use cached query
+    const screens = document.querySelectorAll('.screen');
+    screens.forEach(screen => {
         screen.classList.remove('active');
     });
     
     // Show target screen
-    const targetScreen = document.getElementById(screenId);
+    const targetScreen = getCachedElement(screenId, true);
     if (targetScreen) {
         targetScreen.classList.add('active');
     }
 }
+
+// Constants for timer display
+const TIMER_CONSTANTS = {
+    RADIUS: 45,
+    COLORS: {
+        RED: '#dc3545',
+        YELLOW: '#ffc107', 
+        BLUE: '#007bff'
+    },
+    WARNING_THRESHOLD: 3,
+    LOW_TIME_THRESHOLD: 0.3
+};
 
 /**
  * Updates the timer display with countdown and visual progress
@@ -26,27 +63,27 @@ export function showScreen(screenId) {
  * @param {number} totalTime - Total time allocated
  */
 export function updateTimerDisplay(timeLeft, totalTime) {
-    const countdownElement = document.getElementById('timer-countdown');
-    const progressElement = document.getElementById('timer-progress');
-    const timerSecondsElement = document.querySelector('.timer-seconds');
+    const countdownElement = getCachedElement('timer-countdown', true);
+    const progressElement = getCachedElement('timer-progress', true);
+    const timerSecondsElement = getCachedElement('.timer-seconds');
     
     if (countdownElement && progressElement) {
         // Update countdown text
         countdownElement.textContent = timeLeft;
         
         // Update progress ring
-        const circumference = 2 * Math.PI * 45; // r=45
+        const circumference = 2 * Math.PI * TIMER_CONSTANTS.RADIUS;
         const progress = (timeLeft / totalTime) * circumference;
         progressElement.style.strokeDashoffset = circumference - progress;
         
         // Change color based on time remaining
-        if (timeLeft <= 3) {
-            progressElement.style.stroke = '#dc3545'; // Red
-        } else if (timeLeft <= totalTime * 0.3) {
-            progressElement.style.stroke = '#ffc107'; // Yellow
-        } else {
-            progressElement.style.stroke = '#007bff'; // Blue
+        let strokeColor = TIMER_CONSTANTS.COLORS.BLUE;
+        if (timeLeft <= TIMER_CONSTANTS.WARNING_THRESHOLD) {
+            strokeColor = TIMER_CONSTANTS.COLORS.RED;
+        } else if (timeLeft <= totalTime * TIMER_CONSTANTS.LOW_TIME_THRESHOLD) {
+            strokeColor = TIMER_CONSTANTS.COLORS.YELLOW;
         }
+        progressElement.style.stroke = strokeColor;
     }
     
     if (timerSecondsElement) {
@@ -81,17 +118,21 @@ export function setTimerPauseState(isPaused) {
  * @param {number} total - Total questions in session
  */
 export function updateStats(correct, incorrect, current, total) {
-    const correctElement = document.getElementById('correct-count');
-    const incorrectElement = document.getElementById('incorrect-count');
-    const progressElement = document.getElementById('progress-display');
-    const progressFillElement = document.getElementById('progress-fill');
+    const elements = {
+        correct: getCachedElement('correct-count', true),
+        incorrect: getCachedElement('incorrect-count', true),
+        progress: getCachedElement('progress-display', true),
+        progressFill: getCachedElement('progress-fill', true)
+    };
     
-    if (correctElement) correctElement.textContent = correct;
-    if (incorrectElement) incorrectElement.textContent = incorrect;
-    if (progressElement) progressElement.textContent = `${current}/${total}`;
-    if (progressFillElement) {
+    // Update elements with null safety
+    elements.correct && (elements.correct.textContent = correct);
+    elements.incorrect && (elements.incorrect.textContent = incorrect);
+    elements.progress && (elements.progress.textContent = `${current}/${total}`);
+    
+    if (elements.progressFill) {
         const percentage = total > 0 ? (current / total) * 100 : 0;
-        progressFillElement.style.width = `${percentage}%`;
+        elements.progressFill.style.width = `${percentage}%`;
     }
 }
 
@@ -99,27 +140,33 @@ export function updateStats(correct, incorrect, current, total) {
  * Updates the accuracy display
  */
 export function updateAccuracyDisplay() {
-    const accuracyElement = document.getElementById('accuracy-display');
+    const accuracyElement = getCachedElement('accuracy-display', true);
     if (!accuracyElement) return;
     
     // Get stats from app state if available, otherwise fall back to DOM
     let correct, incorrect;
     if (window.appState?.userAnswers) {
-        correct = window.appState.userAnswers.filter(a => a?.correctness === 'Correct').length;
-        incorrect = window.appState.userAnswers.filter(a => a?.correctness !== 'Correct').length;
+        // Use single pass to count both correct and incorrect
+        const counts = window.appState.userAnswers.reduce((acc, answer) => {
+            if (answer?.correctness === 'Correct') {
+                acc.correct++;
+            } else if (answer?.correctness) {
+                acc.incorrect++;
+            }
+            return acc;
+        }, { correct: 0, incorrect: 0 });
+        correct = counts.correct;
+        incorrect = counts.incorrect;
     } else {
-        correct = parseInt(document.getElementById('correct-count')?.textContent || '0');
-        incorrect = parseInt(document.getElementById('incorrect-count')?.textContent || '0');
+        const correctElement = getCachedElement('correct-count', true);
+        const incorrectElement = getCachedElement('incorrect-count', true);
+        correct = parseInt(correctElement?.textContent || '0');
+        incorrect = parseInt(incorrectElement?.textContent || '0');
     }
     
     const total = correct + incorrect;
-    
-    if (total > 0) {
-        const percentage = Math.round((correct / total) * 100);
-        accuracyElement.textContent = `Accuracy (so far): ${percentage}%`;
-    } else {
-        accuracyElement.textContent = 'Accuracy (so far): 0%';
-    }
+    const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
+    accuracyElement.textContent = `Accuracy (so far): ${percentage}%`;
 }
 
 /**
@@ -136,11 +183,54 @@ export function updateQuestionCounter() {
     counterElement.textContent = `Q ${currentIndex + 1} / ${totalQuestions}`;
 }
 
+// Memoization cache for question filtering
+const filterCache = new Map();
+
+/**
+ * Creates a cache key for filter combinations
+ * @param {Array} selectedSubjects - Selected subject categories
+ * @param {string} selectedLevel - Selected difficulty level
+ * @returns {string} Cache key
+ */
+function createFilterCacheKey(selectedSubjects, selectedLevel) {
+    return `${selectedSubjects.sort().join(',')}|${selectedLevel}`;
+}
+
+/**
+ * Filters questions with memoization
+ * @param {Array} questions - All available questions
+ * @param {Array} selectedSubjects - Selected subject categories
+ * @param {string} selectedLevel - Selected difficulty level
+ * @returns {Array} Filtered questions
+ */
+function filterQuestionsMemoized(questions, selectedSubjects, selectedLevel) {
+    const cacheKey = createFilterCacheKey(selectedSubjects, selectedLevel);
+    
+    if (filterCache.has(cacheKey)) {
+        return filterCache.get(cacheKey);
+    }
+    
+    const filteredQuestions = questions.filter(question => {
+        // Subject filter
+        const subjectMatch = selectedSubjects.length === 0 || 
+                           selectedSubjects.includes(question.category);
+        
+        // Level filter
+        const levelMatch = !selectedLevel || question.level === selectedLevel;
+        
+        return subjectMatch && levelMatch;
+    });
+    
+    // Cache the result
+    filterCache.set(cacheKey, filteredQuestions);
+    return filteredQuestions;
+}
+
 /**
  * Updates the pool preview with estimated question count
  */
 export function updatePoolPreview() {
-    const previewElement = document.getElementById('pool-preview');
+    const previewElement = getCachedElement('pool-preview', true);
     if (!previewElement) {
         console.warn('Pool preview element not found');
         return;
@@ -156,31 +246,17 @@ export function updatePoolPreview() {
     // Get questions from the global app state or use a fallback
     const questions = window.appState?.questions || [];
     
-    console.log('updatePoolPreview called:', {
-        selectedSubjects,
-        selectedLevel,
-        questionsCount: questions.length,
-        appState: window.appState
-    });
-    
-    // Debug: Show first few question categories
-    if (questions.length > 0) {
-        console.log('First 5 question categories:', questions.slice(0, 5).map(q => q.category));
-    }
-    
-    // Filter questions based on current selection
-    const filteredQuestions = questions.filter(question => {
-        // Subject filter
-        const subjectMatch = selectedSubjects.length === 0 || 
-                           selectedSubjects.includes(question.category);
-        
-        // Level filter
-        const levelMatch = !selectedLevel || question.level === selectedLevel;
-        
-        return subjectMatch && levelMatch;
-    });
+    // Use memoized filtering
+    const filteredQuestions = filterQuestionsMemoized(questions, selectedSubjects, selectedLevel);
     
     previewElement.textContent = `${filteredQuestions.length} questions available (randomized each session)`;
+}
+
+/**
+ * Clear filter cache (call when question bank changes)
+ */
+export function clearFilterCache() {
+    filterCache.clear();
 }
 
 /**
@@ -237,10 +313,14 @@ export function updateFilterTags() {
  * @param {Object} question - Question object
  */
 export function displayQuestion(question) {
-    const categoryElement = document.getElementById('question-category');
-    const levelElement = document.getElementById('question-level');
-    const authorElement = document.getElementById('question-author');
-    const questionElement = document.getElementById('question-text');
+    const elements = {
+        category: getCachedElement('question-category', true),
+        level: getCachedElement('question-level', true),
+        author: getCachedElement('question-author', true),
+        question: getCachedElement('question-text', true),
+        answerInput: getCachedElement('answer-input', true),
+        resultDisplay: getCachedElement('result-display', true)
+    };
     
     // CRITICAL: Clean up any existing text reveal state first
     if (window.appState?.textRevealTimer) {
@@ -248,23 +328,26 @@ export function displayQuestion(question) {
         window.appState.textRevealTimer = null;
     }
     
-    // Remove any existing click handlers and revealing class
-    if (questionElement) {
-        questionElement.classList.remove('revealing');
-        // Clone the element to remove all event listeners
-        const newQuestionElement = questionElement.cloneNode(true);
-        questionElement.parentNode.replaceChild(newQuestionElement, questionElement);
+    // Remove any existing click handlers and revealing class safely
+    if (elements.question) {
+        elements.question.classList.remove('revealing');
+        // Remove existing event listeners by cloning
+        const newQuestionElement = elements.question.cloneNode(true);
+        elements.question.parentNode?.replaceChild(newQuestionElement, elements.question);
+        // Update cache with new element
+        domCache.set('question-text', newQuestionElement);
     }
     
-    if (categoryElement) {
+    // Update question metadata
+    if (elements.category) {
         const categoryParts = question.category.split('>');
-        categoryElement.textContent = categoryParts.length > 1 ? categoryParts[1] : question.category;
+        elements.category.textContent = categoryParts.length > 1 ? categoryParts[1] : question.category;
     }
-    if (levelElement) levelElement.textContent = question.level;
-    if (authorElement) authorElement.textContent = `Author: ${question.author}`;
+    if (elements.level) elements.level.textContent = question.level;
+    if (elements.author) elements.author.textContent = `Author: ${question.author}`;
     
     // Start progressive text reveal with the fresh element
-    const freshQuestionElement = document.getElementById('question-text');
+    const freshQuestionElement = getCachedElement('question-text', true);
     if (freshQuestionElement) {
         startTextReveal(freshQuestionElement, question.question);
         
@@ -277,14 +360,10 @@ export function displayQuestion(question) {
                 freshQuestionElement.classList.remove('revealing');
                 
                 // Focus the answer input and scroll to it on mobile
-                const answerInput = document.getElementById('answer-input');
-                if (answerInput) {
-                    answerInput.focus();
+                if (elements.answerInput) {
+                    elements.answerInput.focus();
                     scrollToAnswerInput();
                 }
-                
-                // Remove the click handler
-                freshQuestionElement.removeEventListener('click', skipReveal);
             }
         };
         
@@ -292,16 +371,13 @@ export function displayQuestion(question) {
     }
     
     // Clear previous answer input
-    const answerInput = document.getElementById('answer-input');
-    if (answerInput) {
-        answerInput.value = '';
-        // Don't focus immediately - wait for text reveal to finish
+    if (elements.answerInput) {
+        elements.answerInput.value = '';
     }
     
     // Hide result display
-    const resultDisplay = document.getElementById('result-display');
-    if (resultDisplay) {
-        resultDisplay.classList.add('hidden');
+    if (elements.resultDisplay) {
+        elements.resultDisplay.classList.add('hidden');
     }
 }
 
@@ -311,9 +387,10 @@ export function displayQuestion(question) {
  * @param {string} fullText - Complete text to reveal
  */
 function startTextReveal(element, fullText) {
-    // Clear any existing text reveal timer
+    // Clear any existing text reveal timer safely
     if (window.appState?.textRevealTimer) {
         clearInterval(window.appState.textRevealTimer);
+        window.appState.textRevealTimer = null;
     }
     
     const words = fullText.split(' ');
@@ -335,12 +412,14 @@ function startTextReveal(element, fullText) {
             currentWordIndex++;
         } else {
             // Text reveal complete - clear timer and focus input
-            clearInterval(window.appState.textRevealTimer);
-            window.appState.textRevealTimer = null;
+            if (window.appState?.textRevealTimer) {
+                clearInterval(window.appState.textRevealTimer);
+                window.appState.textRevealTimer = null;
+            }
             element.classList.remove('revealing'); // Remove blinking cursor
             
             // Focus the answer input once text is fully revealed and scroll to it
-            const answerInput = document.getElementById('answer-input');
+            const answerInput = getCachedElement('answer-input', true);
             if (answerInput) {
                 answerInput.focus();
                 scrollToAnswerInput();
@@ -353,11 +432,16 @@ function startTextReveal(element, fullText) {
     
     // Continue revealing words at the specified interval
     if (words.length > 1) {
+        // Ensure appState exists before setting timer
+        if (!window.appState) {
+            console.warn('appState not available for text reveal timer');
+            return;
+        }
         window.appState.textRevealTimer = setInterval(revealNextWord, intervalMs);
     } else {
         // Single word - remove revealing class and focus input immediately
         element.classList.remove('revealing');
-        const answerInput = document.getElementById('answer-input');
+        const answerInput = getCachedElement('answer-input', true);
         if (answerInput) {
             answerInput.focus();
             scrollToAnswerInput();

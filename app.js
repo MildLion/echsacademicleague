@@ -12,8 +12,20 @@ import {
     displayQuestion, showQuestionResult,
     updateSubjectSelector, showParserErrors, hideParserErrors,
     updateTimerValue, updateReadingSpeedValue, updateReadingSpeedPracticeValue, setStartButtonState, showSummary, announceStatus, announceError,
-    updatePoolPreview, updateFilterTags, updateQuestionCounter, updateAccuracyDisplay
+    updatePoolPreview, updateFilterTags, updateQuestionCounter, updateAccuracyDisplay,
+    clearDomCache, clearFilterCache
 } from './ui.js';
+
+// Constants for better maintainability
+const APP_CONSTANTS = {
+    DEFAULT_TIME_ALLOCATED: 10,
+    DEFAULT_READING_SPEED: 200,
+    MIN_TIMER_VALUE: 3,
+    MAX_TIMER_VALUE: 60,
+    MIN_READING_SPEED: 50,
+    MAX_READING_SPEED: 500,
+    READING_SPEED_STEP: 25
+};
 
 // Application state
 let appState = {
@@ -22,8 +34,8 @@ let appState = {
     currentQuestionIndex: 0,
     userAnswers: [],
     sessionStartTime: null,
-    timeAllocated: 10,
-    readingSpeed: 200, // Words per minute
+    timeAllocated: APP_CONSTANTS.DEFAULT_TIME_ALLOCATED,
+    readingSpeed: APP_CONSTANTS.DEFAULT_READING_SPEED,
     timer: null,
     isPaused: false,
     isSessionActive: false,
@@ -44,6 +56,22 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
+}
+
+/**
+ * Calculates correct/incorrect stats from user answers in a single pass
+ * @param {Array} userAnswers - Array of user answer objects
+ * @returns {Object} Object with correct and incorrect counts
+ */
+function calculateStats(userAnswers) {
+    return userAnswers.reduce((acc, answer) => {
+        if (answer?.correctness === 'Correct') {
+            acc.correct++;
+        } else if (answer?.correctness) {
+            acc.incorrect++;
+        }
+        return acc;
+    }, { correct: 0, incorrect: 0 });
 }
 
 // DOM elements
@@ -371,6 +399,10 @@ async function loadQuestionBank() {
         // Parse the question bank
         const parseResult = parseQuestionBank(content, 'bank_sample.txt');
         
+        // Clear caches before updating questions
+        clearFilterCache();
+        clearDomCache();
+        
         appState.questions = parseResult.questions;
         
         // Show parser errors if any
@@ -633,9 +665,11 @@ function handleTimeout() {
     showQuestionResult(false, '', currentQuestion.answers[0], 'Timeout');
     
     // Update stats
+    // Update stats with optimized calculation
+    const stats = calculateStats(appState.userAnswers);
     updateStats(
-        appState.userAnswers.filter(a => a?.correctness === 'Correct').length,
-        appState.userAnswers.filter(a => a?.correctness !== 'Correct').length,
+        stats.correct,
+        stats.incorrect,
         appState.currentQuestionIndex + 1,
         appState.filteredQuestions.length
     );
@@ -698,9 +732,11 @@ function submitAnswer() {
                       isAnswerCorrect ? 'Correct' : 'Incorrect');
     
     // Update stats
+    // Update stats with optimized calculation
+    const stats = calculateStats(appState.userAnswers);
     updateStats(
-        appState.userAnswers.filter(a => a?.correctness === 'Correct').length,
-        appState.userAnswers.filter(a => a?.correctness !== 'Correct').length,
+        stats.correct,
+        stats.incorrect,
         appState.currentQuestionIndex + 1,
         appState.filteredQuestions.length
     );
@@ -721,12 +757,13 @@ function nextQuestion() {
     if (appState.currentQuestionIndex >= appState.filteredQuestions.length) {
         // Session complete
         endSession();
+        const stats = calculateStats(appState.userAnswers);
         showSummary({
             questions: appState.filteredQuestions,
             userAnswers: appState.userAnswers,
             timeAllocated: appState.timeAllocated,
-            correct: appState.userAnswers.filter(a => a?.correctness === 'Correct').length,
-            incorrect: appState.userAnswers.filter(a => a?.correctness !== 'Correct').length,
+            correct: stats.correct,
+            incorrect: stats.incorrect,
             total: appState.filteredQuestions.length
         });
         return;
@@ -750,6 +787,7 @@ function nextQuestion() {
 function endSession() {
     appState.isSessionActive = false;
     
+    // Clear all timers safely
     if (appState.timer) {
         clearInterval(appState.timer);
         appState.timer = null;
@@ -759,6 +797,9 @@ function endSession() {
         clearInterval(appState.textRevealTimer);
         appState.textRevealTimer = null;
     }
+    
+    // Clear caches when session ends
+    clearFilterCache();
 }
 
 /**
