@@ -230,7 +230,7 @@ This is an MVP implementation. For production use, consider:
 
 ## License
 
-This project is designed for educational use by NCAL participants and organizers.
+This project is designed for educational use by El Camino High School Academic League
 
 ---
 

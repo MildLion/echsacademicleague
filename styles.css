@@ -505,6 +505,23 @@ input[type="range"]::-moz-range-thumb {
     margin: 0 auto;
 }
 
+/* Use more horizontal space on larger screens */
+@media (min-width: 1400px) {
+    .practice-container {
+        max-width: 1800px;
+        grid-template-columns: 1fr 400px;
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    .practice-container {
+        max-width: 2000px;
+        grid-template-columns: 1fr 450px;
+        gap: 3.5rem;
+    }
+}
+
 .practice-main {
     background: white;
     border-radius: 16px;
@@ -728,6 +745,31 @@ input[type="range"]::-moz-range-thumb {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
     margin-bottom: 1rem;
+}
+
+/* Desktop: Use 2-column layout for better space utilization */
+@media (min-width: 1200px) {
+    .stats-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+    
+    .stat-card {
+        padding: 1rem 0.75rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .stat-value {
+        font-size: 1.4rem;
+    }
+    
+    /* Make progress card span both columns */
+    .stat-card.progress {
+        grid-column: 1 / -1;
+    }
 }
 
 .stat-card {
@@ -1113,11 +1155,6 @@ input[type="range"]::-moz-range-thumb {
         padding: 2.5rem;
     }
     
-    .practice-container {
-        max-width: 1800px;
-        gap: 3rem;
-    }
-    
     .practice-main {
         padding: 3rem;
     }
@@ -1131,11 +1168,6 @@ input[type="range"]::-moz-range-thumb {
 @media (min-width: 1800px) {
     .setup-container {
         max-width: 1600px;
-    }
-    
-    .practice-container {
-        max-width: 2000px;
-        gap: 3.5rem;
     }
     
     .practice-main {

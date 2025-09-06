@@ -39,7 +39,9 @@ let appState = {
     timer: null,
     isPaused: false,
     isSessionActive: false,
-    textRevealTimer: null
+    textRevealTimer: null,
+    enterPressCount: 0,
+    lastEnterTime: 0
 };
 
 // Expose app state globally for UI functions
@@ -212,7 +214,28 @@ function setupEventListeners() {
     if (elements.answerInput) {
         elements.answerInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
-                submitAnswer();
+                const currentTime = Date.now();
+                
+                // Reset counter if more than 1 second has passed since last Enter
+                if (currentTime - appState.lastEnterTime > 1000) {
+                    appState.enterPressCount = 0;
+                }
+                
+                appState.enterPressCount++;
+                appState.lastEnterTime = currentTime;
+                
+                if (appState.enterPressCount === 1) {
+                    // First Enter - submit answer
+                    submitAnswer();
+                } else if (appState.enterPressCount === 2) {
+                    // Second Enter - move to next question
+                    e.preventDefault();
+                    const nextQuestionBtn = document.getElementById('next-question');
+                    if (nextQuestionBtn && !nextQuestionBtn.disabled) {
+                        nextQuestion();
+                    }
+                    appState.enterPressCount = 0; // Reset counter
+                }
             }
         });
     }
@@ -600,6 +623,7 @@ function startPracticeSession() {
     }
     
     // Display first question
+    resetEnterCounter();
     displayQuestion(appState.filteredQuestions[0]);
     
     // Start timer
@@ -749,6 +773,14 @@ function submitAnswer() {
 }
 
 /**
+ * Reset Enter key press counter
+ */
+function resetEnterCounter() {
+    appState.enterPressCount = 0;
+    appState.lastEnterTime = 0;
+}
+
+/**
  * Move to the next question
  */
 function nextQuestion() {
@@ -773,6 +805,7 @@ function nextQuestion() {
     updateQuestionCounter();
     
     // Display next question
+    resetEnterCounter();
     displayQuestion(appState.filteredQuestions[appState.currentQuestionIndex]);
     
     // Start timer for new question
