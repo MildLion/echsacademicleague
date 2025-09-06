@@ -140,6 +140,146 @@ Humanities>World History;What event temporarily halted the fighting between nati
 Humanities>World History;Identify either of the 2 countries that received money from the U.S under the Truman Doctrine.;["GREECE", "TURKEY"];Junior Varsity;NCAL
 Humanities>World History;Name the ancient civilization which produced Zoroastrianism.;["PERSIA"];Junior Varsity;NCAL
 Humanities>World History;Name the Indian who taught that the world's problems are caused by man's desire.;["GUATAMA SIDDHARTHA", "SIDDHARTHA", "BUDDHA"];Freshman;NCAL
+Humanities>World History;Which early-modern Islamic dynasty in South Asia was founded by Babur in 1526?;["MUGHAL EMPIRE","MUGHALS"];Junior Varsity;Sal
+Humanities>World History;Who was the leader of the Chinese Communist Party that founded the People's Republic of China in 1949?;["MAO","MAO ZEDONG"];Freshman;Sal
+Humanities>World History;Name the West African empire, famed for its gold trade, whose ruler Mansa Musa undertook a famous hajj in 1324.;["MALI EMPIRE","MALI"];Junior Varsity;Sal
+Humanities>World History;What is the common nickname for Simón Bolívar, who led independence wars in northern South America?;["THE LIBERATOR","EL LIBERTADOR"];Junior Varsity;Sal
+Humanities>World History;What is the name of the Mongol leader who created the largest contiguous land empire in history?;["GENGHIS KHAN","CHINGGIS KHAN","TEMUJIN"];Freshman;Sal
+Humanities>World History;Who are the indigenous Polynesian people of Aotearoa, now known as New Zealand?;["MAORI","MĀORI"];Freshman;Sal
+Humanities>World History;Which Abbasid capital city, founded in 762, was devastated by a Mongol sack in 1258?;["BAGHDAD"];Junior Varsity;Sal
+Humanities>World History;Name the catastrophic 19th-century war that pitted Paraguay against Brazil, Argentina, and Uruguay.;["WAR OF THE TRIPLE ALLIANCE","PARAGUAYAN WAR"];Varsity;Sal
+Humanities>World History;Which Chinese dynasty, lasting from 206 BCE to 220 CE, consolidated imperial rule and opened the Silk Road?;["HAN DYNASTY","HAN"];Freshman;Sal
+Humanities>World History;Name the Islamic empire that took Constantinople in 1453 and was dissolved after World War I.;["OTTOMAN EMPIRE","OTTOMANS"];Freshman;Sal
+Humanities>World History;Who was the first Prime Minister of independent India, championing nonalignment?;["NEHRU","JAWAHARLAL NEHRU"];Junior Varsity;Sal
+Humanities>World History;Which Chinese dynasty is considered a cosmopolitan golden age of poetry and art, but was weakened by the An Lushan Rebellion?;["TANG DYNASTY","TANG"];Junior Varsity;Sal
+Humanities>World History;What was the name of the major Andean empire, with extensive road networks, that fell to Spanish conquistadors?;["INCA EMPIRE","INCAN EMPIRE","INCA"];Freshman;Sal
+Humanities>World History;Name the 1868 event that overthrew the Japanese shogunate and began a period of rapid industrialization.;["MEIJI RESTORATION"];Junior Varsity;Sal
+Humanities>World History;Which native Chinese dynasty built the Forbidden City and sent out Admiral Zheng He's treasure fleets?;["MING DYNASTY","MING"];Junior Varsity;Sal
+Humanities>World History;Which Islamic caliphate, centered in Baghdad, is known for its scientific and cultural "Golden Age"?;["ABBASID CALIPHATE","ABBASIDS"];Junior Varsity;Sal
+Humanities>World History;Who was the Mongol leader who conquered Song China and founded the Yuan dynasty?;["KUBLAI KHAN","QUBILAI KHAN"];Junior Varsity;Sal
+Humanities>World History;From which Eurasian steppe region did the confederation that built a massive trans-continental empire originate?;["MONGOLIA","MONGOLIAN STEPPE","CENTRAL ASIAN STEPPE","THE STEPPE"];Varsity;Sal
+Humanities>World History;Who was the last independent Inca ruler, captured and executed by Francisco Pizarro?;["ATAHUALPA"];Junior Varsity;Sal
+Humanities>World History;Name the final imperial dynasty of China, established by the Manchu people.;["QING DYNASTY","QING"];Junior Varsity;Sal
+Humanities>World History;Which Indian Prime Minister oversaw the Green Revolution but also declared a state of emergency from 1975–77?;["INDIRA GANDHI"];Junior Varsity;Sal
+Humanities>World History;Name India's first subcontinental empire, whose Emperor Ashoka publicized moral edicts.;["MAURYAN EMPIRE","MAURYAS"];Junior Varsity;Sal
+Humanities>World History;What was the name of the anti-foreign uprising in China that was crushed by an Eight-Nation Alliance?;["BOXER REBELLION","BOXER UPRISING","YIHEQUAN UPRISING"];Junior Varsity;Sal
+Humanities>World History;Name the Mesoamerican empire centered at Tenochtitlan that was conquered by Hernán Cortés.;["AZTEC EMPIRE","AZTECS"];Freshman;Sal
+Humanities>World History;Who was the ANC leader who became South Africa's first Black president after spending 27 years in prison?;["NELSON MANDELA","MANDELA"];Freshman;Sal
+Humanities>World History;Which West African empire, a successor to Mali, was ended by Moroccan firearms in 1591?;["SONGHAI EMPIRE","SONGHAI"];Varsity;Sal
+Humanities>World History;What was the name of the Aztec capital, built on Lake Texcoco, that was razed by the Spanish?;["TENOCHTITLAN"];Junior Varsity;Sal
+Humanities>World History;What was the first major Islamic dynasty, based in Damascus, that expanded into Iberia?;["UMAYYAD CALIPHATE","UMAYYADS"];Varsity;Sal
+Humanities>World History;Who was the post-Mao Chinese leader who instituted market-oriented reforms?;["DENG XIAOPING","DENG"];Junior Varsity;Sal
+Humanities>World History;Who overthrew the Batista regime in Cuba in 1959?;["CASTRO","FIDEL CASTRO"];Junior Varsity;Sal
+Humanities>World History;Which Egyptian president nationalized the Suez Canal in 1956?;["GAMAL ABDEL NASSER","NASSER"];Junior Varsity;Sal
+Humanities>World History;Name the massive millenarian civil war in China that severely weakened the Qing dynasty.;["TAIPING REBELLION"];Varsity;Sal
+Humanities>World History;What is the common name for Timur, the Turco-Mongol conqueror from Samarkand?;["TAMERLANE","TIMUR"];Varsity;Sal
+Humanities>World History;Which Japanese daimyō began the unification of Japan and embraced the use of firearms?;["ODA NOBUNAGA","NOBUNAGA"];Junior Varsity;Sal
+Humanities>World History;Who was the first president of Indonesia and a key leader of the Non-Aligned Movement?;["SUKARNO"];Junior Varsity;Sal
+Humanities>World History;Name the Chilean general who overthrew Salvador Allende in a 1973 coup.;["AUGUSTO PINOCHET","PINOCHET"];Junior Varsity;Sal
+Humanities>World History;Who was the Vietnamese revolutionary leader and president of North Vietnam during the Vietnam War?;["HO CHI MINH","HO"];Junior Varsity;Sal
+Humanities>World History;Who was the Ugandan dictator known for his brutal regime and the expulsion of Asians?;["IDI AMIN","IDI AMIN DADA","AMIN"];Junior Varsity;Sal
+Humanities>World History;Which Canadian Prime Minister patriated the constitution and established official bilingualism?;["PIERRE TRUDEAU","TRUDEAU"];Varsity;Sal
+Humanities>World History;Name the 1904–1905 conflict where Japan defeated Russia, announcing its status as a world power.;["RUSSO-JAPANESE WAR"];Junior Varsity;Sal
+Humanities>World History;What was the name of the military government that ruled Japan during its period of isolation?;["TOKUGAWA SHOGUNATE","EDO BAKUFU","BAKUFU"];Junior Varsity;Sal
+Humanities>World History;Which chartered company came to dominate trade and governance in India before the 1857 revolt?;["BRITISH EAST INDIA COMPANY","EAST INDIA COMPANY","EIC"];Junior Varsity;Sal
+Humanities>World History;Who led India's nonviolent independence movement through methods of Satyagraha?;["MAHATMA GANDHI","MOHANDAS GANDHI","GANDHI"];Freshman;Sal
+Humanities>World History;Which Mexican revolutionary cavalry leader famously raided Columbus, New Mexico in 1916?;["PANCHO VILLA","FRANCISCO VILLA","VILLA"];Varsity;Sal
+Humanities>World History;What was the name of Pol Pot's radical Cambodian regime that caused a genocide?;["KHMER ROUGE"];Junior Varsity;Sal
+Humanities>World History;Which Mauryan emperor embraced Buddhism and issued moral edicts after the Kalinga War?;["ASHOKA","ASHOKA THE GREAT","ASOKA"];Junior Varsity;Sal
+Humanities>World History;Name the Mesopotamian city-state of Hammurabi and Nebuchadnezzar II.;["BABYLON"];Freshman;Sal
+Humanities>World History;Name the mid-19th century conflicts between China and Britain over the opium trade.;["OPIUM WARS","FIRST OPIUM WAR","SECOND OPIUM WAR"];Junior Varsity;Sal
+Humanities>World History;What global body for international security and cooperation was founded in 1945?;["UNITED NATIONS","UN"];Freshman;Sal
+Humanities>World History;Who was the Ming admiral who led seven major voyages across the Indian Ocean?;["ZHENG HE","CHENG HO"];Junior Varsity;Sal
+Humanities>World History;What was the name of the system of racial segregation in South Africa from 1948 to 1994?;["APARTHEID"];Freshman;Sal
+Humanities>World History;Which Mughal emperor is known for his policy of religious tolerance and debate?;["AKBAR","AKBAR THE GREAT","JALAL-UD-DIN AKBAR"];Junior Varsity;Sal
+Humanities>World History;Name the battle between the Egyptians and Hittites that resulted in history's earliest known peace treaty.;["BATTLE OF KADESH","BATTLE OF QADESH"];Varsity;Sal
+Humanities>World History;Name the 1982 conflict between the UK and Argentina over islands in the South Atlantic.;["FALKLANDS WAR","FALKLAND ISLANDS WAR","MALVINAS WAR"];Junior Varsity;Sal
+Humanities>World History;Who was the first president of Kenya, a nationalist leader during the Mau Mau era?;["JOMO KENYATTA","KENYATTA"];Junior Varsity;Sal
+Humanities>World History;Who was the Zulu king who reorganized warfare with new tactics and weapons?;["SHAKA","SHAKA ZULU"];Junior Varsity;Sal
+Humanities>World History;Which Persian dynasty made Twelver Shi'ism the state religion and rivaled the Ottomans?;["SAFAVID EMPIRE","SAFAVIDS"];Varsity;Sal
+Humanities>World History;Name the 1956 crisis that began when Egypt nationalized the Suez Canal.;["SUEZ CRISIS","SECOND ARAB–ISRAELI WAR","TRIPARTITE AGGRESSION"];Junior Varsity;Sal
+Humanities>World History;Who was the founder of the Tokugawa shogunate after his victory at Sekigahara?;["TOKUGAWA IEYASU","IEYASU"];Junior Varsity;Sal
+Humanities>World History;Who is known as the "Father of the Chinese Republic" and founded the Kuomintang?;["SUN YAT-SEN","SUN ZHONGSHAN"];Junior Varsity;Sal
+Humanities>World History;Name the vast metropolitan city in central Mexico known for its massive Pyramids of the Sun and Moon.;["TEOTIHUACAN","TEOTIHUACÁN"];Varsity;Sal
+Humanities>World History;Which Mali and Songhai city was a famed scholarly hub and center of trans-Saharan trade?;["TIMBUKTU","TIMBUKTOO"];Junior Varsity;Sal
+Humanities>World History;Name the 1973 war where Egypt and Syria launched a surprise attack on Israel on a Jewish holy day.;["YOM KIPPUR WAR","OCTOBER WAR"];Junior Varsity;Sal
+Humanities>World History;What was the name of the Southern African kingdom that fought the British in the Anglo-Zulu War of 1879?;["ZULU KINGDOM","ZULUS"];Junior Varsity;Sal
+Humanities>World History;Who was the Chilean independence leader and first Supreme Director of an independent Chile?;["BERNARDO O'HIGGINS","O HIGGINS"];Varsity;Sal
+Humanities>World History;Who was the British imperialist and businessman behind the De Beers diamond company and the Cape-to-Cairo vision?;["CECIL RHODES","RHODES"];Junior Varsity;Sal
+Humanities>World History;Which South African president freed Nelson Mandela and negotiated the end of apartheid?;["F. W. DE KLERK","DE KLERK","FREDERIK WILLEM DE KLERK"];Junior Varsity;Sal
+Humanities>World History;What former British colony was handed back to China in 1997 under "one country, two systems"?;["HONG KONG"];Freshman;Sal
+Humanities>World History;Which Venetian traveler wrote a famous account of his time at the court of Kublai Khan?;["MARCO POLO"];Freshman;Sal
+Humanities>World History;Who was the UK's first female Prime Minister, known for her free-market reforms?;["MARGARET THATCHER","THATCHER"];Freshman;Sal
+Humanities>World History;Who was the founder and first president of the modern Republic of Turkey?;["MUSTAFA KEMAL ATATURK","ATATURK"];Junior Varsity;Sal
+Humanities>World History;What Cold War bloc of states sought independence from both US and Soviet influence?;["NON-ALIGNED MOVEMENT","NAM"];Junior Varsity;Sal
+Humanities>World History;Which Mesoamerican culture is known as the "mother culture" for its influence on later societies?;["OLMEC","OLMECS"];Junior Varsity;Sal
+Humanities>World History;Who was the long-time ruler of Zimbabwe whose later years saw economic collapse?;["ROBERT MUGABE","MUGABE"];Junior Varsity;Sal
+Humanities>World History;Who was the Iraqi strongman who started the Iran-Iraq War and invaded Kuwait in 1990?;["SADDAM HUSSEIN","SADDAM"];Freshman;Sal
+Humanities>World History;Which sultan united Egypt and Syria and recaptured Jerusalem from the Crusaders in 1187?;["SALADIN","SALAH AD-DIN"];Junior Varsity;Sal
+Humanities>World History;What is the common name for the 1857–58 uprising against the British East India Company's rule in India?;["SEPOY MUTINY","INDIAN REBELLION OF 1857","FIRST WAR OF INDEPENDENCE"];Junior Varsity;Sal
+Humanities>World History;Which Japanese ruler unified the nation after Oda Nobunaga and launched invasions of Korea?;["TOYOTOMI HIDEYOSHI","HIDEYOSHI"];Junior Varsity;Sal
+Humanities>World History;Name the late 19th-century war where Chile fought Peru and Bolivia over nitrate deposits.;["WAR OF THE PACIFIC"];Varsity;Sal
+Humanities>World History;Name the religion or philosophy founded by Siddhartha Gautama that spread from India across Asia.;["BUDDHISM"];Freshman;Sal
+Humanities>World History;Who was the founder of the Mauryan Empire in India?;["CHANDRAGUPTA MAURYA","CHANDRAGUPTA"];Junior Varsity;Sal
+Humanities>World History;Which Achaemenid Persian emperor is known for his tolerant imperial model and freeing the Jews from Babylon?;["CYRUS THE GREAT","CYRUS II"];Junior Varsity;Sal
+Humanities>World History;Who was the primary founder and first Prime Minister of the State of Israel?;["DAVID BEN-GURION","BEN-GURION"];Junior Varsity;Sal
+Humanities>World History;What was the reign name of the Japanese emperor who presided over WWII and the postwar economic miracle?;["SHŌWA","SHOWA","HIROHITO"];Junior Varsity;Sal
+Humanities>World History;What massive Chinese fortification was significantly expanded during the Ming dynasty?;["GREAT WALL OF CHINA","THE GREAT WALL"];Freshman;Sal
+Humanities>World History;Name the stone-built capital city of a powerful Shona state in Southern Africa.;["GREAT ZIMBABWE"];Junior Varsity;Sal
+Humanities>World History;Who was the Ethiopian emperor seen as a messianic figure in the Rastafari movement?;["HAILE SELASSIE","HAILE SELASSIE I"];Junior Varsity;Sal
+Humanities>World History;Which Anatolian empire battled the Egyptians to a stalemate at the Battle of Kadesh?;["HITTITES","HITTITE EMPIRE"];Varsity;Sal
+Humanities>World History;What was the name of Japan's first military government, established in the late 12th century?;["KAMAKURA SHOGUNATE","KAMAKURA BAKUFU"];Varsity;Sal
+Humanities>World History;Which Southeast Asian empire was centered at Angkor and built Angkor Wat?;["KHMER EMPIRE","ANGKORIAN EMPIRE"];Junior Varsity;Sal
+Humanities>World History;Name the ethno-linguistic group spread across Turkey, Iraq, Iran, and Syria with modern autonomy struggles.;["KURDS","KURDISH PEOPLE"];Junior Varsity;Sal
+Humanities>World History;What was the name of the slave-soldier dynasty that ruled Egypt and Syria and halted the Mongol advance?;["MAMLUKS","MAMLUK SULTANATE"];Varsity;Sal
+Humanities>World History;Which Northeast Asian region was the homeland of the Manchu people and the site of Japanese expansion in the 1930s?;["MANCHURIA","NORTHEAST CHINA","DONGBEI"];Junior Varsity;Sal
+Humanities>World History;Who was the Libyan ruler from 1969 until his overthrow and death during the Arab Spring?;["MUAMMAR GADDAFI","MUAMMAR QADDAFI","MUAMMAR AL-GADDAFI"];Junior Varsity;Sal
+Humanities>World History;Who was the founder of Pakistan and the leader of the Muslim League?;["MUHAMMAD ALI JINNAH","JINNAH","QAID-E-AZAM"];Junior Varsity;Sal
+Humanities>World History;Name the 1990–1991 conflict where a US-led coalition expelled Iraq from Kuwait.;["PERSIAN GULF WAR","GULF WAR","OPERATION DESERT STORM"];Freshman;Sal
+Humanities>World History;Who was the Mexican strongman whose long period of rule ended with the 1910 Revolution?;["PORFIRIO DIAZ","DIAZ"];Junior Varsity;Sal
+Humanities>World History;Who was the socialist president of Chile overthrown by a US-backed coup in 1973?;["SALVADOR ALLENDE","ALLENDE"];Junior Varsity;Sal
+Humanities>World History;Who was the leading figure of the Haitian Revolution who died in French captivity?;["TOUSSAINT L'OUVERTURE","TOUSSAINT LOUVERTURE"];Junior Varsity;Sal
+Humanities>World History;What 1840 pact between the British Crown and Māori chiefs is the founding document of New Zealand?;["TREATY OF WAITANGI"];Junior Varsity;Sal
+Humanities>World History;Which Egyptian pharaoh's nearly intact tomb was discovered by Howard Carter in 1922?;["TUTANKHAMUN","KING TUT"];Freshman;Sal
+Humanities>World History;Name the global war from 1914–1918 that began with the assassination in Sarajevo.;["WORLD WAR I","FIRST WORLD WAR","THE GREAT WAR"];Freshman;Sal
+Humanities>World History;What was the name of the Mongol-led dynasty in China founded by Kublai Khan?;["YUAN DYNASTY","YUAN"];Junior Varsity;Sal
+Humanities>World History;What was the title of the military ruler who held de facto power in feudal Japan?;["SHOGUN","SHŌGUN"];Freshman;Sal
+Humanities>World History;Who was the Macedonian king who conquered the Persian Empire and spread Hellenistic culture?;["ALEXANDER THE GREAT","ALEXANDER III OF MACEDON"];Freshman;Sal
+Humanities>World History;Which Sikh holy city was the site of an infamous 1919 massacre by British troops?;["AMRITSAR","JALLIANWALA BAGH"];Junior Varsity;Sal
+Humanities>World History;What is the name of the massive temple complex in Cambodia, originally dedicated to Vishnu?;["ANGKOR WAT"];Freshman;Sal
+Humanities>World History;Who was the Timurid prince who founded the Mughal Empire in India?;["BABUR","ZAHIR-UD-DIN MUHAMMAD BABUR"];Junior Varsity;Sal
+Humanities>World History;What 1978 accords, brokered by the US, led to a peace treaty between Egypt and Israel?;["CAMP DAVID ACCORDS"];Junior Varsity;Sal
+Humanities>World History;Who was the Zulu king during the Anglo-Zulu War of 1879?;["CETSHWAYO","CETSHWAYO KAMPANDE"];Varsity;Sal
+Humanities>World History;Who was the leader of Free France during WWII and later President of the Fifth Republic?;["CHARLES DE GAULLE","DE GAULLE"];Junior Varsity;Sal
+Humanities>World History;Which Argentine Marxist revolutionary was a key figure in the Cuban Revolution?;["CHE GUEVARA","ERNESTO GUEVARA"];Freshman;Sal
+Humanities>World History;Who was the leader of the Chinese Nationalists (KMT) who retreated to Taiwan in 1949?;["CHIANG KAI-SHEK","JIANG JIESHI","CHIANG"];Junior Varsity;Sal
+Humanities>World History;What is the name for the period of state terrorism and "disappearances" in Argentina from 1976–1983?;["DIRTY WAR"];Junior Varsity;Sal
+Humanities>World History;Who was the second and last emperor of Brazil, overseeing the abolition of slavery?;["DOM PEDRO II","PEDRO II"];Varsity;Sal
+Humanities>World History;What remote Pacific island is famed for its massive stone statues called moai?;["EASTER ISLAND","RAPA NUI"];Junior Varsity;Sal
+Humanities>World History;Who was the Filipino revolutionary leader who fought against both Spain and the United States?;["EMILIO AGUINALDO","AGUINALDO"];Junior Varsity;Sal
+Humanities>World History;Who was the Philippine president who declared martial law in 1972 and was ousted in 1986?;["FERDINAND MARCOS","MARCOS"];Junior Varsity;Sal
+Humanities>World History;Which Spanish conquistador conquered the Inca Empire?;["FRANCISCO PIZARRO","PIZARRO"];Freshman;Sal
+Humanities>World History;Who was the US-backed Cuban dictator overthrown by Fidel Castro in 1959?;["FULGENCIO BATISTA","BATISTA"];Junior Varsity;Sal
+Humanities>World History;Who was Israel's first female Prime Minister, leading the country during the Yom Kippur War?;["GOLDA MEIR","MEIR"];Junior Varsity;Sal
+Humanities>World History;Which female pharaoh of Egypt launched a famous trading expedition to the Land of Punt?;["HATSHEPSUT"];Junior Varsity;Sal
+Humanities>World History;Which Spanish conquistador led the expedition that caused the fall of the Aztec Empire?;["HERNAN CORTES","HERNÁN CORTÉS","CORTES"];Freshman;Sal
+Humanities>World History;Name the Lebanese Shi'a political and militant group that emerged during the Lebanese Civil War.;["HEZBOLLAH","HIZBULLAH"];Junior Varsity;Sal
+Humanities>World History;Who was the Inca ruler who lost a civil war against his half-brother Atahualpa just before the Spanish arrival?;["HUASCAR","HUÁSCAR"];Varsity;Sal
+Humanities>World History;Which Moroccan scholar traveled extensively throughout the Islamic world in the 14th century, documenting his journeys?;["IBN BATTUTA","IBN BATTUTAH"];Junior Varsity;Sal
+Humanities>World History;Who was the "Liberator" of Argentina, Chile, and Peru, alongside Bernardo O'Higgins?;["JOSE DE SAN MARTIN","JOSÉ DE SAN MARTÍN","SAN MARTIN"];Junior Varsity;Sal
+Humanities>World History;Which Himalayan region has been a major point of contention between India and Pakistan since 1947?;["KASHMIR"];Junior Varsity;Sal
+Humanities>World History;Who was the Panamanian dictator ousted by a US invasion in 1989?;["MANUEL NORIEGA","NORIEGA"];Junior Varsity;Sal
+Humanities>World History;What was the name of the anti-colonial rebellion in Kenya during the 1950s?;["MAU MAU UPRISING","MAU MAU REBELLION"];Junior Varsity;Sal
+Humanities>World History;Which river was the lifeline of ancient Egyptian civilization?;["NILE","NILE RIVER"];Freshman;Sal
+Humanities>World History;Which brief dynasty was the first to unify China under an imperial system?;["QIN DYNASTY","QIN"];Junior Varsity;Sal
+Humanities>World History;Who was the long-time dictator of the Dominican Republic, assassinated in 1961?;["RAFAEL TRUJILLO","RAFAEL LEONIDAS TRUJILLO","TRUJILLO"];Varsity;Sal
+Humanities>World History;Which Chinese megacity was a treaty port and is now a global financial hub?;["SHANGHAI"];Junior Varsity;Sal
+Humanities>World History;Which monotheistic religion originated in the Punjab region of South Asia?;["SIKHISM"];Junior Varsity;Sal
+Humanities>World History;Which Beijing square was the site of a deadly crackdown on pro-democracy protesters in 1989?;["TIANANMEN SQUARE"];Junior Varsity;Sal
+Humanities>World History;Which Portuguese explorer was the first to reach India by sailing around Africa?;["VASCO DA GAMA","DA GAMA"];Freshman;Sal
+Humanities>World History;Which British naval officer was the subject of a famous mutiny on the HMS Bounty?;["WILLIAM BLIGH","BLIGH"];Varsity;Sal
+Humanities>World History;What Japanese word means "divine wind" and refers to the typhoons that destroyed Mongol invasion fleets?;["KAMIKAZE"];Freshman;Sal
+Humanities>World History;Often credited to Cai Lun in 105 CE, what Chinese invention revolutionized bureaucracy and communication?;["PAPER"];Freshman;Sal
 Math>Algebra;What is the algebra term for the second, or Y-component, or an ordered pair?;["ORDINATE"];Junior Varsity;NCAL
 Math>Algebra;What is the range of the natural logarithm function?;["ALL REAL","ALL REALS","ALL REAL NUMBER","ALL REAL NUMBERS"];Junior Varsity;NCAL
 Math>Algebra;What is the value of the determinant of the 2-by-2 matrix with 1st-row entries of 1 and 2 and 2nd-row entries of 2 and 3?;["NEGATIVE 1", "NEGATIVE ONE","- ONE", "- 1", "-1"];Junior Varsity;NCAL
