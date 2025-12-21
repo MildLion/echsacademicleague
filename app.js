@@ -84,7 +84,15 @@ let elements = {};
  */
 
 const PASSWORD_PROTECTION = {
-    PASSWORD: 'pancakes',
+    // Password is obfuscated to prevent easy discovery in source code
+    // Uses character code manipulation and string reconstruction
+    _getPassword() {
+        // Split password into parts and reconstruct
+        const part1 = String.fromCharCode(112, 97, 110);
+        const part2 = String.fromCharCode(99, 97);
+        const part3 = String.fromCharCode(107, 101, 115);
+        return part1 + part2 + part3;
+    },
     STORAGE_KEY: 'unlocked',
     
     /**
@@ -274,7 +282,7 @@ const PASSWORD_PROTECTION = {
             
             const enteredPassword = passwordInput.value.trim();
             
-            if (enteredPassword === this.PASSWORD) {
+            if (enteredPassword === this._getPassword()) {
                 // Success - unlock
                 this.setUnlocked(true);
                 this.hideError(passwordError, passwordInput);
