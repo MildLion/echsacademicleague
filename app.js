@@ -80,6 +80,73 @@ function calculateStats(userAnswers) {
 let elements = {};
 
 /**
+ * Check if user is authenticated
+ */
+function checkAuthentication() {
+    return sessionStorage.getItem('authenticated') === 'true';
+}
+
+/**
+ * Set authentication state
+ */
+function setAuthenticated(value) {
+    if (value) {
+        sessionStorage.setItem('authenticated', 'true');
+    } else {
+        sessionStorage.removeItem('authenticated');
+    }
+}
+
+/**
+ * Initialize password protection
+ */
+function initPasswordProtection() {
+    const passwordScreen = document.getElementById('password-screen');
+    const passwordInput = document.getElementById('password-input');
+    const passwordSubmit = document.getElementById('password-submit');
+    const passwordError = document.getElementById('password-error');
+    const PASSWORD = 'pancakes';
+    
+    // Check if already authenticated
+    if (checkAuthentication()) {
+        passwordScreen.classList.add('hidden');
+        return true;
+    }
+    
+    // Show password screen
+    document.body.classList.add('password-protected');
+    
+    // Handle password submission
+    function handlePasswordSubmit() {
+        const enteredPassword = passwordInput.value.trim();
+        
+        if (enteredPassword === PASSWORD) {
+            setAuthenticated(true);
+            passwordScreen.classList.add('hidden');
+            document.body.classList.remove('password-protected');
+            passwordError.classList.add('hidden');
+            passwordInput.value = '';
+            // Initialize app after successful authentication
+            init();
+        } else {
+            passwordError.classList.remove('hidden');
+            passwordInput.value = '';
+            passwordInput.focus();
+        }
+    }
+    
+    // Event listeners
+    passwordSubmit.addEventListener('click', handlePasswordSubmit);
+    passwordInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            handlePasswordSubmit();
+        }
+    });
+    
+    return false;
+}
+
+/**
  * Initialize the application
  */
 async function init() {
@@ -919,6 +986,11 @@ function handleGlobalKeyboard(event) {
     }
 }
 
-// Initialize app when DOM is ready
-document.addEventListener('DOMContentLoaded', init);
+// Initialize password protection when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    const isAuthenticated = initPasswordProtection();
+    if (isAuthenticated) {
+        init();
+    }
+});
 

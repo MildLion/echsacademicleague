@@ -15,6 +15,21 @@
     <link rel="stylesheet" href="styles.css?v=20241220-15">
 </head>
 <body>
+    <!-- Password Screen -->
+    <div id="password-screen" class="password-screen">
+        <div class="password-container">
+            <div class="password-header">
+                <h2>🔒 Access Required</h2>
+                <p>Please enter the password to continue</p>
+            </div>
+            <div class="password-form">
+                <input type="password" id="password-input" placeholder="Enter password..." autocomplete="off" autofocus>
+                <button type="button" id="password-submit" class="btn-primary">Submit</button>
+                <div id="password-error" class="password-error hidden">Incorrect password. Please try again.</div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="header-content">
             <div class="header-left">
@@ -356,6 +371,6 @@
         <p>NCAL Study App - Offline Practice Tool</p>
     </footer>
 
-    <script type="module" src="app.js?v=20241220-15"></script>
+    <script type="module" src="app.js?v=20241221-01"></script>
 </body>
 </html>
