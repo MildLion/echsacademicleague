@@ -110,6 +110,7 @@ function initPasswordProtection() {
     // Check if already authenticated
     if (checkAuthentication()) {
         passwordScreen.classList.add('hidden');
+        passwordScreen.style.display = 'none';
         return true;
     }
     
@@ -122,7 +123,9 @@ function initPasswordProtection() {
         
         if (enteredPassword === PASSWORD) {
             setAuthenticated(true);
+            // Hide password screen completely
             passwordScreen.classList.add('hidden');
+            passwordScreen.style.display = 'none';
             document.body.classList.remove('password-protected');
             passwordError.classList.add('hidden');
             passwordInput.value = '';
