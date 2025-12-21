@@ -10,7 +10,6 @@ A lightweight, offline web application for practicing North County Academic Leag
 - **Configurable Timer**: Set question time limits from 3-60 seconds
 - **Smart Answer Matching**: Case-insensitive synonym matching with text normalization
 - **Session Tracking**: Monitor progress and performance in real-time
-- **CSV Export**: Download detailed session results for analysis
 - **Accessibility**: Full keyboard navigation and screen reader support
 
 ## How to Run
@@ -117,7 +116,6 @@ ncal-study-app/
 ├── parser.js          # Question bank parser
 ├── normalize.js       # Text normalization utilities
 ├── ui.js              # UI management functions
-├── csv.js             # CSV export functionality
 ├── data/
 │   └── bank_sample.txt # Sample question bank
 ├── assets/
@@ -144,55 +142,52 @@ The app gracefully handles malformed data:
 
 Errors are displayed in a dismissible panel with line-by-line details and a "Copy Details" button for troubleshooting.
 
-## CSV Export
-
-Exported files include these columns:
-- `questionId`: Unique question identifier
-- `category`: Full subject category
-- `subjectSpecific`: Specific subject area
-- `level`: Question difficulty
-- `question`: Question text
-- `userAnswer`: User's submitted answer
-- `correctness`: Result (Correct/Incorrect/Timeout)
-- `timeAllocatedSec`: Time limit per question
-- `timeElapsedSec`: Time actually used
-- `author`: Question author
-- `timestamp`: Export timestamp
-
 ## Development Guidelines
 
-### Cache Busting Rule
-**CRITICAL**: Always update module version numbers when making changes to prevent browser caching issues.
+### ⚠️ CRITICAL: Always Update JS Version After Every Edit
 
-When modifying any of these files:
-- `app.js` - Main application logic
-- `ui.js` - UI management functions  
-- `parser.js` - Question bank parser
-- `normalize.js` - Text normalization utilities
-- `csv.js` - CSV export functionality
-- `styles.css` - Application styles
+**MANDATORY RULE**: **ALWAYS update the JavaScript version number in `index.html` after making ANY edit to JavaScript files.** This is non-negotiable and must be done for every change.
 
-**Update the version parameter in `index.html`:**
+**Files that require version updates:**
+- `app.js` - Main application logic ⚠️ **ALWAYS UPDATE VERSION**
+- `ui.js` - UI management functions ⚠️ **ALWAYS UPDATE VERSION**
+- `parser.js` - Question bank parser ⚠️ **ALWAYS UPDATE VERSION**
+- `normalize.js` - Text normalization utilities ⚠️ **ALWAYS UPDATE VERSION**
+- `styles.css` - Application styles ⚠️ **ALWAYS UPDATE VERSION**
+
+**Update the version parameter in `index.html` after EVERY edit:**
 ```html
-<!-- Before -->
-<script type="module" src="app.js?v=20241220"></script>
-<link rel="stylesheet" href="styles.css?v=20241220">
+<!-- Before editing -->
+<script type="module" src="app.js?v=20241220-15"></script>
+<link rel="stylesheet" href="styles.css?v=20241220-15">
 
-<!-- After -->
-<script type="module" src="app.js?v=20241220-1"></script>
-<link rel="stylesheet" href="styles.css?v=20241220-1">
+<!-- After editing - MUST UPDATE -->
+<script type="module" src="app.js?v=20241221-01"></script>
+<link rel="stylesheet" href="styles.css?v=20241221-01">
 ```
 
 **Version Format**: Use `YYYYMMDD-X` where:
 - `YYYYMMDD` = Date of changes
-- `X` = Increment number for multiple updates per day
+- `X` = Increment number for multiple updates per day (01, 02, 03, etc.)
 
-**Why This Matters**: Without version updates, users' browsers cache old versions, causing bugs and missing features to persist.
+**Why This Matters**: Without version updates, users' browsers cache old JavaScript files, causing bugs and missing features to persist. Users will not see your changes until they hard-refresh their browser, which most users don't know how to do.
 
-### General Cache-Busting Rule
-**RULE**: Every time you modify any JavaScript, CSS, or HTML file that affects functionality or appearance, you MUST update the version number in `index.html` to force browsers to load the fresh version.
+### Mandatory Workflow
 
-**When to Update Versions:**
+**Every time you edit JavaScript or CSS files:**
+
+1. ✅ Make your code changes
+2. ✅ **IMMEDIATELY update version in `index.html`** (both CSS and JS links)
+3. ✅ Test that changes are visible in browser
+4. ✅ Commit with descriptive message
+
+**This is not optional.** If you forget to update the version, your changes won't be visible to users.
+
+### When to Update Versions
+
+**ALWAYS Update:**
+- ✅ Any JavaScript file edit (`app.js`, `ui.js`, `parser.js`, `normalize.js`)
+- ✅ CSS file edits (`styles.css`)
 - ✅ Bug fixes
 - ✅ New features
 - ✅ UI/UX changes
@@ -200,24 +195,24 @@ When modifying any of these files:
 - ✅ Content updates
 - ✅ Any change that users should see immediately
 
-**When NOT to Update Versions:**
+**Exception - Don't Update:**
 - ❌ Documentation-only changes (README.md)
-- ❌ Comments-only changes
-- ❌ Whitespace/formatting changes
-- ❌ Unused code removal
+- ❌ Comments-only changes (but still recommended to update)
+- ❌ Whitespace/formatting changes (but still recommended to update)
 
-**Quick Version Update Process:**
-1. Make your code changes
-2. Update version in `index.html` (both CSS and JS links)
-3. Test that changes are visible
-4. Commit with descriptive message
+**Best Practice**: When in doubt, **always update the version**. It's better to update unnecessarily than to have users stuck with old cached code.
 
-**Example Version Progression:**
-- `v=20241220` (initial)
-- `v=20241220-1` (first update same day)
-- `v=20241220-2` (second update same day)
-- `v=20241221` (next day)
-- `v=20241221-1` (first update next day)
+### Example Version Progression
+
+```
+v=20241220-15  (initial)
+v=20241220-16  (first edit same day)
+v=20241220-17  (second edit same day)
+v=20241221-01  (first edit next day)
+v=20241221-02  (second edit next day)
+```
+
+**Remember**: Every edit = version bump. No exceptions.
 
 ## Contributing
 

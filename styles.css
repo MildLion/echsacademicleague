@@ -1815,19 +1815,18 @@ input:focus {
     }
 }
 
-/* Password Screen */
+/* Password Screen - Non-dismissable Modal */
 .password-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: 10000;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
-    transition: opacity 0.3s ease;
+    pointer-events: auto;
 }
 
 .password-screen.hidden {
@@ -1837,20 +1836,34 @@ input:focus {
     pointer-events: none;
 }
 
+.password-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    pointer-events: none;
+}
+
 .password-container {
+    position: relative;
     background: white;
     padding: 3rem;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 90%;
     text-align: center;
+    z-index: 10001;
+    pointer-events: auto;
 }
 
 .password-header h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: #333;
+    font-weight: 700;
 }
 
 .password-header p {
@@ -1865,32 +1878,120 @@ input:focus {
     gap: 1rem;
 }
 
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .password-form input {
+    flex: 1;
     padding: 0.75rem 1rem;
+    padding-right: 3rem;
     font-size: 1rem;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
 
 .password-form input:focus {
     outline: none;
     border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.password-form input.error {
+    border-color: #dc3545;
+}
+
+.password-form input.error:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    transition: color 0.2s ease;
+    border-radius: 4px;
+}
+
+.toggle-password:hover {
+    color: #667eea;
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+.toggle-password:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.toggle-password-icon {
+    font-size: 1.2rem;
+    display: inline-block;
+    user-select: none;
 }
 
 .password-error {
     color: #dc3545;
     font-size: 0.9rem;
-    margin-top: 0.5rem;
+    margin-top: -0.5rem;
+    text-align: left;
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .password-error.hidden {
     display: none;
 }
 
+/* Prevent background interaction when password screen is active */
+body.password-protected {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 body.password-protected > header,
 body.password-protected > main,
 body.password-protected > footer {
-    display: none;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Accessibility improvements */
+.password-screen[aria-hidden="true"] {
+    display: none !important;
+}
+
+/* Focus visible for keyboard navigation */
+.password-form input:focus-visible,
+.toggle-password:focus-visible,
+#password-submit:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .password-container {
+        padding: 2rem 1.5rem;
+        width: 95%;
+    }
+    
+    .password-header h2 {
+        font-size: 1.5rem;
+    }
 }
 

@@ -6,7 +6,6 @@
 
 import { parseQuestionBank } from './parser.js';
 import { isCorrect } from './normalize.js';
-import { exportSessionCsv, prepareSessionResultsForCsv } from './csv.js';
 import {
     showScreen, updateTimerDisplay, setTimerPauseState, updateStats,
     displayQuestion, showQuestionResult,
@@ -80,73 +79,262 @@ function calculateStats(userAnswers) {
 let elements = {};
 
 /**
- * Check if user is authenticated
+ * Password Protection Module
+ * Provides a non-dismissable modal with focus trap, background lock, and accessibility features
+ */
+
+const PASSWORD_PROTECTION = {
+    PASSWORD: 'pancakes',
+    STORAGE_KEY: 'unlocked',
+    
+    /**
+     * Check if user is unlocked
+     */
+    isUnlocked() {
+        return sessionStorage.getItem(this.STORAGE_KEY) === 'true';
+    },
+    
+    /**
+     * Set unlocked state
+     */
+    setUnlocked(value) {
+        if (value) {
+            sessionStorage.setItem(this.STORAGE_KEY, 'true');
+        } else {
+            sessionStorage.removeItem(this.STORAGE_KEY);
+        }
+    },
+    
+    /**
+     * Get all focusable elements within the password modal
+     */
+    getFocusableElements(container) {
+        const focusableSelectors = [
+            'input:not([disabled])',
+            'button:not([disabled])',
+            'a[href]',
+            'textarea:not([disabled])',
+            'select:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])'
+        ].join(', ');
+        
+        return Array.from(container.querySelectorAll(focusableSelectors));
+    },
+    
+    /**
+     * Trap focus within the password modal
+     */
+    trapFocus(event, container) {
+        const focusableElements = this.getFocusableElements(container);
+        if (focusableElements.length === 0) return;
+        
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (event.key === 'Tab') {
+            if (event.shiftKey) {
+                // Shift + Tab
+                if (document.activeElement === firstElement) {
+                    event.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                // Tab
+                if (document.activeElement === lastElement) {
+                    event.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
+    },
+    
+    /**
+     * Prevent background scrolling
+     */
+    lockBodyScroll() {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+    },
+    
+    /**
+     * Restore background scrolling
+     */
+    unlockBodyScroll() {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+    },
+    
+    /**
+     * Show error message
+     */
+    showError(errorElement, inputElement) {
+        errorElement.classList.remove('hidden');
+        errorElement.textContent = 'Incorrect password. Please try again.';
+        inputElement.setAttribute('aria-invalid', 'true');
+        inputElement.classList.add('error');
+    },
+    
+    /**
+     * Hide error message
+     */
+    hideError(errorElement, inputElement) {
+        errorElement.classList.add('hidden');
+        inputElement.setAttribute('aria-invalid', 'false');
+        inputElement.classList.remove('error');
+    },
+    
+    /**
+     * Toggle password visibility
+     */
+    togglePasswordVisibility(inputElement, toggleButton) {
+        const isPassword = inputElement.type === 'password';
+        inputElement.type = isPassword ? 'text' : 'password';
+        
+        const icon = toggleButton.querySelector('.toggle-password-icon');
+        toggleButton.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+        
+        if (icon) {
+            icon.textContent = isPassword ? '🙈' : '👁️';
+        }
+    },
+    
+    /**
+     * Initialize password protection
+     */
+    init() {
+        const passwordScreen = document.getElementById('password-screen');
+        const passwordForm = document.getElementById('password-form');
+        const passwordInput = document.getElementById('password-input');
+        const passwordSubmit = document.getElementById('password-submit');
+        const passwordError = document.getElementById('password-error');
+        const togglePasswordBtn = document.getElementById('toggle-password');
+        
+        if (!passwordScreen || !passwordForm || !passwordInput) {
+            console.error('Password protection elements not found');
+            return true; // Allow app to continue if elements missing
+        }
+        
+        // Check if already unlocked
+        if (this.isUnlocked()) {
+            passwordScreen.classList.add('hidden');
+            passwordScreen.setAttribute('aria-hidden', 'true');
+            return true;
+        }
+        
+        // Lock body scroll
+        this.lockBodyScroll();
+        
+        // Show password screen
+        passwordScreen.classList.remove('hidden');
+        passwordScreen.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('password-protected');
+        
+        // Focus trap - prevent Tab from escaping modal
+        const handleKeyDown = (e) => {
+            // Prevent ESC key from closing modal
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+            
+            // Trap focus within modal
+            this.trapFocus(e, passwordScreen);
+        };
+        
+        // Prevent clicks on backdrop from closing modal
+        const backdrop = passwordScreen.querySelector('.password-backdrop');
+        if (backdrop) {
+            backdrop.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+        }
+        
+        // Prevent clicks outside modal from closing it
+        passwordScreen.addEventListener('click', (e) => {
+            if (e.target === passwordScreen) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+        
+        // Toggle password visibility
+        if (togglePasswordBtn) {
+            togglePasswordBtn.addEventListener('click', () => {
+                this.togglePasswordVisibility(passwordInput, togglePasswordBtn);
+                passwordInput.focus();
+            });
+        }
+        
+        // Handle form submission
+        passwordForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const enteredPassword = passwordInput.value.trim();
+            
+            if (enteredPassword === this.PASSWORD) {
+                // Success - unlock
+                this.setUnlocked(true);
+                this.hideError(passwordError, passwordInput);
+                
+                // Hide password screen
+                passwordScreen.classList.add('hidden');
+                passwordScreen.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('password-protected');
+                
+                // Unlock body scroll
+                this.unlockBodyScroll();
+                
+                // Remove event listeners
+                passwordScreen.removeEventListener('keydown', handleKeyDown);
+                
+                // Clear password field
+                passwordInput.value = '';
+                passwordInput.type = 'password'; // Reset to password type
+                
+                // Initialize app after successful authentication
+                init();
+            } else {
+                // Wrong password - show error
+                this.showError(passwordError, passwordInput);
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        });
+        
+        // Add focus trap listener
+        passwordScreen.addEventListener('keydown', handleKeyDown);
+        
+        // Focus the input on load
+        setTimeout(() => {
+            passwordInput.focus();
+        }, 100);
+        
+        return false;
+    }
+};
+
+/**
+ * Check if user is authenticated (backward compatibility)
  */
 function checkAuthentication() {
-    return sessionStorage.getItem('authenticated') === 'true';
+    return PASSWORD_PROTECTION.isUnlocked();
 }
 
 /**
- * Set authentication state
+ * Set authentication state (backward compatibility)
  */
 function setAuthenticated(value) {
-    if (value) {
-        sessionStorage.setItem('authenticated', 'true');
-    } else {
-        sessionStorage.removeItem('authenticated');
-    }
+    PASSWORD_PROTECTION.setUnlocked(value);
 }
 
 /**
- * Initialize password protection
+ * Initialize password protection (wrapper for backward compatibility)
  */
 function initPasswordProtection() {
-    const passwordScreen = document.getElementById('password-screen');
-    const passwordInput = document.getElementById('password-input');
-    const passwordSubmit = document.getElementById('password-submit');
-    const passwordError = document.getElementById('password-error');
-    const PASSWORD = 'pancakes';
-    
-    // Check if already authenticated
-    if (checkAuthentication()) {
-        passwordScreen.classList.add('hidden');
-        passwordScreen.style.display = 'none';
-        return true;
-    }
-    
-    // Show password screen
-    document.body.classList.add('password-protected');
-    
-    // Handle password submission
-    function handlePasswordSubmit() {
-        const enteredPassword = passwordInput.value.trim();
-        
-        if (enteredPassword === PASSWORD) {
-            setAuthenticated(true);
-            // Hide password screen completely
-            passwordScreen.classList.add('hidden');
-            passwordScreen.style.display = 'none';
-            document.body.classList.remove('password-protected');
-            passwordError.classList.add('hidden');
-            passwordInput.value = '';
-            // Initialize app after successful authentication
-            init();
-        } else {
-            passwordError.classList.remove('hidden');
-            passwordInput.value = '';
-            passwordInput.focus();
-        }
-    }
-    
-    // Event listeners
-    passwordSubmit.addEventListener('click', handlePasswordSubmit);
-    passwordInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            handlePasswordSubmit();
-        }
-    });
-    
-    return false;
+    return PASSWORD_PROTECTION.init();
 }
 
 /**
@@ -195,11 +383,9 @@ function initializeElements() {
         submitAnswer: document.getElementById('submit-answer'),
         nextQuestion: document.getElementById('next-question'),
         pauseTimer: document.getElementById('pause-timer'),
-        resetFiltersEmpty: document.getElementById('reset-filters-empty'),
         
         // Summary screen
         backToPractice: document.getElementById('back-to-practice'),
-        exportCsv: document.getElementById('export-csv'),
         newSession: document.getElementById('new-session'),
         
         // Error handling
@@ -207,67 +393,43 @@ function initializeElements() {
         dismissErrors: document.getElementById('dismiss-errors')
     };
     
-    // Debug: Log which elements were found
-    console.log('Elements initialized:', {
-        startPractice: !!elements.startPractice,
-        timerSlider: !!elements.timerSlider,
-        selectAll: !!elements.selectAll,
-        clearAll: !!elements.clearAll
-    });
 }
 
 /**
  * Set up all event listeners
  */
 function setupEventListeners() {
-    console.log('Setting up event listeners...');
-    
     // Timer slider
     if (elements.timerSlider) {
-        console.log('Adding timer slider listener');
         elements.timerSlider.addEventListener('input', (e) => {
             const value = parseInt(e.target.value);
             updateTimerValue(value);
             appState.timeAllocated = value;
             updateFilterTags();
         });
-    } else {
-        console.error('Timer slider element not found!');
     }
     
     // Reading speed slider
     if (elements.readingSpeedSlider) {
-        console.log('Adding reading speed slider listener');
         elements.readingSpeedSlider.addEventListener('input', (e) => {
             const value = parseInt(e.target.value);
             updateReadingSpeedValue(value);
             appState.readingSpeed = value;
         });
-    } else {
-        console.error('Reading speed slider element not found!');
     }
     
     // Subject selection
     if (elements.selectAll) {
-        console.log('Adding select all listener');
         elements.selectAll.addEventListener('click', selectAllSubjects);
-    } else {
-        console.error('Select all element not found!');
     }
     
     if (elements.clearAll) {
-        console.log('Adding clear all listener');
         elements.clearAll.addEventListener('click', clearAllSubjects);
-    } else {
-        console.error('Clear all element not found!');
     }
     
     // Start practice
     if (elements.startPractice) {
-        console.log('Adding start practice listener');
         elements.startPractice.addEventListener('click', startPracticeSession);
-    } else {
-        console.error('Start practice element not found!');
     }
     
     // Practice screen navigation
@@ -373,9 +535,6 @@ function setupEventListeners() {
         });
     }
     
-    if (elements.exportCsv) {
-        elements.exportCsv.addEventListener('click', exportResults);
-    }
     
     if (elements.newSession) {
         elements.newSession.addEventListener('click', startNewSession);
@@ -623,15 +782,10 @@ function filterQuestions() {
  * Start a new practice session
  */
 function startPracticeSession() {
-    console.log('startPracticeSession called');
-    console.log('Current app state:', appState);
-    
     let questionCount = filterQuestions();
-    console.log('Question count after filtering:', questionCount);
     
     // If no questions match, try to expand filters automatically
     if (questionCount === 0) {
-        console.log('No questions match filters, auto-expanding filters');
         
         // First try: select all subjects if none selected
         const selectedSubjects = Array.from(
@@ -664,16 +818,12 @@ function startPracticeSession() {
         updatePoolPreview();
     }
     
-    console.log('Starting session with questions:', appState.filteredQuestions);
-    
     // Initialize session state
     appState.currentQuestionIndex = 0;
     appState.userAnswers = [];
     appState.sessionStartTime = Date.now();
     appState.isSessionActive = true;
     appState.isPaused = false;
-    
-
     
     // Switch to practice screen
     showScreen('practice-screen');
@@ -692,14 +842,20 @@ function startPracticeSession() {
         updateReadingSpeedPracticeValue(appState.readingSpeed);
     }
     
-    // Display first question
-    resetEnterCounter();
-    displayQuestion(appState.filteredQuestions[0]);
-    
-    // Start timer
-    startTimer();
-    
-    announceStatus(`Practice session started with ${questionCount} randomized questions`);
+    // Display first question (safety check)
+    if (appState.filteredQuestions.length > 0) {
+        resetEnterCounter();
+        displayQuestion(appState.filteredQuestions[0]);
+        
+        // Start timer
+        startTimer();
+        
+        announceStatus(`Practice session started with ${questionCount} randomized questions`);
+    } else {
+        // This should not happen due to earlier checks, but handle gracefully
+        announceError('No questions available. Please check your filters.');
+        showScreen('setup-screen');
+    }
 }
 
 /**
@@ -723,6 +879,7 @@ function startTimer() {
                 // Time's up - show 0 before handling timeout
                 updateTimerDisplay(0, appState.timeAllocated);
                 clearInterval(appState.timer);
+                appState.timer = null;
                 handleTimeout();
             } else {
                 updateTimerDisplay(timeLeft, appState.timeAllocated);
@@ -912,26 +1069,6 @@ function resetFilters() {
     selectAllSubjects();
     document.querySelector('input[name="level"][value=""]').checked = true;
     showScreen('setup-screen');
-}
-
-/**
- * Export session results to CSV
- */
-function exportResults() {
-    try {
-        const sessionResults = prepareSessionResultsForCsv(
-            appState.filteredQuestions,
-            appState.userAnswers,
-            appState.timeAllocated
-        );
-        
-        exportSessionCsv(sessionResults, `ncal-session-${Date.now()}`);
-        announceStatus('Results exported successfully');
-        
-    } catch (error) {
-        console.error('Failed to export results:', error);
-        announceError('Failed to export results');
-    }
 }
 
 /**

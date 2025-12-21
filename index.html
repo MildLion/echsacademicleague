@@ -15,18 +15,45 @@
     <link rel="stylesheet" href="styles.css?v=20241220-15">
 </head>
 <body>
-    <!-- Password Screen -->
-    <div id="password-screen" class="password-screen">
+    <!-- Password Screen - Non-dismissable Modal -->
+    <div id="password-screen" class="password-screen" role="dialog" aria-modal="true" aria-labelledby="password-title" aria-describedby="password-description">
+        <div class="password-backdrop" aria-hidden="true"></div>
         <div class="password-container">
             <div class="password-header">
-                <h2>🔒 Access Required</h2>
-                <p>Please enter the password to continue</p>
+                <h2 id="password-title">🔒 Access Required</h2>
+                <p id="password-description">Please enter the password to continue</p>
             </div>
-            <div class="password-form">
-                <input type="password" id="password-input" placeholder="Enter password..." autocomplete="off" autofocus>
-                <button type="button" id="password-submit" class="btn-primary">Submit</button>
-                <div id="password-error" class="password-error hidden">Incorrect password. Please try again.</div>
-            </div>
+            <form class="password-form" id="password-form" novalidate>
+                <div class="password-input-wrapper">
+                    <input 
+                        type="password" 
+                        id="password-input" 
+                        name="password"
+                        placeholder="Enter password..." 
+                        autocomplete="off" 
+                        autofocus
+                        aria-label="Password"
+                        aria-describedby="password-error"
+                        aria-invalid="false"
+                        required
+                    >
+                    <button 
+                        type="button" 
+                        id="toggle-password" 
+                        class="toggle-password"
+                        aria-label="Show password"
+                        tabindex="0"
+                    >
+                        <span class="toggle-password-icon" aria-hidden="true">👁️</span>
+                    </button>
+                </div>
+                <div id="password-error" class="password-error hidden" role="alert" aria-live="polite">
+                    Incorrect password. Please try again.
+                </div>
+                <button type="submit" id="password-submit" class="btn-primary">
+                    Submit
+                </button>
+            </form>
         </div>
     </div>
 
@@ -313,10 +340,6 @@
                 <div class="summary-header">
                     <button type="button" id="back-to-practice" class="btn-secondary">← Back to Practice</button>
                     <h2>Session Summary</h2>
-                    <button type="button" id="export-csv" class="btn-primary">
-                        <span class="btn-icon">📥</span>
-                        Export CSV
-                    </button>
                 </div>
 
                 <!-- Summary Cards -->
@@ -371,6 +394,6 @@
         <p>NCAL Study App - Offline Practice Tool</p>
     </footer>
 
-    <script type="module" src="app.js?v=20241221-01"></script>
+    <script type="module" src="app.js?v=20241221-03"></script>
 </body>
 </html>
