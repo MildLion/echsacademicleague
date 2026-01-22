@@ -106,6 +106,12 @@ Science>Physics;Which lepton is found in a neutral, hydrogen-1 atom?;["ELECTRON"
 Science>Physics;If 200 grams of a radioactive substance with a half-life of 20 minutes sits for one hour, how many grams remain?;["25 GRAMS","25","TWENTY-FIVE GRAMS"];Varsity;NCAL
 Science>Physics;Give the physics term for a point of a transverse wave that is a relative minimum.;["TROUGH"];Varsity;NCAL
 Science>Physics;Find the average acceleration (m/s^2) of a car whose velocity decreases from 16.0 m/s to 2.0 m/s during a 3.5-second interval.;["-4","NEGATIVE FOUR","-4 M/S^2","NEGATIVE FOUR METERS PER SECOND SQUARED"];Varsity;NCAL
+Science>Physics;What is the SI unit of force, defined as the force needed to accelerate one kilogram of mass at one meter per second squared?;["NEWTON"];Junior Varsity;NCAL
+Science>Physics;What term describes the product of an object's mass and velocity?;["MOMENTUM"];Junior Varsity;NCAL
+Science>Physics;What is the scientific term for the energy an object possesses due to its motion?;["KINETIC ENERGY"];Freshman;NCAL
+Science>Physics;A 5-kilogram object is lifted 4 meters above the ground. Assuming gravity is 10 m/s^2, what is its gravitational potential energy in joules?;["200 JOULES","200","TWO HUNDRED JOULES"];Varsity;NCAL
+Science>Physics;What two-word term describes the bending of light as it passes from one medium to another?;["REFRACTION","LIGHT REFRACTION"];Varsity;NCAL
+Science>Physics;Which fundamental force is responsible for holding protons and neutrons together in the atomic nucleus?;["STRONG NUCLEAR FORCE","STRONG FORCE"];Varsity;NCAL
 Languages>Spanish;Spell, using the English alphabet, the one-word Spanish translation of the phrase "town square.";["LA PLAZA","PLAZA","EL ZOCALO","ZOCALO","PLAZA OR ZOCALO","ZOCALO OR PLAZA","LA PLAZA OR EL ZOCALO"];Junior Varsity;NCAL
 Languages>Spanish;Spell, using the English alphabet the 3-word Spanish phrase that means "See you later.";["HASTA LA VISTA", "HASTA LA PROXIMA"];Junior Varsity;NCAL
 Languages>Spanish;Spell, using the English alphabet, the Spanish word that means "keyboard," as in 'Please use the keyboard to type your essay into the computer.";["TECLADO"];Junior Varsity;NCAL
